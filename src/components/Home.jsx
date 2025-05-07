@@ -1,100 +1,51 @@
-import { useGetAllUsersQuery, useDeleteUserMutation } from "../app/mainSlice";
-import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
-import { Accordion } from "react-bootstrap";
-import InfoModal from "./Modal";
-import { useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
+
+import opsgLaptop from "../assets/img/opsg-laptop.jpg";
 
 export default function Home() {
-  // using navgate for update profile button
-  const navigate = useNavigate();
-  const [deleteUser] = useDeleteUserMutation();
-
-  const { data, isLoading, isError } = useGetAllUsersQuery(); // get all users
-
-  useEffect(() => {
-    if (isError) {
-      setResponse(data?.error.status || "unknown error");
-      // openModal();
-      navigate("/login");
-    } else {
-      navigate("/");
-    }
-  }, [isError]);
-
-  // Modal logic
-  const [response, setResponse] = useState("");
-  const [show, setShow] = useState(false);
-  const openModal = () => setShow(true);
-  const closeModal = () => setShow(false);
-
-  //handleDelete for delete button
-  const handleDelete = async (userId) => {
-    try {
-      await deleteUser(userId).unwrap();
-    } catch (error) {
-      console.error(error.message);
-      openModal();
-    }
-  };
-
-  // const handleDelete = (user) => {
-  //   const { id } = user;
-  //   const updatedUser = data?.filter(user => user.id !== id);
-  //   setResponse({ message: `User ${user.firstName} ${user.lastName} successfully deleted`});
-  //   openModal();
-  // };
-
-  // if (isLoading) {
-  //   return <h1>isloading...</h1>;
-  //   console.log("in isloading");
-  // }
-
   return (
-    <article>
-      {show ? (
-        <InfoModal
-          show={show}
-          hide={closeModal}
-          heading="Error"
-          body={response || "unknown error"}
-        />
-      ) : (
-        <>
-          <h2>Our users</h2>
-          <div className="user-list">
-            <Accordion>
-              {data && !isError ? (
-                data?.map((user) => (
-                  <div key={user.id} className="user-info">
-                    <Accordion.Item eventKey={user.id}>
-                      <Accordion.Header className="user-info">
-                        {user.email} {user.firstName} {user.lastName}
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <Button
-                          variant="primary"
-                          onClick={() => navigate(`user/${user.id}`)}
-                        >
-                          Update User
-                        </Button>
-                        <Button
-                          variant="primary"
-                          onClick={() => handleDelete(user?.id)}
-                        >
-                          Delete User
-                        </Button>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  </div>
-                ))
-              ) : (
-                <></>
-              )}
-            </Accordion>
-          </div>
-        </>
-      )}
-    </article>
+    <Container fluid>
+      {/* animate fade in going down */}
+      <Row className="justify-content-md-center">
+        <Col className="display-1" md="auto">
+          Title With
+        </Col>
+      </Row>
+      <Row className="justify-content-md-center">
+        <Col className="display-1" md="auto">
+          Power
+        </Col>
+      </Row>
+      <Row className="justify-content-md-center">
+        <Col className="text-muted" md="auto">
+          <h1>Company Motto</h1>
+        </Col>
+      </Row>
+
+      {/* animate fade in going up */}
+      <Row className="justify-content-md-center">
+        <Col md="auto">
+          <Image src={opsgLaptop} fluid rounded thumbnail />
+        </Col>
+      </Row>
+
+      {/* no animation */}
+      <Row className="justify-content-md-center">
+        <Col md="auto">
+          <h3>Trusted By Our Clients</h3>
+        </Col>
+      </Row>
+      <Row className="justify-content-md-center">
+        <Col md="auto">Company 1</Col>
+        <Col md="auto">Company 2</Col>
+      </Row>
+      <Row className="justify-content-md-center">
+        <Col md="auto">Company 3</Col>
+        <Col md="auto">Company 4</Col>
+      </Row>
+    </Container>
   );
 }
