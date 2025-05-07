@@ -35,16 +35,9 @@ export default function Home() {
       {/* no animation */}
       <Row className="justify-content-md-center">
         <Col md="auto">
-          <h3>Trusted By Our Clients</h3>
+          {/* consider rising number */}
+          <h3>Trusted By Over x Clients</h3>
         </Col>
-      </Row>
-      <Row className="justify-content-md-center">
-        <Col md="auto">Company 1</Col>
-        <Col md="auto">Company 2</Col>
-      </Row>
-      <Row className="justify-content-md-center">
-        <Col md="auto">Company 3</Col>
-        <Col md="auto">Company 4</Col>
       </Row>
     </Container>
   );
