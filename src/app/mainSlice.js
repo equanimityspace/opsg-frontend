@@ -20,31 +20,7 @@ const usersApi = api.injectEndpoints({
       providesTags: ["User"],
     }),
 
-    getAllUsers: build.query({
-      query: () => ({
-        url: "/auth/getAllUsers/",
-        method: "GET",
-      }),
-      providesTags: ["User"],
-    }),
-
-    getUser: build.query({
-      query: (id) => ({
-        url: `/auth/getUser/${id}`,
-        method: "GET",
-      }),
-      providesTags: ["User"],
-    }),
-
-    deleteUser: build.mutation({
-      query: (id) => ({
-        url: `auth/deleteUser/${id}`,
-        method: "DELETE",
-      }),
-      invalidatesTags: ["User"],
-    }),
-
-    updateUserProfile: build.mutation({
+    updateProfile: build.mutation({
       query: ({ id, firstName, lastName, email, password }) => ({
         url: `/auth/updateUserProfile/${id}`,
         method: "PUT",
@@ -53,7 +29,7 @@ const usersApi = api.injectEndpoints({
       invalidatesTags: ["User"],
     }),
 
-    deleteUser: build.mutation({
+    deleteProfile: build.mutation({
       query: (id) => ({
         url: `auth/deleteUser/${id}`,
         method: "DELETE",
@@ -66,8 +42,6 @@ const usersApi = api.injectEndpoints({
 export const {
   useRegisterMutation,
   useLoginMutation,
-  useGetAllUsersQuery,
-  useGetUserQuery,
-  useDeleteUserMutation,
-  useUpdateUserProfileMutation,
+  useDeleteProfileMutation,
+  useUpdateProfileMutation,
 } = usersApi;
