@@ -1,7 +1,9 @@
+import "./App.css";
 import { RouterProvider } from 'react-router-dom';
 import './app.css'
 import Router from './router';
 import { RouterProvider } from 'react-router-dom';
+import { isPending } from "@reduxjs/toolkit";
 
 export default App = () => {
 
