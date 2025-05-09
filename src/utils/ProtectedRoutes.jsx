@@ -1,13 +1,19 @@
 import React from "react";
-import { useOutletContext, Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import getToken from "./tokenService";
 
-export default ProtectedRoute = ({role}) => {
+const getRole = () => {
+  return window.sessionStorage.getItem("role").toLowerCase();
+};
 
-    const context = useOutletContext();
+const ProtectedRoutes = () => {
+    //not sure how to handle token below... might be good?
+  const token = getToken();
 
-    if (!context.user || !context.user.role.includes(role)) {
-        return <Navigate to="/" replace/>
+    if (!token) {
+        return <Navigate to="/"/>
     }
-    return <Outlet context={context}/>;
+    return <Outlet/>;
     
 };
+export default {ProtectedRoutes, getRole}

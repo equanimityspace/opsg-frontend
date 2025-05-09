@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useRegisterMutation } from "../app/mainSlice";
+import { useRegisterMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
 
 import Button from "react-bootstrap/Button";
@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 
-import InfoModal from "./Modal";
+import InfoModal from "../../utils/Modal";
 
 export default function Register() {
   const navigate = useNavigate();

@@ -1,16 +1,8 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
-
-import opsgLaptop from "../assets/img/opsg-laptop.jpg";
+import { Row, Col, Image, Container } from "react-bootstrap";
 import React from "react";
-import { useOutletContext } from "react-router-dom";
+import opsgLaptop from "./assets/img/opsg-laptop.jpg";
 
-export default function Home() {
-export default Home = () => {
-
-  const context = useOutletContext()
+const Home = () => {
 
   return (
     <Container fluid>
@@ -48,12 +40,7 @@ export default Home = () => {
     </Container>
   );
 }
-    //main page here
-    <div>
-      // if no user
-    </div>
-  )
-}
+
 
 // import { useDeleteProfileMutation } from "../app/mainSlice";
 // import { useEffect, useState } from "react";
@@ -142,3 +129,4 @@ export default Home = () => {
 //     </article>
 //   );
 // }
+export default Home
