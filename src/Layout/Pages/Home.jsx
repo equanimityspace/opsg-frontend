@@ -1,9 +1,8 @@
 import { Row, Col, Image, Container } from "react-bootstrap";
 import React from "react";
-// import opsgLaptop from "../img/opsg-laptop.jpg";
+import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
 
 const Home = () => {
-
   return (
     <Container fluid>
       {/* animate fade in going down */}
@@ -39,8 +38,7 @@ const Home = () => {
       </Row>
     </Container>
   );
-}
-
+};
 
 // import { useDeleteProfileMutation } from "../app/mainSlice";
 // import { useEffect, useState } from "react";
@@ -129,4 +127,4 @@ const Home = () => {
 //     </article>
 //   );
 // }
-export default Home
+export default Home;

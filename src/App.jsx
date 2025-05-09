@@ -8,26 +8,26 @@ import Registration from "./Layout/Pages/Registration";
 import SingleUser from "./Layout/Pages/Profile";
 import NavRoles from "./Features/Navigations/NavRoles";
 
-
 function App() {
   return (
     <>
       <Routes>
         {/* <NavBar /> */}
-        <Routes>
-          {/* No auth needed */}
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Registration />} />
-          <Route path="/login" element={<Login />} />
-          
-          {/* must be logged in */}
-          <Route path="/Navbars" element={<ProtectedRoutes />}>
-            <Route path="/Navigations" element={<NavRoles />}>
-              <Route path="/me" element={<SingleUser />} />
-              <Route path="/updateUserProfile/:userid" element={<SingleUser />} />
-            </Route>
+        {/* No auth needed */}
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* must be logged in */}
+        <Route path="/navbars" element={<ProtectedRoutes />}>
+          <Route path="/navbars/navigations" element={<NavRoles />}>
+            <Route path="/navbars/navigations/me" element={<SingleUser />} />
+            <Route
+              path="/navbars/navigations/updateuserprofile/:userid"
+              element={<SingleUser />}
+            />
           </Route>
-        </Routes>
+        </Route>
       </Routes>
     </>
   );
