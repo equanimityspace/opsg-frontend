@@ -7,6 +7,7 @@ import Login from "./Layout/Pages/Login";
 import Registration from "./Layout/Pages/Registration";
 import SingleUser from "./Layout/Pages/Profile";
 import NavRoles from "./Features/Navigations/NavRoles";
+import OurServices from "./Layout/Pages/OurServices";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/ourservices" element={<OurServices />} />
 
         {/* must be logged in */}
         <Route path="/navbars" element={<ProtectedRoutes />}>

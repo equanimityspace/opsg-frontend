@@ -23,6 +23,7 @@ export default function Register() {
 
   // stores data from login form
   const [formData, setFormData] = useState({
+    company: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -80,6 +81,15 @@ export default function Register() {
         </Card.Header>
         <Card.Body>
           <Form onSubmit={submit}>
+            <Form.Group className="mb-3" controlId="formBasicFirstName">
+              <Form.Label>Company</Form.Label>
+              <Form.Control
+                type="text"
+                name="company"
+                placeholder="Company"
+                onChange={update}
+              />
+            </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicFirstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control

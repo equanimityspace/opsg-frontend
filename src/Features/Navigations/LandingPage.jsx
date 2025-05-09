@@ -1,2 +1,43 @@
 import React from "react";
-import { HomePage } from "./Navbars/OpenNav";
+import { Home } from "./pages/home";
+import { getRole } from "./ProtectedRoutes";
+
+export function landingPage() {
+    const role = getRole();
+
+
+    const displayLandingPage = () => {
+      switch (role) {
+
+        case 'visitor', 'disabled':
+            return (
+                <>
+                <OpenNav />
+                </>
+            );
+
+        case 'user':
+            return (
+                <>
+                <UserNav />
+                </>
+            );
+
+        case "admin":
+          return (
+                <>
+                <AdminNav />
+                </>
+            );
+
+        default:
+          break;
+      }
+    };
+
+    return (
+        <>
+        {displayLandingPage()}
+        </>
+    )
+};

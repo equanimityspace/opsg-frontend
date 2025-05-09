@@ -1,15 +1,13 @@
-// import { NavLink } from "react-router-dom";
-// import React from "react";
-// import getRole from "./Utils/ProtectedRoutes";
+import { NavLink } from "react-router-dom";
+import React from "react";
 
-// export default function AccountsPage() {
-//     const role = getRole();
-// };
+export default function authorizedNav() {
 
-// export default function AuthorizedNav() {
-
-//     //authorized navbar elements here
-//     //view invoice(s)
-//     //edit account
-//     //anything else??
-// }
+    // return (
+    //     <NavLink to=
+    // )
+    //authorized navbar elements here
+    //view invoice(s)
+    //edit account
+    //anything else??
+}

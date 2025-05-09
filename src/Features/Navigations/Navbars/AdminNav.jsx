@@ -1,6 +1,6 @@
 import { useGetAllUsersQuery } from "../../../Slices/mainSlice";
 
-    export default function AdminNav() {
+    export default function adminNav() {
         
         useGetAllUsersQuery();
         
