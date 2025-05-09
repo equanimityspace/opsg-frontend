@@ -1,9 +1,7 @@
 import { createBrowserRouter, Router } from "react-router-dom";
 import Home from "./Layout/Pages/Home";
 import Profile from "./Layout/Pages/Profile";
-import Root from "./components/Root";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
-import Admin from "./components/Admin";
 
 // protected routes are created as children under the root route
 const router = createBrowserRouter([

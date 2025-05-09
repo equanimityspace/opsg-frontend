@@ -1,6 +1,6 @@
 import { Row, Col, Image, Container } from "react-bootstrap";
 import React from "react";
-import opsgLaptop from "./assets/img/opsg-laptop.jpg";
+// import opsgLaptop from "../img/opsg-laptop.jpg";
 
 const Home = () => {
 
