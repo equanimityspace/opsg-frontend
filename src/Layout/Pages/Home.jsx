@@ -1,10 +1,13 @@
 import { Row, Col, Image, Container } from "react-bootstrap";
 import React from "react";
 import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
+import NavBar from "../Navbar";
 
 const Home = () => {
   return (
-    <Container fluid>
+    <>
+    <NavBar></NavBar>
+    <Container className="main" fluid>
       {/* animate fade in going down */}
       <Row className="justify-content-md-center">
         <Col className="display-1" md="auto">
@@ -37,6 +40,7 @@ const Home = () => {
         </Col>
       </Row>
     </Container>
+    </>
   );
 };
 
