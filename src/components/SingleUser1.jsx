@@ -61,52 +61,54 @@ export default function SingleUser() {
   if (error) return <p>Error loading user. Please try again later.</p>;
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridfirstName">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control type="firstName" placeholder={user.firstName} />
+    <div className="d-flex justify-content-center vh-80 vw-80">
+      <Form className="w-50 mt-5" onSubmit={handleSubmit}>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridfirstName">
+            <Form.Label>First Name</Form.Label>
+            <Form.Control type="firstName" placeholder={user.firstName} />
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="formGridlastName">
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control type="lastName" placeholder={user.lastName} />
+          </Form.Group>
+        </Row>
+
+        <Form.Group className="mb-3" controlId="formGridemail">
+          <Form.Label>email</Form.Label>
+          <Form.Control placeholder={user.email} />
         </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridlastName">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="lastName" placeholder={user.lastName} />
+        <Form.Group className="mb-3" controlId="formGr">
+          <Form.Label>Password</Form.Label>
+          <Form.Control placeholder={user.password} />
         </Form.Group>
-      </Row>
 
-      <Form.Group className="mb-3" controlId="formGridemail">
-        <Form.Label>email</Form.Label>
-        <Form.Control placeholder={user.email} />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formGr">
-        <Form.Label>Password</Form.Label>
-        <Form.Control placeholder={user.password} />
-      </Form.Group>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridmpg">
+        <Row className="mb-3">
+          {/* <Form.Group as={Col} controlId="formGridmpg">
           <Form.Label>Miles per gallon</Form.Label>
           <Form.Control />
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridgasTank">
           <Form.Label>How many gallons of gas</Form.Label>
-        </Form.Group>
-        {/* 
+        </Form.Group> */}
+          {/* 
         <Form.Group as={Col} controlId="formGridZip">
           <Form.Label>Zip</Form.Label>
           <Form.Control />
         </Form.Group> */}
-      </Row>
+        </Row>
 
-      {/* <Form.Group className="mb-3" id="formGridCheckbox">
+        {/* <Form.Group className="mb-3" id="formGridCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group> */}
 
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </div>
   );
 }
