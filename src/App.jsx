@@ -1,23 +1,28 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
-
-import Home from "./components/Home";
-import Login from "./components/Login";
-import Registration from "./components/Registration";
-import SingleUser from "./components/SingleUser";
-import { isPending } from "@reduxjs/toolkit";
+import router from "./Router";
+import ProtectedRoutes from "./utils/ProtectedRoutes";
+import Home from "./Layout/Pages/Home";
+import Login from "./Layout/Pages/Login";
+import Registration from "./Layout/Pages/Registration";
+// import SingleUser from "./components/SingleUser";
 
 function App() {
   return (
     <>
       <Routes>
-        {/* No login needed */}
-        <Route path="/register" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
-        {/* must be logged in */}
-        <Route path="/" element={<Home />} />
-        <Route path="/user/:id" element={<SingleUser />} />
+        <NavBar />
+        <Routes>
+          {/* No auth needed */}
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/login" element={<Login />} />
+          
+          {/* must be logged in */}
+          <Route path="/Navbars" element={<ProtectedRoutes />} />
+
+          {/* <Route path="/user/:id" element={<SingleUser />} /> */}
+        </Routes>
       </Routes>
     </>
   );

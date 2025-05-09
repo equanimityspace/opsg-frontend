@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import api from "../api/api";
-import { storeToken } from "./tokenService";
+import storeToken from "./tokenService";
 
 // register
 const registerSlice = createSlice({

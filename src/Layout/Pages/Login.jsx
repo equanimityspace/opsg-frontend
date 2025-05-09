@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { useLoginMutation } from "../app/mainSlice";
+import { useLoginMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
 
-import InfoModal from "./Modal";
+import InfoModal from "../../utils/Modal";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";

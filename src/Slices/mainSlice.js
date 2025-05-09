@@ -1,4 +1,4 @@
-import api from "../api/api";
+import api from "../app/api";
 
 const usersApi = api.injectEndpoints({
   endpoints: (build) => ({
@@ -20,13 +20,13 @@ const usersApi = api.injectEndpoints({
       providesTags: ["User"],
     }),
 
-    getAllUsers: build.query({
-      query: () => ({
-        url: "/auth/getAllUsers/",
-        method: "GET",
-      }),
-      providesTags: ["User"],
-    }),
+    // getAllUsers: build.query({
+    //   query: () => ({
+    //     url: "/auth/getAllUsers/",
+    //     method: "GET",
+    //   }),
+    //   providesTags: ["User"],
+    // }),
 
     getUser: build.query({
       query: (id) => ({
@@ -34,14 +34,6 @@ const usersApi = api.injectEndpoints({
         method: "GET",
       }),
       providesTags: ["User"],
-    }),
-
-    deleteUser: build.mutation({
-      query: (id) => ({
-        url: `auth/deleteUser/${id}`,
-        method: "DELETE",
-      }),
-      invalidatesTags: ["User"],
     }),
 
     updateUserProfile: build.mutation({
