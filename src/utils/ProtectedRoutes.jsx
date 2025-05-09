@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import getToken from "./tokenService";
+import { getToken } from "./tokenService";
 
 const getRole = () => {
   return window.sessionStorage.getItem("role").toLowerCase();

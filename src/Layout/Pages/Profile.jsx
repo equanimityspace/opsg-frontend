@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {
   useGetUserQuery,
   useUpdateUserProfileMutation,
-} from "../app/mainSlice";
+} from "../../Slices/mainSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function SingleUser() {

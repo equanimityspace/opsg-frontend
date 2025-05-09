@@ -1,8 +1,9 @@
-import AuthorizedNav from "./Navbars/AuthorizedNav";
-import OpenNav from "./Navbars/OpenNav";
+import AdminNav from "./Navbars/UserNav";
+// import UserNav from "./Navbars/OpenNav";
 import { Outlet } from "react-router-dom";
 
-export default function NavigationRoles() {
+
+export default function NavRoles() {
     const role = window.sessionStorage.getItem('role').toLowerCase;
 
     const DisplayNavbar = () => {
@@ -11,13 +12,13 @@ export default function NavigationRoles() {
             case 'user':
                 return (
                     <>
-                    <OpenNav />
+                    <UserNav />
                     </>
                 );
             case 'admin':
                 return (
                     <>
-                    <AuthorizedNav />
+                    <AdminNav />
                     </>
                 );
             default:

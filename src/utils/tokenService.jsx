@@ -1,3 +1,5 @@
+
+
 // stores token in client browser
 export const storeToken = (state, { payload }) => {
   localStorage.setItem("token", payload.token);
