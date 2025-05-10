@@ -26,6 +26,7 @@ function App() {
               path="/navbars/navigations/updateuserprofile/:userid"
               element={<SingleUser />}
             />
+            <Route path="/user/:id" element={<SingleUser />} />
           </Route>
         </Route>
       </Routes>
