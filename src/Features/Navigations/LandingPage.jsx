@@ -1,5 +1,4 @@
 import React from "react";
-import { Home } from "./pages/home";
 import { getRole } from "./ProtectedRoutes";
 
 export function landingPage() {

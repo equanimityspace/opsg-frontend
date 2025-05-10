@@ -5,8 +5,14 @@ import {
   useUpdateUserProfileMutation,
 } from "../../Slices/mainSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useAuthState } from "../../Features/Navigations/AuthContext";
 
-export default function SingleUser() {
+export default function Profile() {
+  const authState = useAuthState();
+
+  //determine the user's current role
+  const userRole = useAuthState.role;
+
   const navigate = useNavigate();
   const { id } = useParams();
   const { data: user, error, isLoading, refetch } = useGetUserQuery(id);
@@ -56,6 +62,8 @@ export default function SingleUser() {
   if (error) return <p>Error loading user. Please try again later.</p>;
 
   return (
+    <div>
+      {userRole === "user" || "admin"? <p>Welcome!</p> : <p>Welcome, {userRole}!</p>}
     <div className="single-user">
       {editMode ? (
         <form onSubmit={handleSubmit}>
@@ -138,6 +146,7 @@ export default function SingleUser() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
