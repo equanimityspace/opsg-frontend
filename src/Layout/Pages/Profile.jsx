@@ -113,6 +113,33 @@ export default function SingleUser() {
   if (isLoading) return <p>Loading user data...</p>;
   if (error) return <p>Error loading user. Please try again later.</p>;
 
+
+//   return (
+
+//     <div>
+//       {userRole === "user" || "admin"? <p>Welcome!</p> : <p>Welcome, {userRole}!</p>}
+//     <div className="single-user">
+//       {editMode ? (
+//         <form onSubmit={handleSubmit}>
+//           <div>
+//             <label>First Name:</label>
+//             <input
+//               type="text"
+
+// //     <div className="d-flex justify-content-center vh-80 vw-80">
+// //       <Form className="w-50 mt-5" onSubmit={handleSubmit}>
+// //         <Row className="mb-3">
+// //           <Form.Group as={Col} controlId="firstName">
+// //             <Form.Label>First Name</Form.Label>
+// //             <Form.Control
+
+//               value={formData.firstName}
+//               onChange={(e) =>
+//                 setFormData((f) => ({ ...f, firstName: e.target.value }))
+//               }
+//             />
+//           </Form.Group>
+
   return (
     <div className="d-flex justify-content-center vh-80 vw-80">
       <Form className="w-50 mt-5" onSubmit={handleSubmit}>
@@ -127,45 +154,45 @@ export default function SingleUser() {
             />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="lastName">
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control
-              value={formData.lastName}
-              onChange={(e) =>
-                setFormData((f) => ({ ...f, lastName: e.target.value }))
-              }
-            />
-          </Form.Group>
-        </Row>
+//           <Form.Group as={Col} controlId="lastName">
+//             <Form.Label>Last Name</Form.Label>
+//             <Form.Control
+//               value={formData.lastName}
+//               onChange={(e) =>
+//                 setFormData((f) => ({ ...f, lastName: e.target.value }))
+//               }
+//             />
+//           </Form.Group>
+//         </Row>
 
-        <Form.Group className="mb-3" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            value={user.email}
-            onChange={(e) =>
-              setFormData((f) => ({ ...f, email: e.target.value }))
-            }
-          />
-        </Form.Group>
+//         <Form.Group className="mb-3" controlId="email">
+//           <Form.Label>Email</Form.Label>
+//           <Form.Control
+//             type="email"
+//             value={user.email}
+//             onChange={(e) =>
+//               setFormData((f) => ({ ...f, email: e.target.value }))
+//             }
+//           />
+//         </Form.Group>
 
-        <Row className="align-items-end mb-3">
-          <Form.Group as={Col} controlId="password">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="********"></Form.Control>
-          </Form.Group>
+//         <Row className="align-items-end mb-3">
+//           <Form.Group as={Col} controlId="password">
+//             <Form.Label>Password</Form.Label>
+//             <Form.Control type="password" placeholder="********"></Form.Control>
+//           </Form.Group>
 
-          {!showPwdForm && (
-            <Col xs="auto">
-              <Button
-                variant="primary"
-                onClick={() => setShowPwdForm((v) => !v)}
-              >
-                Change Password
-              </Button>
-            </Col>
-          )}
-        </Row>
+//           {!showPwdForm && (
+//             <Col xs="auto">
+//               <Button
+//                 variant="primary"
+//                 onClick={() => setShowPwdForm((v) => !v)}
+//               >
+//                 Change Password
+//               </Button>
+//             </Col>
+//           )}
+//         </Row>
 
         {/* Renders the 3 change password fields */}
         {showPwdForm && (
