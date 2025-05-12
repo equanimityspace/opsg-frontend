@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/user/:id" element={<SingleUser />} />
 
         {/* must be logged in */}
         <Route path="/navbars" element={<ProtectedRoutes />}>
@@ -26,7 +27,6 @@ function App() {
               path="/navbars/navigations/updateuserprofile/:userid"
               element={<SingleUser />}
             />
-            <Route path="/user/:id" element={<SingleUser />} />
           </Route>
         </Route>
       </Routes>
