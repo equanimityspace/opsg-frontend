@@ -27,6 +27,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/ourservices" element={<OurServices />} />
           <Route path="/contactform" element={<ContactForm />} />
+          <Route path="/user/:id" element={<SingleUser />} />
 
           {/* Protected Routes */}
           <ProtectedRoutes>
