@@ -7,19 +7,12 @@ import {
 } from "../../Slices/mainSlice";
 import { useChangePasswordMutation } from "../../Slices/changePasswordSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useAuthState } from "../../Features/Navigations/AuthContext";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
-export default function Profile() {
-  const authState = useAuthState();
-
-  //determine the user's current role
-  const userRole = useAuthState.role;
-
-
+export default function SingleUser() {
   const navigate = useNavigate();
   const { id } = useParams();
   const { data: user, error, isLoading, refetch } = useGetUserQuery(id);
@@ -121,24 +114,12 @@ export default function Profile() {
   if (error) return <p>Error loading user. Please try again later.</p>;
 
   return (
-
-    <div>
-      {userRole === "user" || "admin"? <p>Welcome!</p> : <p>Welcome, {userRole}!</p>}
-    <div className="single-user">
-      {editMode ? (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>First Name:</label>
-            <input
-              type="text"
-
-//     <div className="d-flex justify-content-center vh-80 vw-80">
-//       <Form className="w-50 mt-5" onSubmit={handleSubmit}>
-//         <Row className="mb-3">
-//           <Form.Group as={Col} controlId="firstName">
-//             <Form.Label>First Name</Form.Label>
-//             <Form.Control
-
+    <div className="d-flex justify-content-center vh-80 vw-80">
+      <Form className="w-50 mt-5" onSubmit={handleSubmit}>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="firstName">
+            <Form.Label>First Name</Form.Label>
+            <Form.Control
               value={formData.firstName}
               onChange={(e) =>
                 setFormData((f) => ({ ...f, firstName: e.target.value }))
@@ -257,7 +238,6 @@ export default function Profile() {
           Save Profile
         </Button>
       </Form>
-    </div>
     </div>
   );
 }
