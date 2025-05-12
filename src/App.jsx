@@ -18,6 +18,7 @@ function App() {
 
   return (
     <>
+
       {/* App content */}
       <AuthProvider>
         <Switch>
