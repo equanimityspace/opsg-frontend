@@ -5,7 +5,7 @@ import NavBar from "../Navbar";
 const ourServices = () => {
   return (
     <>
-    <NavBar></NavBar>
+    <NavBar />
     <Container className="main" fluid>
       <Row className="justify-content-md-center">
         <Col className="text-muted" md="auto">

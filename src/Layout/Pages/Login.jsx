@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
-
+import NavBar from "../Navbar";
 import InfoModal from "../../utils/Modal";
 
 import Button from "react-bootstrap/Button";
@@ -53,6 +53,8 @@ export default function Login() {
   };
 
   return (
+    <>
+    <NavBar />
     <div className="d-flex justify-content-center vh-80">
       {show ? (
         <InfoModal
@@ -108,5 +110,5 @@ export default function Login() {
         </Card.Body>
       </Card>
     </div>
-  );
+    </>);
 }
