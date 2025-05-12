@@ -24,8 +24,8 @@ export default function NavBar() {
                <a className="nav-link" href="/contactForm">Contact Us</a>
                </li>
             </ul>
-            <button type="button" class="btn btn-info btn-sm" href="/login">Login</button>
-            <button type="button" class="btn btn-info btn-sm" href="/register">Register</button>
+            <button type="button" className="btn btn-info btn-sm" href="/Login">Login</button>
+            <button type="button" className="btn btn-info btn-sm" href="/Register">Register</button>
          </div>
          </nav>
       </header>
