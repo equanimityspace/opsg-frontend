@@ -53,6 +53,8 @@ export default function Login() {
   };
 
   return (
+    <>
+    <NavBar />
     <div className="d-flex justify-content-center vh-80">
       {show ? (
         <InfoModal
@@ -64,7 +66,6 @@ export default function Login() {
       ) : (
         <></>
       )}
-       <NavBar />
       <Card className="w-50 mt-5">
         <Card.Header>
           <Nav variant="tabs" defaultActiveKey="/login">
@@ -109,5 +110,5 @@ export default function Login() {
         </Card.Body>
       </Card>
     </div>
-  );
+    </>);
 }
