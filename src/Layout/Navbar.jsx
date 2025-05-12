@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function NavBar() {
    const navigate = useNavigate();
+   // const onClick = () => {
+   //    navigate
+   // }
 
    // const token = 
    return (
@@ -24,8 +27,12 @@ export default function NavBar() {
                <a className="nav-link" href="/contactForm">Contact Us</a>
                </li>
             </ul>
-            <button type="button" className="btn btn-info btn-sm" href="/Login">Login</button>
-            <button type="button" className="btn btn-info btn-sm" href="/Register">Register</button>
+            <a href="/Login" >
+               <button type="button" className="btn btn-info btn-sm">Login</button>
+            </a>
+            <a href="/Register">
+               <button type="button" className="btn btn-info btn-sm">Register</button>
+            </a >
          </div>
          </nav>
       </header>
