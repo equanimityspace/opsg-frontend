@@ -11,7 +11,6 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-
 export default function SingleUser() {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -20,22 +19,18 @@ export default function SingleUser() {
     useUpdateUserProfileMutation();
   const [changePassword, { isLoading: isChanging, error: changeError }] =
     useChangePasswordMutation();
-
   // const [editMode, setEditMode] = useState(true);
   // const [showPasswordField, setShowPasswordField] = useState(true);
-
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
   });
-
   const [showPwdForm, setShowPwdForm] = useState(false);
   const [currentPwd, setCurrentPwd] = useState("");
   const [newPwd, setNewPwd] = useState("");
   const [confirmPwd, setConfirmPwd] = useState("");
   const [pwdError, setPwdError] = useState("");
-
   useEffect(() => {
     if (user) {
       setFormData({
@@ -45,7 +40,6 @@ export default function SingleUser() {
       });
     }
   }, [user]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -56,14 +50,12 @@ export default function SingleUser() {
       // setEditMode(false);
       // setShowPasswordField(false);
       refetch();
-
       // navigate back home
       navigate(`/`);
     } catch (err) {
       console.error(err);
     }
   };
-
   const handlePasswordChange = async () => {
     if (!currentPwd || !newPwd || newPwd !== confirmPwd) {
       setPwdError(
@@ -75,7 +67,6 @@ export default function SingleUser() {
       );
       return;
     }
-
     try {
       await changePassword({
         id,
@@ -91,14 +82,12 @@ export default function SingleUser() {
     } catch (error) {
       setPwdError("Password change failed");
     }
-
     //   try {
     //     await updateUserProfile({
     //       id,
     //       currentPassword: currentPwd,
     //       password: newPwd,
     //     }).unwrap();
-
     //     setShowPwdForm(false);
     //     setCurrentPwd("");
     //     setNewPwd("");
@@ -109,10 +98,8 @@ export default function SingleUser() {
     //     setPwdError("Password change failed");
     //   }
   };
-
   if (isLoading) return <p>Loading user data...</p>;
   if (error) return <p>Error loading user. Please try again later.</p>;
-
   return (
     <div className="d-flex justify-content-center vh-80 vw-80">
       <Form className="w-50 mt-5" onSubmit={handleSubmit}>
@@ -126,7 +113,6 @@ export default function SingleUser() {
               }
             />
           </Form.Group>
-
           <Form.Group as={Col} controlId="lastName">
             <Form.Label>Last Name</Form.Label>
             <Form.Control
@@ -137,7 +123,6 @@ export default function SingleUser() {
             />
           </Form.Group>
         </Row>
-
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -148,13 +133,11 @@ export default function SingleUser() {
             }
           />
         </Form.Group>
-
         <Row className="align-items-end mb-3">
           <Form.Group as={Col} controlId="password">
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="********"></Form.Control>
           </Form.Group>
-
           {!showPwdForm && (
             <Col xs="auto">
               <Button
@@ -166,7 +149,6 @@ export default function SingleUser() {
             </Col>
           )}
         </Row>
-
         {/* Renders the 3 change password fields */}
         {showPwdForm && (
           <div className="border p-3 mb-3">
@@ -178,7 +160,6 @@ export default function SingleUser() {
                 onChange={(e) => setCurrentPwd(e.target.value)}
               ></Form.Control>
             </Form.Group>
-
             <Form.Group className="mb-2" controlId="newPwd">
               <Form.Label>New Password</Form.Label>
               <Form.Control
@@ -187,7 +168,6 @@ export default function SingleUser() {
                 onChange={(e) => setNewPwd(e.target.value)}
               ></Form.Control>
             </Form.Group>
-
             <Form.Group className="mb-2" controlId="confirmPWd">
               <Form.Label>Confirm New Password</Form.Label>
               <Form.Control
@@ -196,7 +176,6 @@ export default function SingleUser() {
                 onChange={(e) => setConfirmPwd(e.target.value)}
               ></Form.Control>
             </Form.Group>
-
             {pwdError && <p className="text-danger small">{pwdError}</p>}
             <div className="d-flex gap-2 mt-2">
               <Button variant="success" onClick={handlePasswordChange}>
@@ -219,21 +198,18 @@ export default function SingleUser() {
           <Form.Label>Miles per gallon</Form.Label>
           <Form.Control />
         </Form.Group>
-
         <Form.Group as={Col} controlId="formGridgasTank">
           <Form.Label>How many gallons of gas</Form.Label>
         </Form.Group> */}
-        {/* 
+        {/*
         <Form.Group as={Col} controlId="formGridZip">
           <Form.Label>Zip</Form.Label>
           <Form.Control />
         </Form.Group> */}
         {/* </Row> */}
-
         {/* <Form.Group className="mb-3" id="formGridCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group> */}
-
         <Button variant="primary" type="submit">
           Save Profile
         </Button>
