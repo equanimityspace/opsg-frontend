@@ -1,3 +1,5 @@
+
+import { createContext, useState, useEffect, useContext } from "react";
 // import { createContext, useState, useEffect, } from "react";
 // import authProvider from "./authProvider";
 
@@ -62,15 +64,10 @@
 // };
 // export default useAuthState; AuthProvider
 
-
-import { createContext, useState, useEffect, useCallback, useContext } from "react";
-
 const AuthContext = createContext();
 
-const AuthProvider = ({ children }) => {
-  const [authState, setAuthState] = useState({
-    role: "visitor",
-  });
+export function AuthProvider({ children }) {
+  const [authState, setAuthState] = useState({ role: "visitor" });
 
   useEffect(() => {
     const storedRole = localStorage.getItem("role");
@@ -80,17 +77,19 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={authState}>
-      {children}</AuthContext.Provider>
-    );
-};
 
-export const useAuthState = () => {
+    <AuthContext.Provider value={{ authState, setAuthState }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export function useAuthState() {
+
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error("useAuthState must be used within an AuthProvider");
   }
   return context;
-};
+}
 
-export default AuthProvider;

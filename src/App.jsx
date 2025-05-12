@@ -106,7 +106,7 @@ import SingleUser from "./Layout/Pages/Profile";
 import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
 import React, { useContext } from "react";
-import { useAuthState } from "./Features/Navigations/AuthContext";
+import { useAuthState, AuthProvider } from "./Features/Navigations/AuthContext";
 import NavRoles from "./Features/Navigations/NavRoles";
 
 // const AuthContext = React.createContext({ role: 'visitor'});
@@ -117,26 +117,27 @@ function App() {
   return (
     <>
       {/* App content */}
-      <AuthProvider>
-          {/* Visitor Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Registration />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/ourservices" element={<OurServices />} />
-          <Route path="/contactform" element={<ContactForm />} />
-          <Route path="/user/:id" element={<SingleUser />} />
 
-          {/* Protected Routes */}
-          <ProtectedRoutes>
-            <NavRoles role={role} />
-            <Route path="/navbars/navigations/me" element={<NavRoles />} />
-            <Route
-              path="/navbars/navigations/updateuserprofile/:userid"
-              element={<NavRoles />}
-            />
-          </ProtectedRoutes>
-       
-      </AuthProvider>
+      {/* Visitor Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/ourservices" element={<OurServices />} />
+        <Route path="/contactform" element={<ContactForm />} />
+        <Route path="/user/:id" element={<SingleUser />} />
+      </Routes>
+
+      {/* Protected Routes */}
+      <ProtectedRoutes>
+        <NavRoles role={role} />
+        <Route path="/navbars/navigations/me" element={<NavRoles />} />
+        <Route
+          path="/navbars/navigations/updateuserprofile/:userid"
+          element={<NavRoles />}
+        />
+      </ProtectedRoutes>
+
     </>
   );
 }
