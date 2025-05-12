@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar from "../Navbar";
 
 export default function ContactFormPage() {
   const [formData, setFormData] = useState({
@@ -20,6 +21,8 @@ export default function ContactFormPage() {
   };
 
   return (
+    <>
+    <NavBar />
     <div className="container">
       <form onSubmit={handleSubmit}>
         <h1>Contact Information</h1>
@@ -104,5 +107,5 @@ export default function ContactFormPage() {
         }
       `}</style>
     </div>
-  );
+    </>);
 }

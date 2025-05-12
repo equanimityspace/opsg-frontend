@@ -11,6 +11,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import NavBar from "../Navbar";
 export default function SingleUser() {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -101,7 +102,9 @@ export default function SingleUser() {
   if (isLoading) return <p>Loading user data...</p>;
   if (error) return <p>Error loading user. Please try again later.</p>;
   return (
+    <>
     <div className="d-flex justify-content-center vh-80 vw-80">
+      <NavBar />
       <Form className="w-50 mt-5" onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="firstName">
@@ -215,5 +218,5 @@ export default function SingleUser() {
         </Button>
       </Form>
     </div>
-  );
+    </>);
 }

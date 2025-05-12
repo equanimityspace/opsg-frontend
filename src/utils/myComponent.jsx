@@ -1,7 +1,7 @@
 import React from "react";
-import useAuthState from "../Features/Navigations/AuthContext";
+import { useAuthState } from "../Features/Navigations/AuthContext";
 
-function myComponent() {
+export default function myComponent() {
   const authState = useAuthState();
 
   return (
@@ -10,5 +10,3 @@ function myComponent() {
     </div>
   );
 }
-
-export default myComponent;

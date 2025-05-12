@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
-
+import NavBar from "../Navbar";
 import InfoModal from "../../utils/Modal";
 
 import Button from "react-bootstrap/Button";
@@ -64,6 +64,7 @@ export default function Login() {
       ) : (
         <></>
       )}
+       <NavBar />
       <Card className="w-50 mt-5">
         <Card.Header>
           <Nav variant="tabs" defaultActiveKey="/login">

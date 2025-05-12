@@ -6,7 +6,7 @@ import NavBar from "../Navbar";
 const Home = () => {
   return (
     <>
-    <NavBar></NavBar>
+    <NavBar />
     <Container className="main" fluid>
       {/* animate fade in going down */}
       <Row className="justify-content-md-center">

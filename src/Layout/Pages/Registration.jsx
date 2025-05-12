@@ -8,6 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 
 import InfoModal from "../../utils/Modal";
+import NavBar from "../Navbar";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -57,6 +58,8 @@ export default function Register() {
   };
 
   return (
+    <>
+    <NavBar />
     <div className="d-flex justify-content-center vh-80">
       {show ? (
         <InfoModal
@@ -139,5 +142,5 @@ export default function Register() {
         </Card.Body>
       </Card>
     </div>
-  );
+    </>);
 }
