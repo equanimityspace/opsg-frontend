@@ -86,7 +86,10 @@ export default function SingleUser() {
     <>
       <NavBar />
 
-      <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
+      <div
+        className="min-vh-100 d-flex justify-content-center align-items-center"
+        style={{ backgroundColor: "#1877F2" }}
+      >
         <div
           className="bg-white rounded shadow p-4"
           style={{ width: "100%", maxWidth: "600px" }}
