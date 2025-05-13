@@ -41,7 +41,7 @@ const Home = () => {
               Title With
             </Col>
           </Row>
-          <Row className="justify-content-md-center">
+          <Row className="justify-content-md-center text-danger">
             <Col className="display-1" md="auto">
               Power
             </Col>
@@ -68,10 +68,10 @@ const Home = () => {
           </Row>
         </motion.div>
         {/* no animation */}
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center text-primary mt-5 mb-5">
           <Col md="auto">
             {/* consider rising number */}
-            <h3>Trusted By Over x Clients</h3>
+            <h3>Trusted by over X clients</h3>
           </Col>
         </Row>
       </Container>
