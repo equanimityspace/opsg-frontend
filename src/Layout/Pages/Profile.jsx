@@ -93,7 +93,38 @@ export default function SingleUser() {
         >
           <h2 className="mb-4 text-center">Edit Profile</h2>
           <Form onSubmit={handleSubmit}>
-            {/* …your form groups for name & email… */}
+            <Row className="mb-3">
+              <Form.Group as={Col} controlId="firstName">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control
+                  value={formData.firstName}
+                  onChange={(e) =>
+                    setFormData((f) => ({ ...f, firstName: e.target.value }))
+                  }
+                />
+              </Form.Group>
+              <Form.Group as={Col} controlId="lastName">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control
+                  value={formData.lastName}
+                  onChange={(e) =>
+                    setFormData((f) => ({ ...f, lastName: e.target.value }))
+                  }
+                />
+              </Form.Group>
+            </Row>
+
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData((f) => ({ ...f, email: e.target.value }))
+                }
+              />
+            </Form.Group>
+
             <Row className="align-items-end mb-3">
               <Form.Group as={Col} controlId="password">
                 <Form.Label>Password</Form.Label>
@@ -113,8 +144,33 @@ export default function SingleUser() {
 
             {showPwdForm && (
               <div className="border rounded p-3 mb-3">
-                {/* …currentPwd, newPwd, confirmPwd inputs & buttons… */}
+                <Form.Group className="mb-2" controlId="currentPwd">
+                  <Form.Label>Current Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    value={currentPwd}
+                    onChange={(e) => setCurrentPwd(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-2" controlId="newPwd">
+                  <Form.Label>New Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    value={newPwd}
+                    onChange={(e) => setNewPwd(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-2" controlId="confirmPwd">
+                  <Form.Label>Confirm New Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    value={confirmPwd}
+                    onChange={(e) => setConfirmPwd(e.target.value)}
+                  />
+                </Form.Group>
+
                 {pwdError && <p className="text-danger small">{pwdError}</p>}
+
                 <div className="d-flex gap-2 mt-2">
                   <Button variant="success" onClick={handlePasswordChange}>
                     Save Password
