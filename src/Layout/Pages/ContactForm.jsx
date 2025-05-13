@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import NavBar from "../Navbar";
+
 
 export default function ContactFormPage() {
   const [formData, setFormData] = useState({
@@ -15,9 +17,27 @@ export default function ContactFormPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form Data:", formData);
-    alert("Form submitted successfully!");
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          full_name: formData.fullName,
+          email_address: formData.email,
+          phone_number: formData.phone,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          alert("Message sent succesfully!");
+          setFormData({ fullName: "", email: "", phone: "" });
+        },
+        (err) => {
+          console.error(err);
+          alert("Failed to send message. Please try again later.");
+        }
+      );
   };
 
   return (
