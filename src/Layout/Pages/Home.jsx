@@ -5,7 +5,7 @@ import { Row, Col, Image, Container } from "react-bootstrap";
 // import React from "react";
 import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
 import NavBar from "../Navbar";
-import AnimationCountUp from "../AnimationCountUp";
+import AnimationCountUp from "../../utils/AnimationCountUp";
 
 const Home = () => {
   // animate fading in
@@ -18,8 +18,8 @@ const Home = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
-        delay: 0.1,
+        duration: 0.8,
+        delay: 0.2,
       },
     },
   };
