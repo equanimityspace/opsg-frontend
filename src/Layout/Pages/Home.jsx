@@ -5,6 +5,7 @@ import { Row, Col, Image, Container } from "react-bootstrap";
 // import React from "react";
 import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
 import NavBar from "../Navbar";
+import AnimationCountUp from "../AnimationCountUp";
 
 const Home = () => {
   // animate fading in
@@ -71,7 +72,10 @@ const Home = () => {
         <Row className="justify-content-md-center text-primary mt-5 mb-5">
           <Col md="auto">
             {/* consider rising number */}
-            <h3>Trusted by over X clients</h3>
+            <h3>
+              Trusted by over <AnimationCountUp from={0} to={50} /> providers,
+              hospitals, and some other kind of client
+            </h3>
           </Col>
         </Row>
       </Container>
