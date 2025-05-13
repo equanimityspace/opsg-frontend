@@ -84,7 +84,7 @@ export default function Register() {
         </Card.Header>
         <Card.Body>
           <Form onSubmit={submit}>
-            <Form.Group className="mb-3" controlId="formBasicFirstName">
+            <Form.Group className="mb-3" controlId="formBasicCompany">
               <Form.Label>Company</Form.Label>
               <Form.Control
                 type="text"
