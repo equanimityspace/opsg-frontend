@@ -10,6 +10,8 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import NavBar from "../Navbar";
+
 
 export default function SingleUser() {
   const navigate = useNavigate();
@@ -82,9 +84,7 @@ export default function SingleUser() {
   if (error) return <p>Error loading user. Please try again later.</p>;
 
   return (
-    // Full-screen blue background, center contents
     <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
-      {/* White box around form, rounded corners */}
       <div
         className="bg-white rounded shadow p-4"
         style={{ width: "100%", maxWidth: "600px" }}
@@ -113,6 +113,7 @@ export default function SingleUser() {
           </Row>
           <Form.Group className="mb-3" controlId="email">
             <Form.Label>Email</Form.Label>
+
             <Form.Control
               type="email"
               value={formData.email}
@@ -189,5 +190,5 @@ export default function SingleUser() {
         </Form>
       </div>
     </div>
-  );
+    </>);
 }

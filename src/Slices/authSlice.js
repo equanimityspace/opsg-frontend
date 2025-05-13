@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import api from "../App/api";
+import api from "../app/api";
 import { storeToken } from "../utils/tokenService";
 
 // register
