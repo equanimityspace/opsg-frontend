@@ -1,4 +1,4 @@
-import { motion, useScroll } from "motion/react";
+import { motion } from "motion/react";
 // const { scrollYProgress } = useScroll();
 
 import { Row, Col, Image, Container } from "react-bootstrap";
