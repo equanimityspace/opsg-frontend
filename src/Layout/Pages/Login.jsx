@@ -36,19 +36,14 @@ export default function Login() {
 
   // submit login request
   const submit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
-      const response = await login(formData);
-      setResponse(response);
-
-      // on successful login, return home
-      if (response?.data) {
-        navigate("/");
-      } else {
-        openModal();
-      }
-    } catch (error) {
-      console.error(error);
+      const payload = await login(formData).unwrap();
+      const userId = payload.user.id;
+      navigate(`/user/${userId}`);
+    } catch (err) {
+      setResponse(err);
+      openModal();
     }
   };
 
