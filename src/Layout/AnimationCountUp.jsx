@@ -17,7 +17,6 @@ export default function AnimationCountUp({ from, to }) {
       duration: 1.5,
       ease: "easeOut",
       onUpdate(value) {
-        console.log(value);
         element.textContent = value.toFixed(0);
       },
     });
