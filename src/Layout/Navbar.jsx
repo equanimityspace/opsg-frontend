@@ -1,9 +1,32 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { getToken, deleteToken} from "../utils/tokenService";
+import { useEffect } from "react";
 
 export default function NavBar() {
+   const navigate = useNavigate();
+   const token = getToken();
+
+   // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+   // useEffect(() => {
+   //    if (token) {
+   //      setIsLoggedIn(true)
+   //    } else {
+   //      setIsLoggedIn(false)
+   //    }
+   //  }, [token])
+
+   // const handleLogin = () => {
+   // }
+
+   const handleLogout = () => {
+      deleteToken();
+   }
+
+     //handle login/logout button change
+   const buttonStatus = token ? "Log Out" : "Login";
 
    // const token = 
    return (
@@ -24,9 +47,24 @@ export default function NavBar() {
                <a className="nav-link" href="/contactForm">Contact Us</a>
                </li>
             </ul>
-            <a href="/Login" >
-               <button type="button" className="btn btn-info btn-sm">Login</button>
-            </a>
+            {token ? (
+                  <button
+                     type="button"
+                     className="btn btn-info mx-2"
+                     onClick={handleLogout()}
+                     navigate="/"
+                  >
+                     {buttonStatus}
+                  </button>
+               ) : (
+                  <button
+                     type="button"
+                     className="btn btn-info mx-2"
+                     // onClick={navigate("/contact")}
+                  >
+                     {buttonStatus}
+                  </button>
+               )}
             <a href="/Register">
                <button type="button" className="btn btn-info btn-sm">Register</button>
             </a >

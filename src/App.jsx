@@ -8,7 +8,6 @@ import SingleUser from "./Layout/Pages/Profile";
 import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
 import React, { useContext } from "react";
-// import AdminPage from '/TEST SHIT/adminpage';
 
 import userNav from "./Features/Navigations/Navbars/UserNav";
 // import { AuthProvider } from "./Features/Navigations/AuthContext";

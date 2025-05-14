@@ -42,12 +42,14 @@ export default function Login() {
     try {
       const payload = await login(formData).unwrap();
       const userId = payload.user.id;
+      storeToken(payload);
       navigate(`/user/${userId}`);
     } catch (err) {
       setResponse(err);
       openModal();
     }
   };
+
 
   return (
     <>
