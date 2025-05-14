@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
-import NavBar from "../Navbar";
+
 import InfoModal from "../../utils/Modal";
 
 import Button from "react-bootstrap/Button";
@@ -37,26 +37,18 @@ export default function Login() {
 
   // submit login request
   const submit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
-      const response = await login(formData);
-      setResponse(response);
-
-      // on successful login, go to profile
-      if (response?.data) {
-        storeToken;
-        navigate("/singleuser");
-      } else {
-        openModal();
-      }
-    } catch (error) {
-      console.error(error);
+      const payload = await login(formData).unwrap();
+      const userId = payload.user.id;
+      navigate(`/user/${userId}`);
+    } catch (err) {
+      setResponse(err);
+      openModal();
     }
   };
 
   return (
-    <>
-    <NavBar />
     <div className="d-flex justify-content-center vh-80">
       {show ? (
         <InfoModal
@@ -112,5 +104,5 @@ export default function Login() {
         </Card.Body>
       </Card>
     </div>
-    </>);
+  );
 }

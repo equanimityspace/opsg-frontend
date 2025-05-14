@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { getToken } from '/src/utils/tokenService.jsx';
-import axios from "axios";
+import { getToken } from "/src/utils/tokenService.jsx";
 
 const BASE_URL = "https://bring-it-all-together-backend-61a2.onrender.com";
 
