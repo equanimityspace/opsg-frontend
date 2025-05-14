@@ -8,25 +8,26 @@ export default function NavBar() {
    const navigate = useNavigate();
    const token = getToken();
 
-   // const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const [isLoggedIn, setIsLoggedIn] = useState("Login");
 
-   // useEffect(() => {
-   //    if (token) {
-   //      setIsLoggedIn(true)
-   //    } else {
-   //      setIsLoggedIn(false)
-   //    }
-   //  }, [token])
+   useEffect(() => {
+      if (token) {
+        setIsLoggedIn("Logout")
+      } else {
+        setIsLoggedIn("Login")
+      }
+    }, [token])
 
-   // const handleLogin = () => {
-   // }
+   const handleLogin = () => {
+   }
 
    const handleLogout = () => {
       deleteToken();
+      navigate("/login")
    }
 
      //handle login/logout button change
-   const buttonStatus = token ? "Log Out" : "Login";
+   // const buttonStatus = token ? "Log Out" : "Login";
 
    // const token = 
    return (
@@ -51,18 +52,18 @@ export default function NavBar() {
                   <button
                      type="button"
                      className="btn btn-info mx-2"
-                     onClick={handleLogout()}
+                     onClick={handleLogout}
                      navigate="/"
                   >
-                     {buttonStatus}
+                     {isLoggedIn}
                   </button>
                ) : (
                   <button
                      type="button"
                      className="btn btn-info mx-2"
-                     // onClick={navigate("/contact")}
+                     onClick={() => navigate("/login")}
                   >
-                     {buttonStatus}
+                     {isLoggedIn}
                   </button>
                )}
             <a href="/Register">

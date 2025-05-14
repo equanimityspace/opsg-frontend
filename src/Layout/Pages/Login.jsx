@@ -42,7 +42,6 @@ export default function Login() {
     try {
       const payload = await login(formData).unwrap();
       const userId = payload.user.id;
-      storeToken(payload);
       navigate(`/user/${userId}`);
     } catch (err) {
       setResponse(err);
@@ -60,7 +59,7 @@ export default function Login() {
           show={show}
           hide={closeModal}
           heading="Error"
-          body={response?.error.data}
+          body={response?.error?.data}
         />
       ) : (
         <></>
