@@ -33,12 +33,12 @@ function App() {
 
 
 
-         {/* Protected Routes */}
+         {/* Protected Routes
         <Route path = '/admin' element={ 
           <ProtectedRoutes roles={["admin"]}>
             <AdminPage />
           </ProtectedRoutes>}> 
-        </Route>
+        </Route> */}
 
 
         <Route path="/user/:id" element={

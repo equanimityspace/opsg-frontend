@@ -36,7 +36,7 @@ export default function ProtectedRoutes({children, roles}) {
 
     const allowedRoles = ["admin", "user"];
 
-    if(!allowedRoles.include(role)) {
+    if(!allowedRoles.includes(role)) {
       return <Navigate to="/" />
 
     }
