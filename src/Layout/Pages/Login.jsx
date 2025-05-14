@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
+import { storeToken } from "../../utils/tokenService";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -41,9 +42,10 @@ export default function Login() {
       const response = await login(formData);
       setResponse(response);
 
-      // on successful login, return home
+      // on successful login, go to profile
       if (response?.data) {
-        navigate("/");
+        storeToken;
+        navigate("/singleuser");
       } else {
         openModal();
       }

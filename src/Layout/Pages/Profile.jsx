@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import NavBar from "../Navbar";
+import DisplayNavBar from "../Navbar";
 
 export default function SingleUser() {
   const navigate = useNavigate();
@@ -84,7 +84,7 @@ export default function SingleUser() {
 
   return (
     <>
-      <NavBar />
+      <DisplayNavBar />
 
       <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
         <div

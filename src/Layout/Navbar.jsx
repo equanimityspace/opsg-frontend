@@ -1,12 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function NavBar() {
-   const navigate = useNavigate();
-   // const onClick = () => {
-   //    navigate
-   // }
 
    // const token = 
    return (
@@ -37,4 +34,4 @@ export default function NavBar() {
          </nav>
       </header>
    )
-}
+ }

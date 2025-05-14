@@ -1,14 +1,15 @@
-// import { NavLink } from "react-router-dom";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+// // import { NavLink } from "react-router-dom";
+// import React from "react";
+// import { useNavigate } from "react-router-dom";
 
-export default function openNav() {
-  const navigate = useNavigate()
+// const openNav = () => {
 
-    return (
-      <Navbar/>
-    )
-}
+//     return (
+//       <Nav/>
+//     )
+// };
+
+// export default openNav
 
 
 
