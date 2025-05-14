@@ -13,7 +13,6 @@ import Row from "react-bootstrap/Row";
 import NavBar from "../Navbar";
 import InfoModal from "../../utils/Modal";
 
-
 export default function SingleUser() {
   const { id } = useParams();
   const { data: user, error, isLoading, refetch } = useGetUserQuery(id);
@@ -107,7 +106,7 @@ export default function SingleUser() {
 
   return (
     <>
-      <DisplayNavBar />
+      <NavBar />
 
       <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
         <div
