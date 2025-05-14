@@ -15,16 +15,16 @@ import App from "./App.jsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./app/store.js";
-import { AuthProvider } from "./Features/Navigations/AuthContext.jsx";
+import ContextProvider from "./TEST SHIT/ContextProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <AuthProvider>
+      <ContextProvider>
         <Router>
           <App />
         </Router>
-      </AuthProvider>
+      </ContextProvider>
     </Provider>
   </StrictMode>
 );

@@ -10,8 +10,10 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import DisplayNavBar from "../Navbar";
 import NavBar from "../Navbar";
 import InfoModal from "../../utils/Modal";
+
 
 export default function SingleUser() {
   const { id } = useParams();
@@ -106,7 +108,7 @@ export default function SingleUser() {
 
   return (
     <>
-      <NavBar />
+      <DisplayNavBar />
 
       <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
         <div

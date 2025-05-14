@@ -20,22 +20,30 @@
 // }
 // export default ProtectedRoute;
 
-import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import { getToken } from "./tokenService";
-import { Nav } from "react-bootstrap";
 
 
-export function getRole() {
-  const role = window.sessionStorage.getItem("role");
-  return role ? role.toLowerCase() : "";
-}
+import React, {useContext} from "react";
+import { userContext } from "../TEST SHIT/ContextProvider";
+import { useNavigate } from "react-router-dom";
 
-export default function ProtectedRoutes() {
-  const token = getToken();
-  if (!token) {
-    return <Navigate to="/" />;
-  }
-  return <Outlet />;
-}
+export default function ProtectedRoutes({children, roles}) {
+    const {role, authenticated} = useContext(userContext);
+    const Navigate = useNavigate();
+
+    if(!authenticated) {
+      return <Navigate to="/login" />
+    }
+
+    const allowedRoles = ["admin", "user"];
+
+    if(!allowedRoles.include(role)) {
+      return <Navigate to="/" />
+
+    }
+
+    return children;
+
+};
+
+
 
