@@ -4,12 +4,12 @@ import React from "react";
 export const userContext = createContext()
 
 const ContextProvider = ({ children }) => {
-  const [role, seetRole] = React.useState('admin');
+  const [role, setRole] = React.useState('admin');
   const [authenticated, setAuthenticated] = React.useState(true);
   
 
-  const logout = () => {
-    seetRole(null);
+  const handlelogout = () => {
+    setRole(null);
     setAuthenticated(false);
   };
 
