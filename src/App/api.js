@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { getToken } from "/src/utils/tokenService.jsx";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://opsg-backend.onrender.com";
 
 const api = createApi({
   baseQuery: fetchBaseQuery({
