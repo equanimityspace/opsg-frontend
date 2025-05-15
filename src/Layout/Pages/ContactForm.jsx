@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import NavBar from "../Navbar";
-
 
 export default function ContactFormPage() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
+    message: "",
   });
+
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -25,13 +29,13 @@ export default function ContactFormPage() {
           full_name: formData.fullName,
           email_address: formData.email,
           phone_number: formData.phone,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+          message: formData.message,
+        }
       )
       .then(
         () => {
-          alert("Message sent succesfully!");
-          setFormData({ fullName: "", email: "", phone: "" });
+          alert("Message sent successfully!");
+          setFormData({ fullName: "", email: "", phone: "", message: "" });
         },
         (err) => {
           console.error(err);
@@ -42,90 +46,73 @@ export default function ContactFormPage() {
 
   return (
     <>
-    <NavBar />
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <h1>Contact Information</h1>
-        <label>
-          Full Name
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Email Address
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Phone Number
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-      <style jsx>{`
-        .container {
-          max-width: 400px;
-          margin: 50px auto;
-          padding: 20px;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          background: #fff;
-        }
-        form {
-          display: flex;
-          flex-direction: column;
-        }
-        h1 {
-          margin-bottom: 20px;
-          text-align: center;
-          font-size: 1.5rem;
-          color: #333;
-        }
-        label {
-          margin-bottom: 15px;
-          font-size: 1rem;
-          color: #555;
-          display: flex;
-          flex-direction: column;
-        }
-        input {
-          margin-top: 5px;
-          padding: 8px;
-          font-size: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-        button {
-          padding: 10px;
-          font-size: 1rem;
-          border: none;
-          border-radius: 4px;
-          background: #0070f3;
-          color: #fff;
-          cursor: pointer;
-          transition: background 0.3s;
-        }
-        button:hover {
-          background: #005bb5;
-        }
-      `}</style>
-    </div>
-    </>);
+      <NavBar />
+      <div className="container mt-5" style={{ maxWidth: "600px" }}>
+        <h1 className="text-center mb-4">Contact Information</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="fullName" className="form-label">
+              Full Name
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              className="form-control"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="form-control"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="phone" className="form-label">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              className="form-control"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="message" className="form-label">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              className="form-control"
+              rows={7}
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="text-center">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
+  );
 }

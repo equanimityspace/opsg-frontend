@@ -10,6 +10,8 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import InfoModal from "../../utils/Modal";
+
 // import DisplayNavBar from "../Navbar";
 import userNav from "../../Features/Navigations/Navbars/UserNav";
 
@@ -27,6 +29,9 @@ export default function SingleUser() {
     email: "",
   });
 
+  const [modalShow, setModalShow] = useState(false);
+  const [modalHeading, setModalHeading] = useState("");
+  const [modalBody, setModalBody] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [showPwdForm, setShowPwdForm] = useState(false);
   const [currentPwd, setCurrentPwd] = useState("");
@@ -48,8 +53,10 @@ export default function SingleUser() {
     e.preventDefault();
     try {
       await updateUserProfile({ id, ...formData }).unwrap();
-      refetch();
-      navigate(`/`);
+      setModalHeading("Profile Updated");
+      setModalBody("Your profile was updated succesfully");
+      setModalShow(true);
+      setEditMode(false);
     } catch (err) {
       console.error(err);
     }
@@ -71,13 +78,17 @@ export default function SingleUser() {
         id,
         currentPassword: currentPwd,
         newPassword: newPwd,
+        confirmPassword: confirmPwd,
       }).unwrap();
       setShowPwdForm(false);
       setCurrentPwd("");
       setNewPwd("");
       setConfirmPwd("");
       setPwdError("");
-      refetch();
+      setEditMode(false);
+      setModalHeading("Password Changed");
+      setModalBody("Your password was changed successfully.");
+      setModalShow(true);
     } catch {
       setPwdError("Password change failed");
     }
@@ -99,7 +110,9 @@ export default function SingleUser() {
 
   return (
     <>
+
       <DisplayUserNav />
+
 
       <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
         <div
@@ -245,6 +258,13 @@ export default function SingleUser() {
           </Form>
         </div>
       </div>
+
+      <InfoModal
+        show={modalShow}
+        hide={() => setModalShow(false)}
+        heading={modalHeading}
+        body={modalBody}
+      />
     </>
   );
 }

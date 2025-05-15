@@ -37,10 +37,10 @@ const usersApi = api.injectEndpoints({
     }),
 
     updateUserProfile: build.mutation({
-      query: ({ id, firstName, lastName, email, password }) => ({
+      query: ({ id, firstName, lastName, email }) => ({
         url: `/auth/updateUserProfile/${id}`,
         method: "PUT",
-        body: { firstName, lastName, email, password },
+        body: { firstName, lastName, email },
       }),
       invalidatesTags: ["User"],
     }),
