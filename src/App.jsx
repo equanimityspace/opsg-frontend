@@ -8,6 +8,8 @@ import SingleUser from "./Layout/Pages/Profile";
 import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
 import React, { useContext } from "react";
+import AdminPage from "./Layout/Pages/AdminDashboard/AdminDashboard";
+
 
 import userNav from "./Features/Navigations/Navbars/UserNav";
 // import { AuthProvider } from "./Features/Navigations/AuthContext";
@@ -31,24 +33,17 @@ function App() {
         <Route path="/contactform" element={<ContactForm />} />
 
 
-
-         {/* Protected Routes
-        <Route path = '/admin' element={ 
-          <ProtectedRoutes roles={["admin"]}>
+         {/* Protected Routes */}
+        <Route path = '/adminPage' element={ 
+          <ProtectedRoutes isAdmin={true}>
             <AdminPage />
           </ProtectedRoutes>}> 
-        </Route> */}
-
-
-        <Route path="/user/:id" element={
-          <ProtectedRoutes roles={["admin", "user"]}>
-            <SingleUser />
-          </ProtectedRoutes>}> 
         </Route>
-         
-        <Route path="/" element={
-          <ProtectedRoutes roles={["admin", "user", "guest"]}>
-            <Home />
+
+
+        <Route path="/user/:userid" element={
+          <ProtectedRoutes isLoggedIn={true}>
+            <SingleUser />
           </ProtectedRoutes>}> 
         </Route>
        </Routes>

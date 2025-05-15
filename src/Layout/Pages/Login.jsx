@@ -22,6 +22,14 @@ export default function Login() {
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
 
+
+
+  // //attempting to store user role at login
+  // const data = await response.JSON();
+  // localStorage.setItem("role", data.role);
+
+
+
   // stores data from login form
   const [formData, setFormData] = useState({
     email: "",
@@ -42,6 +50,7 @@ export default function Login() {
     try {
       const payload = await login(formData).unwrap();
       const userId = payload.user.id;
+      const isAdmin = payload.user.isAdmin;
       navigate(`/user/${userId}`);
     } catch (err) {
       setResponse(err);

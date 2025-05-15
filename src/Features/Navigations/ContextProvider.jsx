@@ -4,17 +4,17 @@ import React from "react";
 export const userContext = createContext()
 
 const ContextProvider = ({ children }) => {
-  const [role, seetRole] = React.useState('admin');
+  const [isAdmin, setIsAdmin] = React.useState(true);
   const [authenticated, setAuthenticated] = React.useState(true);
   
 
-  const logout = () => {
-    seetRole(null);
+  const handleLogout = () => {
+    setIsAdmin(false);
     setAuthenticated(false);
   };
 
   return (
-    <userContext.Provider value = {{role, authenticated}}>
+    <userContext.Provider value = {{isAdmin, authenticated, handleLogout}}>
       {children}
     </userContext.Provider>
   )

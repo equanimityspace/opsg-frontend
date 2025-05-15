@@ -10,9 +10,11 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import DisplayNavBar from "../Navbar";
+// import DisplayNavBar from "../Navbar";
+import userNav from "../../Features/Navigations/Navbars/UserNav";
 
 export default function SingleUser() {
+  const userNav = DisplayUserNav();
   const navigate = useNavigate();
   const { id } = useParams();
   const { data: user, error, isLoading, refetch } = useGetUserQuery(id);
@@ -97,7 +99,7 @@ export default function SingleUser() {
 
   return (
     <>
-      <DisplayNavBar />
+      <DisplayUserNav />
 
       <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
         <div

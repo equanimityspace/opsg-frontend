@@ -15,7 +15,7 @@ import App from "./App.jsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./app/store.js";
-import ContextProvider from "./TEST SHIT/ContextProvider.jsx";
+import ContextProvider from "./Features/Navigations/ContextProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

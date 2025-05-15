@@ -1,49 +1,43 @@
-// import React from "react";
-// import { useAuthState } from "../Features/Navigations/AuthContext";
-// import { Redirect, useLocation } from "react-router-dom";
-// import { Navigate, Outlet } from "react-router-dom";
-// import { getToken } from "./tokenService";
+import { Navigate } from 'react-router-dom';
 
-// const getRole = () => {
-//   return window.sessionStorage.getItem("role").toLowerCase();
+
+const ProtectedRoute = ({ isAdmin, children }) => {
+  const isLoggedIn = () => {
+    // Check for token 
+    const token = localStorage.getItem('token');
+    return token ? true : false;
+  };
+
+  // Check if the user is logged in
+  const isAuthenticatedUser = isLoggedIn();0
+
+  if (!isAuthenticatedUser) {
+    return <Navigate to="/login" />;
+  }
+
+  if (isLoggedIn) {
+    return <Navigate to="/user/:userid" />; 
+  }
+// Render the protected content if the user is logged in and is an admin
+  return children; 
+};
+
+export default ProtectedRoute;
+
+
+// const ProtectedRoute = ({ isAdmin, children }) => {
+//   const userRole = localStorage.getItem('token'); // Get the user’s role and token from local storage
+
+//   if (userRole !== role) {
+//     return <Navigate to="/" />; // Redirect if the role doesn't match
+//   }
+
+//   return children;
 // };
 
-// function ProtectedRoute({component: Component, ...props}) {
-//   const authState = useAuthState();
-//   const location = useLocation();
-
-//   return authState.role === "admin" || "user" ? (
-//     <Component {...props}/>
-//   ) : (
-//     <Redirect to={{pathname: "/", state: {from:location}}} />
-//   )
-// }
 // export default ProtectedRoute;
 
 
-
-import React, {useContext} from "react";
-import { userContext } from "../TEST SHIT/ContextProvider";
-import { useNavigate } from "react-router-dom";
-
-export default function ProtectedRoutes({children, roles}) {
-    const {role, authenticated} = useContext(userContext);
-    const Navigate = useNavigate();
-
-    if(!authenticated) {
-      return <Navigate to="/login" />
-    }
-
-    const allowedRoles = ["admin", "user"];
-
-    if(!allowedRoles.includes(role)) {
-      return <Navigate to="/" />
-
-    }
-
-    return children;
-
-};
 
 
 
