@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
-import ContextProvider from "../../../TEST SHIT/ContextProvider";
+import ContextProvider from "../ContextProvider";
 
 export default function userNav() {
   // Check if there's a token in secure storage
@@ -20,7 +20,7 @@ export default function userNav() {
         ...prevState,
         isLoggedIn: true,
         user: userData.user,
-        role: userData.role,
+        isAdmin: true,
       }));
     } else {
       console.error("token verification failed");
@@ -67,7 +67,7 @@ export default function userNav() {
   );
 }
 
-{
+
   /* <NavLink 
                 to={"/pages/profile"} className={({ isActive }) => 
                 isActive ? "user-nav active" : "user-nav"
@@ -75,11 +75,11 @@ export default function userNav() {
             >
                 Profile
             </NavLink> */
-}
 
-{
+
+
   /* // authorized navbar elements here
     // view invoice(s)
     // edit account
     // anything else?? */
-}
+

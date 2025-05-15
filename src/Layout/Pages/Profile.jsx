@@ -10,10 +10,14 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import NavBar from "../Navbar";
 import InfoModal from "../../utils/Modal";
 
+// import DisplayNavBar from "../Navbar";
+import userNav from "../../Features/Navigations/Navbars/UserNav";
+
 export default function SingleUser() {
+  const userNav = DisplayUserNav();
+  const navigate = useNavigate();
   const { id } = useParams();
   const { data: user, error, isLoading, refetch } = useGetUserQuery(id);
   const [updateUserProfile] = useUpdateUserProfileMutation();
@@ -106,7 +110,9 @@ export default function SingleUser() {
 
   return (
     <>
-      <NavBar />
+
+      <DisplayUserNav />
+
 
       <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
         <div
