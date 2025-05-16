@@ -6,7 +6,6 @@ import opsgLogo from "../../../assets/img/opsg-logo.png";
 
 const AdminNav = (props) => {
   const [isNotActive, setNotActive] = useState("true");
-  const [isDropdownActive, setDropdownActive] = useState("false");
   var arrowRight = <i class="bi bi-arrow-right-circle-fill"></i>;
   var crossIcon = <i class="bi bi-x-circle"></i>;
   return (
