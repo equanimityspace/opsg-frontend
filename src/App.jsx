@@ -5,7 +5,7 @@ import { useState } from "react";
 import Home from "./Layout/Pages/Home";
 import Login from "./Layout/Pages/Login";
 import Registration from "./Layout/Pages/Registration";
-import SingleUser from "./Layout/Pages/Profile";
+import Profile from "./Layout/Pages/Profile";
 import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
 import React, { useContext } from "react";
@@ -36,10 +36,10 @@ function App() {
         <Route path="/contactform" element={<ContactForm />} />
 
         {/* Protected Routes */}
-        <Route
-          path="/adminPage"
+        {/* <Route
+          path="/admin/dashboard"
           element={
-            <ProtectedRoutes isAdmin={true}>
+            <ProtectedRoutes userId={userId} isAdmin={true}>
               <AdminPage />
             </ProtectedRoutes>
           }
@@ -48,11 +48,16 @@ function App() {
         <Route
           path={`/user/${userId}`}
           element={
-            <ProtectedRoutes isLoggedIn={true}>
-              <SingleUser />
+            <ProtectedRoutes userId={userId} isAdmin={true}>
+              <Profile />
             </ProtectedRoutes>
-          }
-        ></Route>
+          } */}
+        <Route
+          path="/login/redirect"
+          element={<ProtectedRoutes userId={userId} isAdmin={isAdmin} />}
+        />
+        <Route path="/admin/dashboard" element={<AdminPage />} />
+        <Route path={`/user/${userId}`} element={<Profile />} />
       </Routes>
     </>
   );
