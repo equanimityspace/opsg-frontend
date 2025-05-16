@@ -15,7 +15,7 @@ import InfoModal from "../../utils/Modal";
 // import DisplayNavBar from "../Navbar";
 import userNav from "../../Features/Navigations/Navbars/UserNav";
 
-export default function SingleUser() {
+export default function Profile() {
   const userNav = DisplayUserNav();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -110,9 +110,7 @@ export default function SingleUser() {
 
   return (
     <>
-
       <DisplayUserNav />
-
 
       <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
         <div

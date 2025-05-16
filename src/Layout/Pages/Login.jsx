@@ -11,7 +11,7 @@ import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 import { storeToken } from "../../utils/tokenService";
 
-export default function Login() {
+export default function Login({ setUserId, setIsAdmin }) {
   const navigate = useNavigate();
   const [login, status] = useLoginMutation();
 
@@ -22,13 +22,9 @@ export default function Login() {
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
 
-
-
   // //attempting to store user role at login
   // const data = await response.JSON();
   // localStorage.setItem("role", data.role);
-
-
 
   // stores data from login form
   const [formData, setFormData] = useState({
@@ -51,71 +47,74 @@ export default function Login() {
       const payload = await login(formData).unwrap();
       const userId = payload.user.id;
       const isAdmin = payload.user.isAdmin;
-      navigate(`/user/${userId}`);
+      setUserId(userId);
+      setIsAdmin(isAdmin);
+      navigate("/login/redirect");
     } catch (err) {
+      console.error(err);
       setResponse(err);
       openModal();
     }
   };
 
-
   return (
     <>
-    <NavBar />
-    <div className="d-flex justify-content-center vh-80">
-      {show ? (
-        <InfoModal
-          show={show}
-          hide={closeModal}
-          heading="Error"
-          body={response?.error?.data}
-        />
-      ) : (
-        <></>
-      )}
-      <Card className="w-50 mt-5">
-        <Card.Header>
-          <Nav variant="tabs" defaultActiveKey="/login">
-            <Nav.Item>
-              <Nav.Link href="/login">Login</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="/register">Register</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Card.Header>
-        <Card.Body>
-          <Form onSubmit={submit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                placeholder="Enter email"
-                onChange={update}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={update}
-              />
-            </Form.Group>
-            {!status?.isLoading ? (
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            ) : (
-              <Button variant="primary" type="submit" disabled>
-                Loading...
-              </Button>
-            )}
-          </Form>
-        </Card.Body>
-      </Card>
-    </div>
-  </>);
+      <NavBar />
+      <div className="d-flex justify-content-center vh-80">
+        {show ? (
+          <InfoModal
+            show={show}
+            hide={closeModal}
+            heading="Error"
+            body={response?.error?.data}
+          />
+        ) : (
+          <></>
+        )}
+        <Card className="w-50 mt-5">
+          <Card.Header>
+            <Nav variant="tabs" defaultActiveKey="/login">
+              <Nav.Item>
+                <Nav.Link href="/login">Login</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="/register">Register</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Card.Header>
+          <Card.Body>
+            <Form onSubmit={submit}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  placeholder="Enter email"
+                  onChange={update}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={update}
+                />
+              </Form.Group>
+              {!status?.isLoading ? (
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              ) : (
+                <Button variant="primary" type="submit" disabled>
+                  Loading...
+                </Button>
+              )}
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
+    </>
+  );
 }
