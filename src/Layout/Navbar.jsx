@@ -18,12 +18,13 @@ export default function NavBar() {
       }
     }, [token])
 
-   const handleLogin = () => {
-   }
-
    const handleLogout = () => {
       deleteToken(token);
       navigate("/login")
+   }
+
+   const backToProfile = () => {
+      navigate("/userDashboard")
    }
 
      //handle login/logout button change
@@ -47,11 +48,28 @@ export default function NavBar() {
                <li className="nav-item">
                <a className="nav-link" href="/contactForm">Contact Us</a>
                </li>
+
+
+               {token ? (
+                  <a className="nav-link"
+                     onClick={backToProfile}
+                  >My Profile
+                    
+                  </a>
+               ) : (
+                  <a
+                     className="nav-link"
+                     onClick={() => navigate("/")}
+                  >
+                  </a>
+               )}
+
+
             </ul>
             {token ? (
                   <button
                      type="button"
-                     className="btn btn-info mx-2"
+                     className="btn btn-info btn-sm mx-2"
                      onClick={handleLogout}
                      navigate="/"
                   >
@@ -60,7 +78,7 @@ export default function NavBar() {
                ) : (
                   <button
                      type="button"
-                     className="btn btn-info mx-2"
+                     className="btn btn-info btn-sm mx-2"
                      onClick={() => navigate("/login")}
                   >
                      {isLoggedIn}

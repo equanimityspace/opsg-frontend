@@ -41,7 +41,7 @@ const UserNav = (props) => {
           <ul className="list-unstyled components">
             <li className="list-item">
               <i className="bi bi-house"></i>
-              <Link>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="list-item">
               <i className="bi bi-people-fill"></i>
@@ -59,47 +59,3 @@ const UserNav = (props) => {
 };
 
 export default UserNav;
-
-
-
-
-// import { NavLink } from "react-router-dom";
-// import React from "react";
-// import ContextProvider from "../ContextProvider";
-
-// export default function userNav() {
-//   // // Check if there's a token in secure storage
-//   // const token = localStorage.getItem("token");
-//   // if (token) {
-//   //   // Verify token with server if needed
-//   //   const verifyResponse = fetch("/api/verify", {
-//   //     method: "GET",
-//   //     headers: {
-//   //       Authorization: `Bearer ${token}`,
-//   //     },
-//   //   });
-//   //   if (verifyResponse.ok) {
-//   //     // Fetch user data from the server if needed
-//   //     const userData = verifyResponse.json();
-//   //     setAuthState((prevState) => ({
-//   //       ...prevState,
-//   //       isLoggedIn: true,
-//   //       user: userData.user,
-//   //       isAdmin: true,
-//   //     }));
-//   //   } else {
-//   //     console.error("token verification failed");
-//   //   }
-//   // }
-
-
-//   return (
-//     <>
-
-      
-//     </>
-//   );
-// }
-
-
-
