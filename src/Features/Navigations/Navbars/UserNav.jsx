@@ -8,6 +8,12 @@ import opsgLogo from "../../../assets/img/opsg-logo.png";
 const UserNav = (props) => {
   const [isNotActive, setNotActive] = useState("true");
   const [isDropdownActive, setDropdownActive] = useState("false");
+  const handleLogout = () => {
+    const handleClick = () => {
+      deleteToken();
+      navigate("/login")
+    }
+     };
   var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
   var crossIcon = <i className="bi bi-x-circle"></i>;
   return (
@@ -36,7 +42,7 @@ const UserNav = (props) => {
           <ul className="list-unstyled components">
             <li className="list-item">
               <i className="bi bi-house"></i>
-              <Link to="/admin/dashboard">Home</Link>
+              <Link>Home</Link>
             </li>
             <li className="list-item">
               <i className="bi bi-people-fill"></i>
@@ -44,7 +50,7 @@ const UserNav = (props) => {
             </li>
             <li className="list-item">
               <i className="bi bi-box-arrow-left"></i>
-              <Link to="/">Log out</Link>
+              <Link to="/" onClick={handleLogout}>Log out</Link>
             </li>
           </ul>
         </nav>
@@ -52,7 +58,7 @@ const UserNav = (props) => {
     </div>
   );
 };
-export default UserNav;
+export default UserNav; handleLogout;
 
 
 
