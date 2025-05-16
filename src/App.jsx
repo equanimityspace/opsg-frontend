@@ -46,7 +46,7 @@ function App() {
         ></Route>
 
         <Route
-          path="/user/:userid"
+          path={`/user/${userId}`}
           element={
             <ProtectedRoutes isLoggedIn={true}>
               <SingleUser />
