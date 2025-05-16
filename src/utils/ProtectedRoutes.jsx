@@ -1,29 +1,28 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 
-
-const ProtectedRoute = ({ isAdmin, children }) => {
+const ProtectedRoute = ({ userId, isAdmin, children }) => {
   const isLoggedIn = () => {
-    // Check for token 
-    const token = localStorage.getItem('token');
+    // Check for token
+    const token = localStorage.getItem("token");
     return token ? true : false;
   };
 
   // Check if the user is logged in
-  const isAuthenticatedUser = isLoggedIn();0
+  const isAuthenticatedUser = isLoggedIn();
+  0;
 
   if (!isAuthenticatedUser) {
     return <Navigate to="/login" />;
   }
 
   if (isLoggedIn) {
-    return <Navigate to="/user/:userid" />; 
+    return <Navigate to={`/user/${userId}`} />;
   }
-// Render the protected content if the user is logged in and is an admin
-  return children; 
+  // Render the protected content if the user is logged in and is an admin
+  return children;
 };
 
 export default ProtectedRoute;
-
 
 // const ProtectedRoute = ({ isAdmin, children }) => {
 //   const userRole = localStorage.getItem('token'); // Get the user’s role and token from local storage
@@ -36,8 +35,3 @@ export default ProtectedRoute;
 // };
 
 // export default ProtectedRoute;
-
-
-
-
-
