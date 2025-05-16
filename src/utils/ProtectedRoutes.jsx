@@ -1,28 +1,22 @@
+import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ userId, isAdmin, children }) => {
-  const isLoggedIn = () => {
-    // Check for token
-    const token = localStorage.getItem("token");
-    return token ? true : false;
-  };
+const ProtectedRoutes = ({ userId, isAdmin }) => {
+  const token = localStorage.getItem("token");
 
-  // Check if the user is logged in
-  const isAuthenticatedUser = isLoggedIn();
-  0;
-
-  if (!isAuthenticatedUser) {
+  if (!token) {
     return <Navigate to="/login" />;
   }
 
-  if (isLoggedIn) {
+  if (token && !isAdmin) {
     return <Navigate to={`/user/${userId}`} />;
+  } else if (token && isAdmin) {
+    // Render the protected content if the user is logged in and is an admin
+    return <Navigate to={"/admin/dashboard"} />;
   }
-  // Render the protected content if the user is logged in and is an admin
-  return children;
 };
 
-export default ProtectedRoute;
+export default ProtectedRoutes;
 
 // const ProtectedRoute = ({ isAdmin, children }) => {
 //   const userRole = localStorage.getItem('token'); // Get the user’s role and token from local storage
