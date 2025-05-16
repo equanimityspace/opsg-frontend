@@ -22,7 +22,7 @@ export default function NavBar() {
    }
 
    const handleLogout = () => {
-      deleteToken();
+      deleteToken(token);
       navigate("/login")
    }
 
