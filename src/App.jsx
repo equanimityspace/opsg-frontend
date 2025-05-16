@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 import { useState } from "react";
 import Home from "./Layout/Pages/Home";
@@ -8,10 +8,10 @@ import Registration from "./Layout/Pages/Registration";
 import Profile from "./Layout/Pages/Profile";
 import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
-import React, { useContext } from "react";
 import AdminPage from "./Layout/Pages/AdminDashboard/AdminDashboard";
 
 import userNav from "./Features/Navigations/Navbars/UserNav";
+import { useEffect } from "react";
 // import { AuthProvider } from "./Features/Navigations/AuthContext";
 
 // const AuthContext = React.createContext({ role: 'visitor'});
@@ -20,6 +20,12 @@ function App() {
   // const { role } = useAuthState();
   const [userId, setUserId] = useState(null);
   const [isAdmin, setIsAdmin] = useState(null);
+  const navigate = useNavigate();
+
+  // as soon as we get a real userId, go hit the /user/:userId route
+  useEffect(() => {
+    if (userId) navigate(`/user/${userId}`);
+  }, [userId, navigate]);
 
   return (
     <>
@@ -36,12 +42,9 @@ function App() {
         <Route path="/contactform" element={<ContactForm />} />
 
         {/* Protected Routes */}
-        <Route
-          path="/login/redirect"
-          element={<ProtectedRoutes userId={userId} isAdmin={isAdmin} />}
-        />
+        <Route element={<ProtectedRoutes />} />
         <Route path="/admin/dashboard" element={<AdminPage />} />
-        <Route path={`/user/${userId}`} element={<Profile />} />
+        <Route path={"/user/:userId"} element={<Profile />} />
       </Routes>
     </>
   );

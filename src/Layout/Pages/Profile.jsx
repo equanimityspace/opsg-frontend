@@ -12,14 +12,10 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import InfoModal from "../../utils/Modal";
 
-// import DisplayNavBar from "../Navbar";
-import userNav from "../../Features/Navigations/Navbars/UserNav";
-
 export default function Profile() {
-  const userNav = DisplayUserNav();
   const navigate = useNavigate();
-  const { id } = useParams();
-  const { data: user, error, isLoading, refetch } = useGetUserQuery(id);
+  const { userId } = useParams();
+  const { data: user, error, isLoading } = useGetUserQuery(userId);
   const [updateUserProfile] = useUpdateUserProfileMutation();
   const [changePassword] = useChangePasswordMutation();
 
@@ -52,7 +48,7 @@ export default function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await updateUserProfile({ id, ...formData }).unwrap();
+      await updateUserProfile({ userId, ...formData }).unwrap();
       setModalHeading("Profile Updated");
       setModalBody("Your profile was updated succesfully");
       setModalShow(true);
@@ -110,8 +106,6 @@ export default function Profile() {
 
   return (
     <>
-      <DisplayUserNav />
-
       <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
         <div
           className="bg-white rounded shadow p-4"
