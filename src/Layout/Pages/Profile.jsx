@@ -12,11 +12,10 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import InfoModal from "../../utils/Modal";
 
-// import DisplayNavBar from "../Navbar";
-import userNav from "../../Features/Navigations/Navbars/UserNav";
+
 
 export default function Profile() {
-  const userNav = DisplayUserNav();
+
   const navigate = useNavigate();
   const { id } = useParams();
   const { data: user, error, isLoading, refetch } = useGetUserQuery(id);

@@ -10,8 +10,9 @@ import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
 import React, { useContext } from "react";
 import AdminPage from "./Layout/Pages/AdminDashboard/AdminDashboard";
+import UserPage from "./Layout/Pages/UserDash/UserDashboard";
 
-import userNav from "./Features/Navigations/Navbars/UserNav";
+
 // import { AuthProvider } from "./Features/Navigations/AuthContext";
 
 // const AuthContext = React.createContext({ role: 'visitor'});
@@ -40,8 +41,11 @@ function App() {
           path="/login/redirect"
           element={<ProtectedRoutes userId={userId} isAdmin={isAdmin} />}
         />
+        <Route path={`/user/${userId}`} element={<UserPage />} />
+        {/* <Route path="/user/dashboard" element={<UserPage />} /> */}
+
         <Route path="/admin/dashboard" element={<AdminPage />} />
-        <Route path={`/user/${userId}`} element={<Profile />} />
+        {/* <Route path="/admin/users" element={<AdminAllUsers />} /> */}
       </Routes>
     </>
   );

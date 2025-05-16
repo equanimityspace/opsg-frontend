@@ -16,12 +16,12 @@ const router = createBrowserRouter([
         index: true,
       },
       {
-        element: <ProtectedRoutes isLoggedIn="true" />,
-        children: [
-          {
-            path: "/user/:userid",
-            element: <Profile />,
-          },
+        // element: <ProtectedRoutes isLoggedIn="true" />,
+        // children: [
+        //   {
+        //     path: "/user/:userid",
+        //     element: <Profile />,
+        //   },
           //paths to other protected routes
           // {
           //     path: "/profile",
