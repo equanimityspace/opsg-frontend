@@ -34,15 +34,15 @@ const AdminNav = (props) => {
 
           <ul className="list-unstyled components">
             <li className="list-item">
-              <i className="fas fa-briefcase icon-color"></i>
+              <i class="bi bi-house"></i>
               <Link to="/admin/dashboard">Home</Link>
             </li>
             <li className="list-item">
-              <i className="fas fa-building icon-color"></i>
+              <i class="bi bi-people-fill"></i>
               <Link to="/admin/users">Users</Link>
             </li>
             <li className="list-item">
-              <i className="fas fa-history icon-color"></i>
+              <i class="bi bi-box-arrow-left"></i>
               <Link to="/">Log out</Link>
             </li>
           </ul>
