@@ -5,7 +5,6 @@ import { useState } from "react";
 import Home from "./Layout/Pages/Home";
 import Login from "./Layout/Pages/Login";
 import Registration from "./Layout/Pages/Registration";
-import Profile from "./Layout/Pages/Profile";
 import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
 import React, { useContext } from "react";
