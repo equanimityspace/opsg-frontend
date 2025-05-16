@@ -36,22 +36,6 @@ function App() {
         <Route path="/contactform" element={<ContactForm />} />
 
         {/* Protected Routes */}
-        {/* <Route
-          path="/admin/dashboard"
-          element={
-            <ProtectedRoutes userId={userId} isAdmin={true}>
-              <AdminPage />
-            </ProtectedRoutes>
-          }
-        ></Route>
-
-        <Route
-          path={`/user/${userId}`}
-          element={
-            <ProtectedRoutes userId={userId} isAdmin={true}>
-              <Profile />
-            </ProtectedRoutes>
-          } */}
         <Route
           path="/login/redirect"
           element={<ProtectedRoutes userId={userId} isAdmin={isAdmin} />}
