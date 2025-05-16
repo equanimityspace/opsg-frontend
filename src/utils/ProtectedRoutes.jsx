@@ -1,41 +1,31 @@
-// import React from "react";
-// import { useAuthState } from "../Features/Navigations/AuthContext";
-// import { Redirect, useLocation } from "react-router-dom";
-// import { Navigate, Outlet } from "react-router-dom";
-// import { getToken } from "./tokenService";
+import { useEffect } from "react";
+import { Navigate } from "react-router-dom";
 
-// const getRole = () => {
-//   return window.sessionStorage.getItem("role").toLowerCase();
+const ProtectedRoutes = ({ userId, isAdmin }) => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return <Navigate to="/login" />;
+  }
+
+  if (token && !isAdmin) {
+    return <Navigate to={`/user/${userId}`} />;
+  } else if (token && isAdmin) {
+    // Render the protected content if the user is logged in and is an admin
+    return <Navigate to={"/admin/dashboard"} />;
+  }
+};
+
+export default ProtectedRoutes;
+
+// const ProtectedRoute = ({ isAdmin, children }) => {
+//   const userRole = localStorage.getItem('token'); // Get the user’s role and token from local storage
+
+//   if (userRole !== role) {
+//     return <Navigate to="/" />; // Redirect if the role doesn't match
+//   }
+
+//   return children;
 // };
 
-// function ProtectedRoute({component: Component, ...props}) {
-//   const authState = useAuthState();
-//   const location = useLocation();
-
-//   return authState.role === "admin" || "user" ? (
-//     <Component {...props}/>
-//   ) : (
-//     <Redirect to={{pathname: "/", state: {from:location}}} />
-//   )
-// }
 // export default ProtectedRoute;
-
-import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import { getToken } from "./tokenService";
-import { Nav } from "react-bootstrap";
-
-
-export function getRole() {
-  const role = window.sessionStorage.getItem("role");
-  return role ? role.toLowerCase() : "";
-}
-
-export default function ProtectedRoutes() {
-  const token = getToken();
-  if (!token) {
-    return <Navigate to="/" />;
-  }
-  return <Outlet />;
-}
-

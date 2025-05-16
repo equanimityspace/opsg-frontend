@@ -1,12 +1,33 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { getToken, deleteToken} from "../utils/tokenService";
+import { useEffect } from "react";
 
 export default function NavBar() {
    const navigate = useNavigate();
-   // const onClick = () => {
-   //    navigate
-   // }
+   const token = getToken();
+
+   const [isLoggedIn, setIsLoggedIn] = useState("Login");
+
+   useEffect(() => {
+      if (token) {
+        setIsLoggedIn("Logout")
+      } else {
+        setIsLoggedIn("Login")
+      }
+    }, [token])
+
+   const handleLogin = () => {
+   }
+
+   const handleLogout = () => {
+      deleteToken();
+      navigate("/login")
+   }
+
+     //handle login/logout button change
+   // const buttonStatus = token ? "Log Out" : "Login";
 
    // const token = 
    return (
@@ -27,9 +48,24 @@ export default function NavBar() {
                <a className="nav-link" href="/contactForm">Contact Us</a>
                </li>
             </ul>
-            <a href="/Login" >
-               <button type="button" className="btn btn-info btn-sm">Login</button>
-            </a>
+            {token ? (
+                  <button
+                     type="button"
+                     className="btn btn-info mx-2"
+                     onClick={handleLogout}
+                     navigate="/"
+                  >
+                     {isLoggedIn}
+                  </button>
+               ) : (
+                  <button
+                     type="button"
+                     className="btn btn-info mx-2"
+                     onClick={() => navigate("/login")}
+                  >
+                     {isLoggedIn}
+                  </button>
+               )}
             <a href="/Register">
                <button type="button" className="btn btn-info btn-sm">Register</button>
             </a >
@@ -37,4 +73,4 @@ export default function NavBar() {
          </nav>
       </header>
    )
-}
+ }

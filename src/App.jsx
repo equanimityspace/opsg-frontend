@@ -1,143 +1,48 @@
-// // import "bootstrap/dist/css/bootstrap.min.css";
-// // import { Routes, Route } from "react-router-dom";
-// // import ProtectedRoutes from "./utils/ProtectedRoutes";
-// // import Home from "./Layout/Pages/Home";
-// // import Login from "./Layout/Pages/Login";
-// // import Registration from "./Layout/Pages/Registration";
-// // import Profile from "./Layout/Pages/Profile";
-// // import OurServices from "./Layout/Pages/OurServices";
-// // import ContactForm from "./Layout/Pages/ContactForm";
-// // import React, { useContext } from "react";
-// // import useAuthState from "./Features/Navigations/AuthContext";
-// // import NavRoles from "./Features/Navigations/NavRoles";
-// // import myComponent from "./utils/myComponent";
-// // import { Nav } from "react-bootstrap";
-
-// // // const AuthContext = React.createContext({ role: 'visitor'});
-
-// // function App() {
-// //   // const [authState] = useAuthState();
-// //   const [authState, setAuthState] = useAuthState();
-
-// //   return (
-// //     <>
-// //       {/* App content */}
-// //       <authProvider authState={authState} setAuthState={setAuthState}>
-// //           {/* Visitor Routes */}
-// //           <Route path="/" element={<Home />} />
-// //           <Route path="/register" element={<Registration />} />
-// //           <Route path="/login" element={<Login />} />
-// //           <Route path="/ourservices" element={<OurServices />} />
-// //           <Route path="/contactform" element={<ContactForm />} />
-
-// //           {/* Protected Routes */}
-// //           <ProtectedRoutes authState={authState}>
-// //             <Route path="/me" element={<myComponent />}/>
-// //               <Route 
-// //                 path="updateuserprofile/:userid" 
-// //                 element={<NavRoles authState={authState} />} 
-// //               />
-// //           </ProtectedRoutes>
-// //       </authProvider>
-// //     </>
-// //   );
-// // }
-
-// // export default App;
-
-
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import { Routes, Route } from "react-router-dom";
-// import ProtectedRoutes from "./utils/ProtectedRoutes";
-// import Home from "./Layout/Pages/Home";
-// import Login from "./Layout/Pages/Login";
-// import Registration from "./Layout/Pages/Registration";
-// import Profile from "./Layout/Pages/Profile";
-// import OurServices from "./Layout/Pages/OurServices";
-// import ContactForm from "./Layout/Pages/ContactForm";
-// import React, { useContext } from "react";
-// import { useAuthState } from "./Features/Navigations/AuthContext";
-// import NavRoles from "./Features/Navigations/NavRoles";
-
-// // const AuthContext = React.createContext({ role: 'visitor'});
-
-// function App() {
-//   const {role} = useAuthState();
-
-//   return (
-//     <>
-//       {/* App content */}
-//       <AuthProvider>
-//         <Switch>
-//           {/* Visitor Routes */}
-//           <Route path="/" element={<Home />} />
-//           <Route path="/register" element={<Registration />} />
-//           <Route path="/login" element={<Login />} />
-//           <Route path="/ourservices" element={<OurServices />} />
-//           <Route path="/contactform" element={<ContactForm />} />
-
-//           {/* Protected Routes */}
-//           <ProtectedRoutes>
-//             <NavRoles role={role}/>
-//               <Route 
-//                 path="/navbars/navigations/me" 
-//                 element={<NavRoles/>} 
-//               />
-//               <Route
-//                 path="/navbars/navigations/updateuserprofile/:userid"
-//                 element={<NavRoles/>}
-//               />
-//           </ProtectedRoutes>
-//           </Switch>
-//       </AuthProvider>
-//     </>
-//   );
-// }
-
-// export default App;
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
+import { useState } from "react";
 import Home from "./Layout/Pages/Home";
 import Login from "./Layout/Pages/Login";
 import Registration from "./Layout/Pages/Registration";
-import SingleUser from "./Layout/Pages/Profile";
+import Profile from "./Layout/Pages/Profile";
 import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
 import React, { useContext } from "react";
-import { useAuthState, AuthProvider } from "./Features/Navigations/AuthContext";
-import NavRoles from "./Features/Navigations/NavRoles";
+import AdminPage from "./Layout/Pages/AdminDashboard/AdminDashboard";
+
+import userNav from "./Features/Navigations/Navbars/UserNav";
+// import { AuthProvider } from "./Features/Navigations/AuthContext";
 
 // const AuthContext = React.createContext({ role: 'visitor'});
 
 function App() {
-  const { role } = useAuthState();
+  // const { role } = useAuthState();
+  const [userId, setUserId] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(null);
 
   return (
     <>
-      {/* App content */}
-
       {/* Visitor Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setUserId={setUserId} setIsAdmin={setIsAdmin} />}
+        />
+        {/* <Route path="/unauthorized" element={<UnauthorizedPage/>} /> */}
         <Route path="/ourservices" element={<OurServices />} />
         <Route path="/contactform" element={<ContactForm />} />
-        <Route path="/user/:id" element={<SingleUser />} />
-      </Routes>
 
-      {/* Protected Routes */}
-      <ProtectedRoutes>
-        <NavRoles role={role} />
-        <Route path="/navbars/navigations/me" element={<NavRoles />} />
+        {/* Protected Routes */}
         <Route
-          path="/navbars/navigations/updateuserprofile/:userid"
-          element={<NavRoles />}
+          path="/login/redirect"
+          element={<ProtectedRoutes userId={userId} isAdmin={isAdmin} />}
         />
-      </ProtectedRoutes>
-
+        <Route path="/admin/dashboard" element={<AdminPage />} />
+        <Route path={`/user/${userId}`} element={<Profile />} />
+      </Routes>
     </>
   );
 }

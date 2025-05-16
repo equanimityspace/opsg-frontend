@@ -9,16 +9,17 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     children: [
+      is,
       {
         path: "/",
         element: <Home />,
         index: true,
       },
       {
-        element: <ProtectedRoutes role="user" />,
+        element: <ProtectedRoutes isLoggedIn="true" />,
         children: [
           {
-            path: "/profile",
+            path: "/user/:userid",
             element: <Profile />,
           },
           //paths to other protected routes
@@ -29,10 +30,10 @@ const router = createBrowserRouter([
         ],
       },
       {
-        element: <ProtectedRoutes role="admin" />,
+        element: <ProtectedRoutes isAdmin="true" />,
         children: [
           {
-            path: "/admin",
+            path: "/adminUser",
             element: <Admin />,
           },
         ],

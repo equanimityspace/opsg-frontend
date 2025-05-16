@@ -11,9 +11,10 @@ import InfoModal from "../../utils/Modal";
 import NavBar from "../Navbar";
 
 export default function Register() {
+
   const navigate = useNavigate();
 
-  const [register, status] = useRegisterMutation();
+  const [register, status] = useRegisterMutation(); 
 
   // Modal logic
   const [response, setResponse] = useState();
