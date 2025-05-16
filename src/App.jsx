@@ -7,10 +7,9 @@ import Login from "./Layout/Pages/Login";
 import Registration from "./Layout/Pages/Registration";
 import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
-import React, { useContext } from "react";
 import AdminPage from "./Layout/Pages/AdminDashboard/AdminDashboard";
 import UserPage from "./Layout/Pages/UserDash/UserDashboard";
-
+import Profile from "./Layout/Pages/Profile";
 
 // import { AuthProvider } from "./Features/Navigations/AuthContext";
 
@@ -40,9 +39,9 @@ function App() {
           path="/login/redirect"
           element={<ProtectedRoutes userId={userId} isAdmin={isAdmin} />}
         />
-        <Route path={`/user/${userId}`} element={<UserPage />} />
+        <Route path={`/user/:userId`} element={<UserPage />} />
         {/* <Route path="/user/dashboard" element={<UserPage />} /> */}
-
+        <Route path={`/profile/:userId`} element={<Profile />} />
         <Route path="/admin/dashboard" element={<AdminPage />} />
         {/* <Route path="/admin/users" element={<AdminAllUsers />} /> */}
       </Routes>
