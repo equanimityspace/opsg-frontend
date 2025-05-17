@@ -73,8 +73,8 @@ const Home = () => {
           <Col md="auto">
             {/* consider rising number */}
             <h3>
-              Trusted by over <AnimationCountUp from={0} to={50} /> providers,
-              hospitals, and some other kind of client
+              Trusted by over <AnimationCountUp from={0} to={50} />{" "}
+              practitioners, providers, and hospitals.
             </h3>
           </Col>
         </Row>
