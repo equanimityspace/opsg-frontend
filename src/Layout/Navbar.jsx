@@ -1,10 +1,11 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { getToken, deleteToken} from "../utils/tokenService";
 import { useEffect } from "react";
 
 export default function NavBar() {
+   const { userId } = useParams();
    const navigate = useNavigate();
    const token = getToken();
 
@@ -24,7 +25,7 @@ export default function NavBar() {
    }
 
    const backToProfile = () => {
-      navigate("/userDashboard")
+      navigate(`/profile/${userId}`)
    }
 
      //handle login/logout button change
@@ -51,8 +52,7 @@ export default function NavBar() {
                 <li className="nav-item active">
 
                {token ? (
-                  <a className="nav-link" 
-                  // href={`/user/${userId}`}
+                  <a className="nav-link" href={`/user/${userId}`}
                   >My Profile</a>
                ) : (
                   <a className="nav-link" href="/"></a>
@@ -72,7 +72,7 @@ export default function NavBar() {
                   <button
                      type="button"
                      className="btn btn-info btn-sm mx-2"
-                     onClick={() => navigate("/login")}
+                     onClick={backToProfile}
                   >
                      {isLoggedIn}
                   </button>
@@ -90,4 +90,4 @@ export default function NavBar() {
          </nav>
       </header>
    )
- }
+ };
