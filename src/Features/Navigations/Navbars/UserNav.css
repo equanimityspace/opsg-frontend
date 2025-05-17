@@ -6,6 +6,10 @@
   background-color: #272932;
   border-radius: 5px;
 }
+.onPointLogoText {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
 #sidebarCollapse {
   position: absolute;
   top: 0.5rem;
