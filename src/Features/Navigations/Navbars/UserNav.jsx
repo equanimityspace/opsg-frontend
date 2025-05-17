@@ -48,6 +48,10 @@ const UserNav = (props) => {
               <Link to="/admin/users">Invoices</Link>
             </li>
             <li className="list-item">
+              <i className="bi bi-people-fill"></i>
+              <Link to="/admin/users">Edit Profile</Link>
+            </li>
+            <li className="list-item">
               <i className="bi bi-box-arrow-left"></i>
               <Link to="/" onClick={handleClick}>Log out</Link>
             </li>

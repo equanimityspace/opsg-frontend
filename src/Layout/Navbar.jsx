@@ -48,23 +48,16 @@ export default function NavBar() {
                <li className="nav-item">
                <a className="nav-link" href="/contactForm">Contact Us</a>
                </li>
-
+                <li className="nav-item active">
 
                {token ? (
-                  <a className="nav-link"
-                     onClick={backToProfile}
-                  >My Profile
-                    
-                  </a>
+                  <a className="nav-link" 
+                  // href={`/user/${userId}`}
+                  >My Profile</a>
                ) : (
-                  <a
-                     className="nav-link"
-                     onClick={() => navigate("/")}
-                  >
-                  </a>
+                  <a className="nav-link" href="/"></a>
                )}
-
-
+               </li>
             </ul>
             {token ? (
                   <button
@@ -83,9 +76,15 @@ export default function NavBar() {
                   >
                      {isLoggedIn}
                   </button>
+               )}             
+               {token ? (
+               <button className="nav-link" href="/"></button>
+
+               ) : (
+               <button type="button" className="btn btn-info btn-sm">Register</button>
                )}
             <a href="/Register">
-               <button type="button" className="btn btn-info btn-sm">Register</button>
+               {/* <button type="button" className="btn btn-info btn-sm">Register</button> */}
             </a >
          </div>
          </nav>
