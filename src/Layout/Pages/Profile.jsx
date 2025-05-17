@@ -49,7 +49,7 @@ export default function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await updateUserProfile({ userId, ...formData }).unwrap();
+      await updateUserProfile({ id: userId, ...formData }).unwrap();
       setModalHeading("Profile Updated");
       setModalBody("Your profile was updated succesfully");
       setModalShow(true);
@@ -72,7 +72,7 @@ export default function Profile() {
     }
     try {
       await changePassword({
-        userId,
+        id: userId,
         currentPassword: currentPwd,
         newPassword: newPwd,
         confirmPassword: confirmPwd,
