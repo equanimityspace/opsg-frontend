@@ -42,4 +42,4 @@ const updateUserProfileSlice = createSlice({
 export const registerReducer = registerSlice.reducer;
 export const loginReducer = loginSlice.reducer;
 export const getAllUsersReducer = getAllUsersSlice.reducer;
-export const updateUserProfile = updateUserProfileSlice.reducer;
+export const updateUserProfileReducer = updateUserProfileSlice.reducer;

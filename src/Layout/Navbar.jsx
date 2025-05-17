@@ -18,12 +18,13 @@ export default function NavBar() {
       }
     }, [token])
 
-   const handleLogin = () => {
+   const handleLogout = () => {
+      deleteToken(token);
+      navigate("/login")
    }
 
-   const handleLogout = () => {
-      deleteToken();
-      navigate("/login")
+   const backToProfile = () => {
+      navigate("/userDashboard")
    }
 
      //handle login/logout button change
@@ -47,11 +48,21 @@ export default function NavBar() {
                <li className="nav-item">
                <a className="nav-link" href="/contactForm">Contact Us</a>
                </li>
+                <li className="nav-item active">
+
+               {token ? (
+                  <a className="nav-link" 
+                  // href={`/user/${userId}`}
+                  >My Profile</a>
+               ) : (
+                  <a className="nav-link" href="/"></a>
+               )}
+               </li>
             </ul>
             {token ? (
                   <button
                      type="button"
-                     className="btn btn-info mx-2"
+                     className="btn btn-info btn-sm mx-2"
                      onClick={handleLogout}
                      navigate="/"
                   >
@@ -60,14 +71,20 @@ export default function NavBar() {
                ) : (
                   <button
                      type="button"
-                     className="btn btn-info mx-2"
+                     className="btn btn-info btn-sm mx-2"
                      onClick={() => navigate("/login")}
                   >
                      {isLoggedIn}
                   </button>
+               )}             
+               {token ? (
+               <button className="nav-link" href="/"></button>
+
+               ) : (
+               <button type="button" className="btn btn-info btn-sm">Register</button>
                )}
             <a href="/Register">
-               <button type="button" className="btn btn-info btn-sm">Register</button>
+               {/* <button type="button" className="btn btn-info btn-sm">Register</button> */}
             </a >
          </div>
          </nav>

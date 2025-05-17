@@ -9,6 +9,11 @@ const UserNav = (props) => {
   const navigate = useNavigate();
   const [isNotActive, setNotActive] = useState("true");
   const [isDropdownActive, setDropdownActive] = useState("false");
+  const navigate = useNavigate();
+  const handleClick = () => {
+      localStorage.removeItem("token");
+      navigate("/login")
+    }
   var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
   var crossIcon = <i className="bi bi-x-circle"></i>;
 
@@ -43,7 +48,7 @@ const UserNav = (props) => {
           <ul className="list-unstyled components">
             <li className="list-item">
               <i className="bi bi-house"></i>
-              <Link to="/admin/dashboard">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="list-item">
               <i className="bi bi-people-fill"></i>
@@ -56,8 +61,12 @@ const UserNav = (props) => {
               <Link to={`/profile/${userId}`}>Edit profile</Link>
             </li>
             <li className="list-item">
+              <i className="bi bi-people-fill"></i>
+              <Link to="/admin/users">Edit Profile</Link>
+            </li>
+            <li className="list-item">
               <i className="bi bi-box-arrow-left"></i>
-              <Link to="/">Log out</Link>
+              <Link to="/" onClick={handleClick}>Log out</Link>
             </li>
           </ul>
         </nav>
@@ -65,40 +74,4 @@ const UserNav = (props) => {
     </div>
   );
 };
-export default UserNav;
 
-// import { NavLink } from "react-router-dom";
-// import React from "react";
-// import ContextProvider from "../ContextProvider";
-
-// export default function userNav() {
-//   // // Check if there's a token in secure storage
-//   // const token = localStorage.getItem("token");
-//   // if (token) {
-//   //   // Verify token with server if needed
-//   //   const verifyResponse = fetch("/api/verify", {
-//   //     method: "GET",
-//   //     headers: {
-//   //       Authorization: `Bearer ${token}`,
-//   //     },
-//   //   });
-//   //   if (verifyResponse.ok) {
-//   //     // Fetch user data from the server if needed
-//   //     const userData = verifyResponse.json();
-//   //     setAuthState((prevState) => ({
-//   //       ...prevState,
-//   //       isLoggedIn: true,
-//   //       user: userData.user,
-//   //       isAdmin: true,
-//   //     }));
-//   //   } else {
-//   //     console.error("token verification failed");
-//   //   }
-//   // }
-
-//   return (
-//     <>
-
-//     </>
-//   );
-// }
