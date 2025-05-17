@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "./UserNav.css";
-
-
 import opsgLogo from "../../../assets/img/opsg-logo.png";
+import { Button } from "react-bootstrap";
 
 const UserNav = (props) => {
+  const { userId } = useParams();
+  const navigate = useNavigate();
   const [isNotActive, setNotActive] = useState("true");
   const [isDropdownActive, setDropdownActive] = useState("false");
   var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
   var crossIcon = <i className="bi bi-x-circle"></i>;
+
+  // Making the gear a button
+  const handleGearClick = () => {
+    navigate(`/profile/${userId}`);
+  };
+
   return (
     <div>
       <div className="wrapper">
@@ -42,6 +49,12 @@ const UserNav = (props) => {
               <i className="bi bi-people-fill"></i>
               <Link to="/admin/users">Invoices</Link>
             </li>
+            <li className="list-item-unstyled">
+              <Button onClick={handleGearClick} className="edit-profile">
+                <i className="bi bi-gear"></i>
+              </Button>
+              <Link to={`/profile/${userId}`}>Edit profile</Link>
+            </li>
             <li className="list-item">
               <i className="bi bi-box-arrow-left"></i>
               <Link to="/">Log out</Link>
@@ -53,9 +66,6 @@ const UserNav = (props) => {
   );
 };
 export default UserNav;
-
-
-
 
 // import { NavLink } from "react-router-dom";
 // import React from "react";
@@ -86,14 +96,9 @@ export default UserNav;
 //   //   }
 //   // }
 
-
 //   return (
 //     <>
 
-      
 //     </>
 //   );
 // }
-
-
-
