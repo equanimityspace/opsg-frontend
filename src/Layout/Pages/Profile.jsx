@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import {
   useGetUserQuery,
   useUpdateUserProfileMutation,
@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import InfoModal from "../../utils/Modal";
+import UserPage from "./UserDash/UserDashboard";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -106,7 +107,8 @@ export default function Profile() {
 
   return (
     <>
-      <div className="bg-primary min-vh-100 d-flex justify-content-center align-items-center">
+      <UserPage />
+      <div style={{ paddingTop: '60px' }} className="d-flex justify-content-center align-items-center">
         <div
           className="bg-white rounded shadow p-4"
           style={{ width: "100%", maxWidth: "600px" }}

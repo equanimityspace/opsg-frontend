@@ -41,7 +41,7 @@ const UserNav = (props) => {
               height={isNotActive ? "20" : "70"}
               width={isNotActive ? "20" : "70"}
             ></img>
-            <h3>OnPoint</h3>
+            <h3 className="onPointLogoText">OnPoint</h3>
           </div>
 
           <ul className="list-unstyled components">

@@ -11,7 +11,10 @@ export default function UserPage() {
         <UserNav />
         <Container data-bs-theme="dark">
           <Row className="justify-content-md-center">
-            <Col className="display-3 mt-4" md="auto">
+            <Col xs={1} md={2}>
+              <Image src={opsgLogo} roundedCircle className="small-image" />
+            </Col>
+            <Col className="display-5 mt-4" md="auto">
               OnPoint User Dashboard
             </Col>
           </Row>
