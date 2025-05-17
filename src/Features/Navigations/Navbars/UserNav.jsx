@@ -4,16 +4,16 @@ import "./UserNav.css";
 import opsgLogo from "../../../assets/img/opsg-logo.png";
 import { Button } from "react-bootstrap";
 
-const UserNav = (props) => {
+export const UserNav = (props) => {
   const { userId } = useParams();
   const navigate = useNavigate();
   const [isNotActive, setNotActive] = useState("true");
   const [isDropdownActive, setDropdownActive] = useState("false");
-  const navigate = useNavigate();
+
   const handleClick = () => {
-      localStorage.removeItem("token");
-      navigate("/login")
-    }
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
   var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
   var crossIcon = <i className="bi bi-x-circle"></i>;
 
@@ -61,12 +61,10 @@ const UserNav = (props) => {
               <Link to={`/profile/${userId}`}>Edit profile</Link>
             </li>
             <li className="list-item">
-              <i className="bi bi-people-fill"></i>
-              <Link to="/admin/users">Edit Profile</Link>
-            </li>
-            <li className="list-item">
               <i className="bi bi-box-arrow-left"></i>
-              <Link to="/" onClick={handleClick}>Log out</Link>
+              <Link to="/" onClick={handleClick}>
+                Log out
+              </Link>
             </li>
           </ul>
         </nav>
@@ -74,4 +72,3 @@ const UserNav = (props) => {
     </div>
   );
 };
-
