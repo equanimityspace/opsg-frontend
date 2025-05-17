@@ -3,13 +3,19 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { getToken, deleteToken } from "../utils/tokenService";
 import { useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
 
 export default function NavBar() {
-  const { userId } = useParams();
   const navigate = useNavigate();
   const token = getToken();
 
   const [isLoggedIn, setIsLoggedIn] = useState("Login");
+
+  let userId;
+  if (token) {
+    const { id } = jwtDecode(token);
+    userId = id;
+  }
 
   useEffect(() => {
     if (token) {
