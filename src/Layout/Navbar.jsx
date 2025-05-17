@@ -26,8 +26,8 @@ export default function NavBar() {
   }, [token]);
 
   const handleLogout = () => {
+    navigate("/Login");
     deleteToken(token);
-    navigate("/login");
   };
 
   const backToProfile = () => {
@@ -97,15 +97,22 @@ export default function NavBar() {
               {isLoggedIn}
             </button>
           )}
+          <a href="Login">
+            <button type="button" className="btn btn-info btn-sm">Login</button>
+          </a>
+          {/* {token ? (
+            <button className="nav-link" href="/"></button>
+          ) : (
+            <button type="button" className="btn btn-info btn-sm" href="/Register">
+              Register
+            </button>
+          )} */}
+          <a href="/Register">
           {token ? (
             <button className="nav-link" href="/"></button>
           ) : (
-            <button type="button" className="btn btn-info btn-sm">
-              Register
-            </button>
+          <button type="button" className="btn btn-info btn-sm">Register</button> 
           )}
-          <a href="/Register">
-            {/* <button type="button" className="btn btn-info btn-sm">Register</button> */}
           </a>
         </div>
       </nav>
