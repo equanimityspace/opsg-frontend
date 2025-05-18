@@ -30,9 +30,9 @@ export default function NavBar() {
     navigate("/login");
   };
 
-  const backToProfile = () => {
-    navigate(`/profile/${userId}`);
-  };
+  // const backToProfile = () => {
+  //   navigate(`/profile/${userId}`);
+  // };
 
   //handle login/logout button change
   // const buttonStatus = token ? "Log Out" : "Login";
@@ -92,7 +92,7 @@ export default function NavBar() {
             <button
               type="button"
               className="btn btn-info btn-sm mx-2"
-              onClick={backToProfile}
+              onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
             >
               {isLoggedIn}
             </button>
@@ -100,13 +100,14 @@ export default function NavBar() {
           {token ? (
             <button className="nav-link" href="/"></button>
           ) : (
-            <button type="button" className="btn btn-info btn-sm">
+            <button
+              type="button"
+              className="btn btn-info btn-sm"
+              onClick={() => navigate("/register")}
+            >
               Register
             </button>
           )}
-          <a href="/Register">
-            {/* <button type="button" className="btn btn-info btn-sm">Register</button> */}
-          </a>
         </div>
       </nav>
     </header>
