@@ -20,9 +20,9 @@ export default function NavBar() {
 
   useEffect(() => {
     if (token) {
-      setIsLoggedIn("Logout");
+      setIsLoggedIn("LOGOUT");
     } else {
-      setIsLoggedIn("Login");
+      setIsLoggedIn("LOGIN");
     }
   }, [token]);
 
@@ -44,7 +44,7 @@ export default function NavBar() {
   // const token =
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light">
           <div className="sidebar-header2">
             <img
               src={opsgLogo}
@@ -59,7 +59,7 @@ export default function NavBar() {
                 marginLeft: "12px",
               }}>OnPoint</h6>
           </div>
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -69,7 +69,7 @@ export default function NavBar() {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
+        </button> */}
 
         <div className="collapse navbar-collapse" id="navbarNav" >
           <ul className="navbar-nav" 
@@ -81,23 +81,23 @@ export default function NavBar() {
             <li className="nav-item active">
               <a className="nav-link " href="/" style={{paddingLeft: "20px"}}
               >
-                About Us
+                ABOUT
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link nav-link2" href="/ourservices" style={{paddingLeft: "50px"}}>
-                Our Services
+                SERVICES
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link nav-link2" href="/contactForm" style={{paddingLeft: "50px"}}>
-                Contact
+                CONTACT
               </a>
             </li>
             <li className="nav-item active">
               {token ? (
                 <a className="nav-link nav-link2" href={`/user/${userId}`} style={{paddingLeft: "50px"}}>
-                  My Profile
+                  PROFILE
                 </a>
               ) : (
                 <a className="nav-link nav-link2" href="/"></a>
@@ -108,8 +108,7 @@ export default function NavBar() {
             <button
               type="button"
               style={{backgroundColor: "rgb(121, 203, 187)", fontSize: "12px"}}
-              className="btn btn-sm mx-2"
-              width="20px"
+              className="btn btn-sm"
               onClick={handleLogout}
               navigate="/"
             >
@@ -120,7 +119,6 @@ export default function NavBar() {
               type="button"
               style={{backgroundColor: "rgb(121, 203, 187)", fontSize: "12px"}}
               className="btn btn-info btn-sm mx-3"
-              width="20px"
               onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
             >
               {isLoggedIn}
@@ -136,7 +134,7 @@ export default function NavBar() {
               width="20px"
               onClick={() => navigate("/register")}
             >
-              Register
+              REGISTER
             </button>
           )}
           </div>
