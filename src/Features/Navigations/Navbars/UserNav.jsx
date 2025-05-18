@@ -10,18 +10,27 @@ export const UserNav = (props) => {
   const [isNotActive, setNotActive] = useState("true");
   const [isDropdownActive, setDropdownActive] = useState("false");
 
+  var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
+  var crossIcon = <i className="bi bi-x-circle"></i>;
+
   const handleClick = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
-  var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
-  var crossIcon = <i className="bi bi-x-circle"></i>;
 
-  // Making the gear a button
-  const handleGearClick = () => {
+  // Button logic
+  const handleEditProfileClick = () => {
     navigate(`/profile/${userId}`);
   };
-
+  const handleHomeClick = () => {
+    navigate(`/`);
+  };
+  const handleInvoiceClick = () => {
+    navigate(`admin/users`);
+  };
+  //importing handle logout for logout button
+  //nvm its in another function copy and pasting it
+  //nvm using handleClick
   return (
     <div>
       <div className="wrapper">
@@ -47,21 +56,30 @@ export const UserNav = (props) => {
 
           <ul className="list-unstyled components">
             <li className="list-item">
-              <i className="bi bi-house"></i>
+              <Button onClick={handleHomeClick} className="home-click">
+                <i className="bi bi-house"></i>
+              </Button>
               <Link to="/">Home</Link>
             </li>
             <li className="list-item">
-              <i className="bi bi-people-fill"></i>
+              <Button onClick={handleInvoiceClick} className="invoice-click">
+                <i className="bi bi-people-fill"></i>
+              </Button>
               <Link to="/admin/users">Invoices</Link>
             </li>
             <li className="list-item-unstyled">
-              <Button onClick={handleGearClick} className="edit-profile">
+              <Button
+                onClick={handleEditProfileClick}
+                className="edit-profile-click"
+              >
                 <i className="bi bi-gear"></i>
               </Button>
               <Link to={`/profile/${userId}`}>Edit profile</Link>
             </li>
             <li className="list-item">
-              <i className="bi bi-box-arrow-left"></i>
+              <Button onClick={handleClick} className="Logout-icon-click">
+                <i className="bi bi-box-arrow-left"></i>
+              </Button>
               <Link to="/" onClick={handleClick}>
                 Log out
               </Link>
@@ -72,4 +90,3 @@ export const UserNav = (props) => {
     </div>
   );
 };
-
