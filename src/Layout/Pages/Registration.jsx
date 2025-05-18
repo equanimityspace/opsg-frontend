@@ -12,7 +12,6 @@ import NavBar from "../Navbar";
 
 export default function Registration() {
   const navigate = useNavigate();
-
   const [register, status] = useRegisterMutation();
 
   // Modal logic
@@ -39,20 +38,21 @@ export default function Registration() {
     }));
   };
 
-  // submit login request
+  // submit registartion request
   const submit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
-      const response = await register(formData);
-      setResponse(response);
-
-      // on successful login, return home
-      if (response.error) {
-        openModal();
-      } else {
-        navigate("/");
-      }
+      const payload = await register(formData).unwrap();
+      // on successful registration, go to user dash
+      const userId = payload.registerUser.id;
+      navigate(`/user/${userId}`);
     } catch (error) {
+      const errorMsg =
+        typeof error.data === "string"
+          ? error.data.trim()
+          : error.data?.message || "Registration failed";
+      setResponse(errorMsg);
+      openModal();
       console.error(error);
     }
   };
@@ -66,7 +66,7 @@ export default function Registration() {
             show={show}
             hide={closeModal}
             heading="Error"
-            body={response?.error.data}
+            body={response}
           />
         ) : (
           <></>
@@ -144,6 +144,4 @@ export default function Registration() {
       </div>
     </>
   );
-
 }
-
