@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+}
+
+.navCol {
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.listCol {
+  flex-grow: 1;
+}
+
+.listGroup {
+  width: 100%;
+}
