@@ -144,4 +144,6 @@ export default function Registration() {
       </div>
     </>
   );
+
 }
+
