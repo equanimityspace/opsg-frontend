@@ -92,7 +92,7 @@ export default function NavBar() {
             <button
               type="button"
               className="btn btn-info btn-sm mx-2"
-              onClick={handleLogout}
+              onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
             >
               {isLoggedIn}
             </button>
