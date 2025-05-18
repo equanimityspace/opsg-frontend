@@ -32,7 +32,9 @@ export default function NavBar() {
   };
 
 
+
   const [isNotActive, setNotActive] = useState("true");
+
 
   // const backToProfile = () => {
   //   navigate(`/profile/${userId}`);
@@ -117,8 +119,10 @@ export default function NavBar() {
           ) : (
             <button
               type="button"
+
               style={{backgroundColor: "rgb(121, 203, 187)", fontSize: "12px"}}
               className="btn btn-info btn-sm mx-3"
+
               onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
             >
               {isLoggedIn}
@@ -129,6 +133,7 @@ export default function NavBar() {
           ) : (
             <button
               type="button"
+
               style={{backgroundColor: "rgb(121, 203, 187)", fontSize: "12px"}}
               className="btn btn-info btn-sm"
               width="20px"
