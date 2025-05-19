@@ -7,7 +7,7 @@ import { Button } from "react-bootstrap";
 export const UserNav = (props) => {
   const { userId } = useParams();
   const navigate = useNavigate();
-  const [isNotActive, setNotActive] = useState("true");
+  const [isNotActive, setNotActive] = useState(false);
   const [isDropdownActive, setDropdownActive] = useState("false");
 
   var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
