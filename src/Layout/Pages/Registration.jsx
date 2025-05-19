@@ -10,11 +10,9 @@ import Card from "react-bootstrap/Card";
 import InfoModal from "../../utils/Modal";
 import NavBar from "../Navbar";
 
-export default function Register() {
-
+export default function Registration() {
   const navigate = useNavigate();
-
-  const [register, status] = useRegisterMutation(); 
+  const [register, status] = useRegisterMutation();
 
   // Modal logic
   const [response, setResponse] = useState();
@@ -40,108 +38,110 @@ export default function Register() {
     }));
   };
 
-  // submit login request
+  // submit registartion request
   const submit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
-      const response = await register(formData);
-      setResponse(response);
-
-      // on successful login, return home
-      if (response.error) {
-        openModal();
-      } else {
-        navigate("/");
-      }
+      const payload = await register(formData).unwrap();
+      // on successful registration, go to user dash
+      const userId = payload.registerUser.id;
+      navigate(`/user/${userId}`);
     } catch (error) {
+      const errorMsg =
+        typeof error.data === "string"
+          ? error.data.trim()
+          : error.data?.message || "Registration failed";
+      setResponse(errorMsg);
+      openModal();
       console.error(error);
     }
   };
 
   return (
     <>
-    <NavBar />
-    <div className="d-flex justify-content-center vh-80">
-      {show ? (
-        <InfoModal
-          show={show}
-          hide={closeModal}
-          heading="Error"
-          body={response?.error.data}
-        />
-      ) : (
-        <></>
-      )}
-      <Card className="w-50 mt-5">
-        <Card.Header>
-          <Nav variant="tabs" defaultActiveKey="/register">
-            <Nav.Item>
-              <Nav.Link href="/login">Login</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="/register">Register</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Card.Header>
-        <Card.Body>
-          <Form onSubmit={submit}>
-            <Form.Group className="mb-3" controlId="formBasicCompany">
-              <Form.Label>Company</Form.Label>
-              <Form.Control
-                type="text"
-                name="company"
-                placeholder="Company"
-                onChange={update}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicFirstName">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                onChange={update}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicLastName">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                onChange={update}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>E-Mail</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                placeholder="johndoe@email.com"
-                onChange={update}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={update}
-              />
-            </Form.Group>
-            {!status?.isLoading ? (
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            ) : (
-              <Button variant="primary" type="submit" disabled>
-                Loading...
-              </Button>
-            )}
-          </Form>
-        </Card.Body>
-      </Card>
-    </div>
-    </>);
+      <NavBar />
+      <div className="d-flex justify-content-center vh-80">
+        {show ? (
+          <InfoModal
+            show={show}
+            hide={closeModal}
+            heading="Error"
+            body={response}
+          />
+        ) : (
+          <></>
+        )}
+        <Card className="w-50 mt-5">
+          <Card.Header>
+            <Nav variant="tabs" defaultActiveKey="/register">
+              <Nav.Item>
+                <Nav.Link href="/login">Login</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="/register">Register</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Card.Header>
+          <Card.Body>
+            <Form onSubmit={submit}>
+              <Form.Group className="mb-3" controlId="formBasicCompany">
+                <Form.Label>Company</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="company"
+                  placeholder="Company"
+                  onChange={update}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicFirstName">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  onChange={update}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicLastName">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  onChange={update}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>E-Mail</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  placeholder="johndoe@email.com"
+                  onChange={update}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={update}
+                />
+              </Form.Group>
+              {!status?.isLoading ? (
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              ) : (
+                <Button variant="primary" type="submit" disabled>
+                  Loading...
+                </Button>
+              )}
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
+    </>
+  );
 }

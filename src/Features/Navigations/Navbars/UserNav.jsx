@@ -1,85 +1,92 @@
-import { NavLink } from "react-router-dom";
-import React from "react";
-import ContextProvider from "../ContextProvider";
+import React, { useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import "./UserNav.css";
+import opsgLogo from "../../../assets/img/opsg-logo.png";
+import { Button } from "react-bootstrap";
 
-export default function userNav() {
-  // Check if there's a token in secure storage
-  const token = localStorage.getItem("token");
-  if (token) {
-    // Verify token with server if needed
-    const verifyResponse = fetch("/api/verify", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    if (verifyResponse.ok) {
-      // Fetch user data from the server if needed
-      const userData = verifyResponse.json();
-      setAuthState((prevState) => ({
-        ...prevState,
-        isLoggedIn: true,
-        user: userData.user,
-        isAdmin: true,
-      }));
-    } else {
-      console.error("token verification failed");
-    }
-  }
+export const UserNav = (props) => {
+  const { userId } = useParams();
+  const navigate = useNavigate();
+  const [isNotActive, setNotActive] = useState("true");
+  const [isDropdownActive, setDropdownActive] = useState("false");
 
+  var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
+  var crossIcon = <i className="bi bi-x-circle"></i>;
+
+  const handleClick = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
+  // Button logic
+  const handleEditProfileClick = () => {
+    navigate(`/profile/${userId}`);
+  };
+  const handleHomeClick = () => {
+    navigate(`/`);
+  };
+  const handleInvoiceClick = () => {
+    navigate(`admin/users`);
+  };
+  //importing handle logout for logout button
+  //nvm its in another function copy and pasting it
+  //nvm using handleClick
   return (
-    <>
-      <AuthProvider>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div>
+      <div className="wrapper">
+        <nav id="sidebar" className={isNotActive ? "active" : ""}>
           <button
-            className="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            id="sidebarCollapse"
+            onClick={() => setNotActive(!isNotActive)}
+            className="btn btn-custom"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className={isNotActive ? "" : "hidden"}>{arrowRight}</span>
+            <span className={isNotActive ? "hidden" : ""}>{crossIcon}</span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item active">
-                <a className="nav-link" href="/">
-                  aerggg
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/ourservices">
-                  abvesd
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contactForm">
-                  dfvdv
-                </a>
-              </li>
-            </ul>
+          <div className="sidebar-header">
+            <img
+              src={opsgLogo}
+              className="rounded-circle usr-image"
+              height={isNotActive ? "20" : "70"}
+              width={isNotActive ? "20" : "70"}
+            ></img>
+            <h3 className="onPointLogoText">OnPoint</h3>
           </div>
+
+          <ul className="list-unstyled components">
+            <li className="list-item">
+              <Button onClick={handleHomeClick} className="home-click">
+                <i className="bi bi-house"></i>
+              </Button>
+              <Link to="/">Home</Link>
+            </li>
+            <li className="list-item">
+              <Button onClick={handleInvoiceClick} className="invoice-click">
+                <i className="bi bi-people-fill"></i>
+              </Button>
+              <Link to="/admin/users">Invoices</Link>
+            </li>
+            <li className="list-item-unstyled">
+              <Button
+                onClick={handleEditProfileClick}
+                className="edit-profile-click"
+              >
+                <i className="bi bi-gear"></i>
+              </Button>
+              <Link to={`/profile/${userId}`}>Edit profile</Link>
+            </li>
+            <li className="list-item">
+              <Button onClick={handleClick} className="Logout-icon-click">
+                <i className="bi bi-box-arrow-left"></i>
+              </Button>
+              <Link to="/" onClick={handleClick}>
+                Log out
+              </Link>
+            </li>
+          </ul>
         </nav>
-      </AuthProvider>
-    </>
+      </div>
+    </div>
   );
-}
-
-
-  /* <NavLink 
-                to={"/pages/profile"} className={({ isActive }) => 
-                isActive ? "user-nav active" : "user-nav"
-            }
-            >
-                Profile
-            </NavLink> */
-
-
-
-  /* // authorized navbar elements here
-    // view invoice(s)
-    // edit account
-    // anything else?? */
-
+};
