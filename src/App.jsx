@@ -41,9 +41,10 @@ function App() {
           element={<ProtectedRoutes userId={userId} isAdmin={isAdmin} />}
         />
         <Route path={`/user/${userId}`} element={<Profile />} />
-        {/* <Route path="/user/dashboard" element={<UserPage />} /> */}
-        <Route path={`/profile/:userId`} element={<Profile />} />
+
         <Route path="/admin/dashboard" element={<AdminPage />} />
+        <Route path="/admin/users" element={<AdminAllUsers />} />
+        <Route path={`/admin/users/user/${userId}`} element={AdminAllUsers} />
       </Routes>
     </>
   );
