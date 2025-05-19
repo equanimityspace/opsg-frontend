@@ -2,7 +2,6 @@ import "./userDashboard.css";
 import opsgLogo from "../../../assets/img/opsg-logo.png";
 
 import { Row, Col, Image, Container } from "react-bootstrap";
-import InfoCard from "../../../utils/InfoCard";
 import { UserNav } from "../../../Features/Navigations/Navbars/UserNav";
 
 export default function UserPage() {

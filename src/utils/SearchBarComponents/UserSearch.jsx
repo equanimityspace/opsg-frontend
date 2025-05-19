@@ -1,18 +1,36 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
+import { getToken } from "../../utils/tokenService";
 
 export default function UserSearch() {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
 
-  const handleSearch = () => {
-    fetch(`/auth/users/search?search=${encodeURIComponent(term)}`)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Server error: ${response.status}`);
-        return response.json();
-      })
-      .then((data) => setResults(data.users))
-      .catch((err) => console.error("Search failed:", err));
+  const handleSearch = async () => {
+    const token = getToken();
+    if (!token) {
+      console.error("No token found");
+      return;
+    }
+    const url = `https://opsg-backend.onrender.com/auth/user/search?search=${encodeURIComponent(
+      term
+    )}`;
+    try {
+      const response = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setResults(data.users);
+    } catch (err) {
+      console.error("Search failed:", err);
+    }
   };
 
   return (
