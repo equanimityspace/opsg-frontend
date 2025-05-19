@@ -12,6 +12,7 @@ import UserPage from "./Layout/Pages/UserDash/UserDashboard";
 import Profile from "./Layout/Pages/Profile";
 
 import AdminAllUsers from "./Layout/Pages/AdminDashboard/AdminAllUsers";
+import AdminUser from "./Layout/Pages/AdminDashboard/AdminUser";
 // import { AuthProvider } from "./Features/Navigations/AuthContext";
 
 // const AuthContext = React.createContext({ role: 'visitor'});
@@ -44,7 +45,7 @@ function App() {
 
         <Route path="/admin/dashboard" element={<AdminPage />} />
         <Route path="/admin/users" element={<AdminAllUsers />} />
-        <Route path={`/admin/users/user/${userId}`} element={AdminAllUsers} />
+        <Route path={`/admin/users/user/:userId`} element={<AdminUser />} />
       </Routes>
     </>
   );
