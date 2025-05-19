@@ -41,7 +41,7 @@ function App() {
           path="/login/redirect"
           element={<ProtectedRoutes userId={userId} isAdmin={isAdmin} />}
         />
-        <Route path={`/user/${userId}`} element={<Profile />} />
+        <Route path={`/user/:userId`} element={<Profile />} />
 
         <Route path="/admin/dashboard" element={<AdminPage />} />
         <Route path="/admin/users" element={<AdminAllUsers />} />
