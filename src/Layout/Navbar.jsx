@@ -65,6 +65,8 @@ export default function NavBar() {
             </h6>
           </div>
         </div>
+
+
         {/* <button
           className="navbar-toggler"
           type="button"
@@ -78,6 +80,7 @@ export default function NavBar() {
         </button> */}
 
         {/* <div className="collapse navbar-collapse" id="navbarNav" > */}
+        
         <div className="collapse navbar-collapse">
           <ul
             className="navbar-nav"
@@ -132,6 +135,7 @@ export default function NavBar() {
           {token ? (
             <button
               type="button"
+              variant="secondary"
               style={{
                 backgroundColor: "rgb(121, 203, 187)",
                 fontSize: "12px",
@@ -145,6 +149,7 @@ export default function NavBar() {
           ) : (
             <button
               type="button"
+              variant="secondary"
               style={{
                 backgroundColor: "rgb(121, 203, 187)",
                 fontSize: "12px",
@@ -156,7 +161,7 @@ export default function NavBar() {
             </button>
           )}
           {token ? (
-            <button className="nav-link" href="/"></button>
+            <button className="nav-link" href="/" variant="secondary"></button>
           ) : (
             <button
               type="button"

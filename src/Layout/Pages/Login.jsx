@@ -79,6 +79,7 @@ export default function Login({ setUserId, setIsAdmin }) {
                 <Nav.Link
                   href="/login"
                   style={{
+                    variant: "secondary",
                     fontSize: "12px",
                     paddingBottom: "10px",
                     paddingTop: "15px",
@@ -91,6 +92,7 @@ export default function Login({ setUserId, setIsAdmin }) {
                 <Nav.Link
                   href="/register"
                   style={{
+                    variant: "secondary",
                     fontSize: "12px",
                     paddingBottom: "10px",
                     paddingTop: "15px",
@@ -139,7 +141,7 @@ export default function Login({ setUserId, setIsAdmin }) {
               </Form.Group>
               {!status?.isLoading ? (
                 <Button
-                  variant="primary"
+                  variant="secondary"
                   className="button3"
                   type="submit"
                   style={{
@@ -151,8 +153,18 @@ export default function Login({ setUserId, setIsAdmin }) {
                   SUBMIT
                 </Button>
               ) : (
-                <Button variant="primary" type="submit" disabled>
-                  Loading...
+                <Button
+                  variant="secondary"
+                  type="submit"
+                  disabled
+                  style={{
+                    width: "80px",
+                    fontSize: "12px",
+                    marginTop: "10px",
+                    backgroundColor: "rgb(121, 203, 187)",
+                  }}
+                >
+                  LOADING
                 </Button>
               )}
             </Form>

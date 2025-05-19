@@ -185,7 +185,7 @@ export default function Registration() {
                 />
               </Form.Group>
               {!status?.isLoading ? (
-                <Button variant="primary" type="submit"
+                <Button variant="secondary" type="submit"
                 className="button3"
                   style={{
                     width: "80px",
@@ -195,8 +195,14 @@ export default function Registration() {
                   SUBMIT
                 </Button>
               ) : (
-                <Button variant="primary" type="submit" disabled>
-                  Loading...
+                <Button variant="primary" type="submit" disabled
+                style={{
+                    width: "80px",
+                    fontSize: "12px",
+                    marginTop: "10px",
+                  }}
+                >
+                  LOADING
                 </Button>
               )}
             </Form>
