@@ -13,12 +13,21 @@ export default function AdminPage() {
   return (
     <>
       <div className="page">
-        <AdminNav />
         <Container data-bs-theme="dark">
+          <Row>
+            <Col className="navCol">
+              <AdminNav />
+            </Col>
+          </Row>
           <Row className="justify-content-md-center">
             <Col className="display-3 mt-4">OnPoint Admin Dashboard</Col>
           </Row>
-          <Row className="justify-content-md-center mt-4" xs={12} md={12}>
+          <Row
+            className="justify-content-md-center mt-4"
+            xs={12}
+            md={12}
+            lg={12}
+          >
             <Col>
               <InfoCard
                 bg="success"

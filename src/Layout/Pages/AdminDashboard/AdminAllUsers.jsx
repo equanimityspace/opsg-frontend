@@ -1,6 +1,5 @@
 import AdminNav from "../../../Features/Navigations/Navbars/AdminNav";
 import { useGetAllUsersQuery } from "../../../Slices/mainSlice";
-import "./adminAllUsers.css";
 
 import ListGroup from "react-bootstrap/ListGroup";
 import Spinner from "react-bootstrap/Spinner";
@@ -12,13 +11,13 @@ export default function AdminAllUsers() {
   const { data: users, error, isLoading } = useGetAllUsersQuery();
 
   return (
-    <Container>
-      <Row>
-        <Col className="navCol">
+    <Container data-bs-theme="dark" fluid>
+      <Row className="g-0">
+        <Col xs="auto" className="flex-shrink-0" style={{ width: "10rem" }}>
           <AdminNav />
         </Col>
-        <Col className="listCol">
-          <ListGroup className="listGroup">
+        <Col className="flex-grow-1 overflow-auto" lg={true}>
+          <ListGroup>
             {users ? (
               users.map((user) => {
                 const userId = user.id;
