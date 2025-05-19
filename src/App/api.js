@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { getToken } from "/src/utils/tokenService.jsx";
+import { getToken } from "/src/utils/tokenService.js";
 
 const BASE_URL = "https://opsg-backend.onrender.com";
 
