@@ -44,8 +44,8 @@ function App() {
         <Route path={`/user/:userId`} element={<UserPage />} />
         <Route path={`/profile/:userId`} element={<Profile />} />
 
-        <Route path="/admin/dashboard" element={<AdminPage />} />
-        <Route path="/admin/user" element={<AdminAllUsers />} />
+        <Route path={"/admin/dashboard"} element={<AdminPage />} />
+        <Route path={"/admin/user"} element={<AdminAllUsers />} />
         <Route path={`/admin/user/user/:userId`} element={<AdminUser />} />
       </Routes>
     </>
