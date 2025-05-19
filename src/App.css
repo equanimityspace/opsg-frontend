@@ -1,1 +1,14 @@
+.btn-custom3, .button3 {
+  border: none;
+  background-color: rgb(121, 203, 187);
+  font-size: "12px" ;
+  padding: 8px;
+  border-radius: 10%;
+  color: #000000;
+  font-weight: 200;
+}
 
+.formLabel {
+    font-size: 12px;
+    padding-left: 2px;
+}
