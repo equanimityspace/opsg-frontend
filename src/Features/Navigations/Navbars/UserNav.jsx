@@ -15,7 +15,7 @@ export const UserNav = (props) => {
 
   const handleClick = () => {
     localStorage.removeItem("token");
-    navigate("/login");
+    navigate("/");
   };
 
   // Button logic
