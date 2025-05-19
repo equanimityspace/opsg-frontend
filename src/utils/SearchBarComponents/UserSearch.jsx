@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import { getToken } from "../../utils/tokenService";
+import { Card, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function UserSearch() {
   const [term, setTerm] = useState("");
@@ -45,13 +47,23 @@ export default function UserSearch() {
         Search
       </button>
 
-      <ul>
-        {results.map((u) => (
-          <li key={u.id}>
-            {u.firstName} {u.lastName} ({u.email})
-          </li>
+      <Row xs={1} md={2} lg={3} className="g-4">
+        {results.map((user) => (
+          <Col key={user.id}>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {user.firstName} {user.lastName}
+                </Card.Title>
+                <Card.Text>({user.email})</Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <Link to={`/user/${user.id}`}>View Profile</Link>
+              </Card.Footer>
+            </Card>
+          </Col>
         ))}
-      </ul>
+      </Row>
     </div>
   );
 }
