@@ -75,63 +75,124 @@ export default function Registration() {
           <Card.Header>
             <Nav variant="tabs" defaultActiveKey="/register">
               <Nav.Item>
-                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/login"
+                  style={{
+                    fontSize: "12px",
+                    paddingBottom: "10px",
+                    paddingTop: "15px",
+                  }}
+                >LOGIN</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/register">Register</Nav.Link>
+                <Nav.Link href="/register"
+                  style={{
+                    fontSize: "12px",
+                    paddingBottom: "10px",
+                    paddingTop: "15px",
+                  }}>REGISTER</Nav.Link>
               </Nav.Item>
             </Nav>
           </Card.Header>
           <Card.Body>
             <Form onSubmit={submit}>
               <Form.Group className="mb-3" controlId="formBasicCompany">
-                <Form.Label>Company</Form.Label>
+                <Form.Label
+                  style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}>COMPANY</Form.Label>
                 <Form.Control
                   type="text"
                   name="company"
-                  placeholder="Company"
+                  placeholder="  Company"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicFirstName">
-                <Form.Label>First Name</Form.Label>
+                <Form.Label
+                style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
+                >FIRST NAME</Form.Label>
                 <Form.Control
                   type="text"
                   name="firstName"
-                  placeholder="First Name"
+                  placeholder="  First name"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicLastName">
-                <Form.Label>Last Name</Form.Label>
+                <Form.Label
+                  style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
+                >LAST NAME</Form.Label>
                 <Form.Control
                   type="text"
                   name="lastName"
-                  placeholder="Last Name"
+                  placeholder="  Last name"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>E-Mail</Form.Label>
+                <Form.Label
+               style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
+                >E-MAIL</Form.Label>
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="johndoe@email.com"
+                  placeholder="  johndoe@email.com"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label
+                style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
+                >PASSWORD</Form.Label>
                 <Form.Control
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="  Enter password"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                    paddingLeft: "3px",
+                  }}
                 />
               </Form.Group>
               {!status?.isLoading ? (
-                <Button variant="primary" type="submit">
-                  Submit
+                <Button variant="primary" type="submit"
+                className="button3"
+                  style={{
+                    width: "80px",
+                    fontSize: "12px",
+                    marginTop: "10px",
+                  }}>
+                  SUBMIT
                 </Button>
               ) : (
                 <Button variant="primary" type="submit" disabled>

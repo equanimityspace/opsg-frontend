@@ -115,6 +115,9 @@ export default function Login({ setUserId, setIsAdmin }) {
                   name="email"
                   placeholder="Enter email"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -127,8 +130,11 @@ export default function Login({ setUserId, setIsAdmin }) {
                 <Form.Control
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Enter password"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                  }}
                 />
               </Form.Group>
               {!status?.isLoading ? (
@@ -139,6 +145,7 @@ export default function Login({ setUserId, setIsAdmin }) {
                   style={{
                     width: "80px",
                     fontSize: "12px",
+                    marginTop: "10px",
                   }}
                 >
                   SUBMIT
