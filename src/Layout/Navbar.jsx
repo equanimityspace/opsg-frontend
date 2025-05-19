@@ -5,7 +5,7 @@ import { getToken, deleteToken } from "../utils/tokenService";
 import { useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import opsgLogo from "../Assets/img/opsg-logo.png";
-import "../Layout/navbar.css"
+import "../Layout/navbar.css";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -32,10 +32,7 @@ export default function NavBar() {
     navigate("/login");
   };
 
-
-
   const [isNotActive, setNotActive] = useState("true");
-
 
   // const backToProfile = () => {
   //   navigate(`/profile/${userId}`);
@@ -48,8 +45,8 @@ export default function NavBar() {
   return (
     <header>
       <nav className="navbar2 navbar-expand-sm bg-light2">
-          <div className="sidebar-header2">
-            <div className="nameLogo">
+        <div className="sidebar-header2">
+          <div className="nameLogo">
             <img
               src={opsgLogo}
               className="rounded-circle usr-image2"
@@ -59,11 +56,15 @@ export default function NavBar() {
               height={isNotActive ? "35" : "70"}
               width={isNotActive ? "35" : "70"}
             ></img>
-            <h6 style={{
+            <h6
+              style={{
                 marginLeft: "12px",
-              }}>OnPoint</h6>
+              }}
+            >
+              OnPoint
+            </h6>
           </div>
-          </div>
+        </div>
         {/* <button
           className="navbar-toggler"
           type="button"
@@ -78,36 +79,49 @@ export default function NavBar() {
 
         {/* <div className="collapse navbar-collapse" id="navbarNav" > */}
         <div className="collapse navbar-collapse">
-
-          <ul className="navbar-nav" 
-          style={{
-            paddingLeft: "20px",
-            fontSize: "12px",
-            width: "40%",
-            textAlign: "center",}} >
-
-
-
-              
+          <ul
+            className="navbar-nav"
+            style={{
+              paddingLeft: "20px",
+              fontSize: "12px",
+              width: "40%",
+              textAlign: "center",
+            }}
+          >
             <li className="nav-item active">
-              <a className="nav-link " href="/" style={{paddingLeft: "20px",  position: "relative"}}
+              <a
+                className="nav-link "
+                href="/"
+                style={{ paddingLeft: "20px", position: "relative" }}
               >
                 ABOUT
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link2" href="/ourservices" style={{paddingLeft: "50px",  position: "relative"}}>
+              <a
+                className="nav-link nav-link2"
+                href="/ourservices"
+                style={{ paddingLeft: "50px", position: "relative" }}
+              >
                 SERVICES
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link2" href="/contactForm" style={{paddingLeft: "50px",  position: "relative"}}>
+              <a
+                className="nav-link nav-link2"
+                href="/contactForm"
+                style={{ paddingLeft: "50px", position: "relative" }}
+              >
                 CONTACT
               </a>
             </li>
             <li className="nav-item active">
               {token ? (
-                <a className="nav-link nav-link2" href={`/user/${userId}`} style={{paddingLeft: "50px",  position: "relative"}}>
+                <a
+                  className="nav-link nav-link2"
+                  href={`/user/${userId}`}
+                  style={{ paddingLeft: "50px", position: "relative" }}
+                >
                   PROFILE
                 </a>
               ) : (
@@ -118,7 +132,10 @@ export default function NavBar() {
           {token ? (
             <button
               type="button"
-              style={{backgroundColor: "rgb(121, 203, 187)", fontSize: "12px"}}
+              style={{
+                backgroundColor: "rgb(121, 203, 187)",
+                fontSize: "12px",
+              }}
               className="button"
               onClick={handleLogout}
               navigate="/"
@@ -128,10 +145,11 @@ export default function NavBar() {
           ) : (
             <button
               type="button"
-
-              style={{backgroundColor: "rgb(121, 203, 187)", fontSize: "12px"}}
+              style={{
+                backgroundColor: "rgb(121, 203, 187)",
+                fontSize: "12px",
+              }}
               className="button"
-
               onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
             >
               {isLoggedIn}
@@ -142,8 +160,10 @@ export default function NavBar() {
           ) : (
             <button
               type="button"
-
-              style={{backgroundColor: "rgb(121, 203, 187)", fontSize: "12px"}}
+              style={{
+                backgroundColor: "rgb(121, 203, 187)",
+                fontSize: "12px",
+              }}
               className="button"
               width="20px"
               onClick={() => navigate("/register")}
@@ -151,7 +171,7 @@ export default function NavBar() {
               REGISTER
             </button>
           )}
-          </div>
+        </div>
       </nav>
     </header>
   );

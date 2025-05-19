@@ -1,8 +1,22 @@
 .page {
-  background-color: rgb(48, 48, 48);
+  background-color: #136f63;
   color: white;
 }
 
 .small-image {
   height: 8rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.navCol {
+  width: 30px;
+  flex-shrink: 0;
 }

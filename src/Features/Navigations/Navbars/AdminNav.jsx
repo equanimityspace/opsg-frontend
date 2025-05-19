@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./AdminNav.css";
 
+import { deleteToken } from "../../../utils/tokenService";
+
 import opsgLogo from "../../../assets/img/opsg-logo.png";
 
 const AdminNav = (props) => {
-  const [isNotActive, setNotActive] = useState("true");
-  var arrowRight = <i class="bi bi-arrow-right-circle-fill"></i>;
-  var crossIcon = <i class="bi bi-x-circle"></i>;
+  const [isNotActive, setNotActive] = useState(false);
+  var arrowRight = <i className="bi bi-arrow-right-circle-fill"></i>;
+  var crossIcon = <i className="bi bi-x-circle"></i>;
   return (
     <div>
       <div className="wrapper">
@@ -33,16 +35,18 @@ const AdminNav = (props) => {
 
           <ul className="list-unstyled components">
             <li className="list-item">
-              <i class="bi bi-house"></i>
+              <i className="bi bi-house"></i>
               <Link to="/admin/dashboard">Home</Link>
             </li>
             <li className="list-item">
-              <i class="bi bi-people-fill"></i>
+              <i className="bi bi-people-fill"></i>
               <Link to="/admin/users">Users</Link>
             </li>
             <li className="list-item">
-              <i class="bi bi-box-arrow-left"></i>
-              <Link to="/">Log out</Link>
+              <i className="bi bi-box-arrow-left"></i>
+              <Link to="/" onClick={() => deleteToken()}>
+                Log out
+              </Link>
             </li>
           </ul>
         </nav>
