@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./AdminNav.css";
 
+import { deleteToken } from "../../../utils/tokenService";
+
 import opsgLogo from "../../../assets/img/opsg-logo.png";
 
 const AdminNav = (props) => {
@@ -42,7 +44,9 @@ const AdminNav = (props) => {
             </li>
             <li className="list-item">
               <i className="bi bi-box-arrow-left"></i>
-              <Link to="/">Log out</Link>
+              <Link to="/" onClick={() => deleteToken()}>
+                Log out
+              </Link>
             </li>
           </ul>
         </nav>
