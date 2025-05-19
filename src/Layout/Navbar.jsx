@@ -5,6 +5,7 @@ import { getToken, deleteToken } from "../utils/tokenService";
 import { useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import opsgLogo from "../Assets/img/opsg-logo.png";
+import "../Layout/navbar.css";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -43,24 +44,26 @@ export default function NavBar() {
   // const token =
   return (
     <header>
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+      <nav className="navbar2 navbar-expand-sm bg-light2">
         <div className="sidebar-header2">
-          <img
-            src={opsgLogo}
-            className="rounded-circle usr-image2"
-            style={{
-              marginLeft: "25px",
-            }}
-            height={isNotActive ? "35" : "70"}
-            width={isNotActive ? "35" : "70"}
-          ></img>
-          <h6
-            style={{
-              marginLeft: "12px",
-            }}
-          >
-            OnPoint
-          </h6>
+          <div className="nameLogo">
+            <img
+              src={opsgLogo}
+              className="rounded-circle usr-image2"
+              style={{
+                marginLeft: "25px",
+              }}
+              height={isNotActive ? "35" : "70"}
+              width={isNotActive ? "35" : "70"}
+            ></img>
+            <h6
+              style={{
+                marginLeft: "12px",
+              }}
+            >
+              OnPoint
+            </h6>
+          </div>
         </div>
         {/* <button
           className="navbar-toggler"
@@ -74,7 +77,8 @@ export default function NavBar() {
           <span className="navbar-toggler-icon"></span>
         </button> */}
 
-        <div className="collapse navbar-collapse" id="navbarNav">
+        {/* <div className="collapse navbar-collapse" id="navbarNav" > */}
+        <div className="collapse navbar-collapse">
           <ul
             className="navbar-nav"
             style={{
@@ -85,7 +89,11 @@ export default function NavBar() {
             }}
           >
             <li className="nav-item active">
-              <a className="nav-link " href="/" style={{ paddingLeft: "20px" }}>
+              <a
+                className="nav-link "
+                href="/"
+                style={{ paddingLeft: "20px", position: "relative" }}
+              >
                 ABOUT
               </a>
             </li>
@@ -93,7 +101,7 @@ export default function NavBar() {
               <a
                 className="nav-link nav-link2"
                 href="/ourservices"
-                style={{ paddingLeft: "50px" }}
+                style={{ paddingLeft: "50px", position: "relative" }}
               >
                 SERVICES
               </a>
@@ -102,7 +110,7 @@ export default function NavBar() {
               <a
                 className="nav-link nav-link2"
                 href="/contactForm"
-                style={{ paddingLeft: "50px" }}
+                style={{ paddingLeft: "50px", position: "relative" }}
               >
                 CONTACT
               </a>
@@ -112,7 +120,7 @@ export default function NavBar() {
                 <a
                   className="nav-link nav-link2"
                   href={`/user/${userId}`}
-                  style={{ paddingLeft: "50px" }}
+                  style={{ paddingLeft: "50px", position: "relative" }}
                 >
                   PROFILE
                 </a>
@@ -128,7 +136,7 @@ export default function NavBar() {
                 backgroundColor: "rgb(121, 203, 187)",
                 fontSize: "12px",
               }}
-              className="btn btn-sm"
+              className="button"
               onClick={handleLogout}
               navigate="/"
             >
@@ -141,7 +149,7 @@ export default function NavBar() {
                 backgroundColor: "rgb(121, 203, 187)",
                 fontSize: "12px",
               }}
-              className="btn btn-info btn-sm mx-3"
+              className="button"
               onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
             >
               {isLoggedIn}
@@ -156,7 +164,7 @@ export default function NavBar() {
                 backgroundColor: "rgb(121, 203, 187)",
                 fontSize: "12px",
               }}
-              className="btn btn-info btn-sm"
+              className="button"
               width="20px"
               onClick={() => navigate("/register")}
             >
