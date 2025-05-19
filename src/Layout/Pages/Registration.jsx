@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
+import ReactiveButton from "reactive-button";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -20,6 +21,9 @@ export default function Registration() {
 
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
+  
+  const [loading, setLoading] = useState(false);
+
 
   // stores data from login form
   const [formData, setFormData] = useState({
@@ -184,7 +188,25 @@ export default function Registration() {
                   }}
                 />
               </Form.Group>
-              {!status?.isLoading ? (
+
+
+                <ReactiveButton
+                  rounded
+                  buttonState={loading ? 'loading' : 'idle'}
+                  idleText={'SUBMIT'}
+                  loadingText={'Loading'}
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    width: "80px",
+                    fontSize: "12px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                    // marginTop: "10px",
+                  }}>
+                </ReactiveButton>
+
+              {/* {!status?.isLoading ? (
                 <Button variant="secondary" type="submit"
                 className="button3"
                   style={{
@@ -204,7 +226,9 @@ export default function Registration() {
                 >
                   LOADING
                 </Button>
-              )}
+              )} */}
+
+
             </Form>
           </Card.Body>
         </Card>

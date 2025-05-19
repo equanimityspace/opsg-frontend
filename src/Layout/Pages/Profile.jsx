@@ -13,6 +13,7 @@ import Row from "react-bootstrap/Row";
 import InfoModal from "../../utils/Modal";
 import UserPage from "./UserDash/UserDashboard";
 import "./../../app.css"
+import ReactiveButton from "reactive-button";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -26,6 +27,8 @@ export default function Profile() {
     lastName: "",
     email: "",
   });
+
+
 
   const [modalShow, setModalShow] = useState(false);
   const [modalHeading, setModalHeading] = useState("");
@@ -120,9 +123,30 @@ export default function Profile() {
                 fontSize: "14px",
                 marginTop: "10px",
               }}
-            >
-              {editMode ? "EDIT PROFILE" : "MY PROFILE"}</h2>
-            {!editMode && (
+            >{editMode ? "EDIT PROFILE" : "MY PROFILE"}</h2>
+{/* TESTING */}
+        {!editMode && (
+              <ReactiveButton
+                  onClick={() => setEditMode(true)}
+                  rounded
+                  className="button3"
+                  variant="secondary"
+                  type={'submit'}
+                  idleText={'EDIT PROFILE'}
+                  style={{
+                    marginRight: "5px",
+                    width: "140px",
+                    fontSize: "12px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                  }}>
+
+              </ReactiveButton>
+            )}
+
+
+
+
+            {/* {!editMode && (
               <Button
                   className="button3"
                   variant="secondary"
@@ -136,7 +160,7 @@ export default function Profile() {
               >
                 EDIT PROFILE
               </Button>
-            )}
+            )} */}
           </div>
 
           <Form onSubmit={handleSubmit}>
@@ -207,7 +231,26 @@ export default function Profile() {
                   </Form.Group>
                   {!showPwdForm && (
                     <Col xs="auto">
-                      <Button
+
+
+                <ReactiveButton
+                  rounded
+                  onClick={() => setShowPwdForm(true)}
+                  idleText={'CHANGE PASSWORD'}
+                  loadingText={'Loading'}
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    marginRight: "5px",
+                    width: "150px",
+                    fontSize: "12px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                  }}>
+                </ReactiveButton>
+
+
+                      {/* <Button
                         variant="secondary"
                         onClick={() => setShowPwdForm(true)}
                         className="button3"
@@ -219,7 +262,9 @@ export default function Profile() {
                           borderRadius: "7%",
                         }}
                       >CHANGE PASSWORD
-                      </Button>
+                      </Button> */}
+
+
                     </Col>
                   )}
                 </Row>
@@ -271,7 +316,7 @@ export default function Profile() {
                     )}
 
                     <div className="d-flex gap-2 mt-2">
-                      <Button variant="secondary" onClick={handlePasswordChange}
+                      {/* <Button variant="secondary" onClick={handlePasswordChange}
                         className="button3"
                         style={{
                           width: "80px",
@@ -280,8 +325,48 @@ export default function Profile() {
                         }}
                       >
                         CONFIRM
-                      </Button>
-                      <Button
+                      </Button> */}
+
+
+                <ReactiveButton
+                  rounded
+                  onClick={handlePasswordChange}
+                  idleText={'SAVE'}
+                  loadingText={'Loading'}
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    marginRight: "5px",
+                    width: "90px",
+                    fontSize: "12px",
+                    marginTop: "8px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                  }}>
+                </ReactiveButton>
+
+
+
+                <ReactiveButton
+                  onClick={handleCancel}
+                  rounded
+                  buttonState={isLoading ? 'loading' : 'idle'}
+                  idleText={'CANCEL'}
+                  loadingText={'Loading'}
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    width: "90px",
+                    fontSize: "12px",
+                    marginTop: "8px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                  }}>
+                </ReactiveButton>
+
+
+
+                      {/* <Button
                         variant="secondary"
                         onClick={() => {
                           setShowPwdForm(false);
@@ -295,7 +380,7 @@ export default function Profile() {
                         }}
                       >
                         CANCEL
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 )}
@@ -304,7 +389,24 @@ export default function Profile() {
             <div className="d-flex justify-content-end">
               {editMode && (
                 <>
-                  <Button variant="secondary" type="submit"
+
+              <ReactiveButton
+                  rounded
+                  buttonState={isLoading ? 'loading' : 'idle'}
+                  idleText={'SAVE CHANGES'}
+                  loadingText={'Loading'}
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    marginRight: "18px",
+                    width: "150px",
+                    fontSize: "12px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                  }}>
+                </ReactiveButton>
+
+                  {/* <Button variant="secondary" type="submit"
                   className="button3"
                         style={{
                           marginRight: "8px",
@@ -317,8 +419,28 @@ export default function Profile() {
                         }}
                   >
                     SAVE CHANGES
-                  </Button>
-                  <Button
+                  </Button> */}
+
+                <ReactiveButton
+                  onClick={handleCancel}
+                  rounded
+                  buttonState={isLoading ? 'loading' : 'idle'}
+                  idleText={'CANCEL CHANGES'}
+                  loadingText={'Loading'}
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    width: "150px",
+                    fontSize: "12px",
+                    marginRight: "5px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                  }}>
+                </ReactiveButton>
+
+
+
+                  {/* <Button
                     variant="secondary"
                     onClick={handleCancel}
                     // className="me-2"
@@ -334,7 +456,7 @@ export default function Profile() {
                         }}
                   >
                     CANCEL CHANGES
-                  </Button>
+                  </Button> */}
                 </>
               )}
             </div>

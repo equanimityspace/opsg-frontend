@@ -3,6 +3,7 @@ import { useLoginMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
 import NavBar from "../Navbar";
 import "../../app.css";
+import ReactiveButton from "reactive-button";
 
 import InfoModal from "../../utils/Modal";
 
@@ -23,9 +24,9 @@ export default function Login({ setUserId, setIsAdmin }) {
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
 
-  // //attempting to store user role at login
-  // const data = await response.JSON();
-  // localStorage.setItem("role", data.role);
+  //TESTING
+const [loading, setLoading] = useState(false);
+  
 
   // stores data from login form
   const [formData, setFormData] = useState({
@@ -139,6 +140,26 @@ export default function Login({ setUserId, setIsAdmin }) {
                   }}
                 />
               </Form.Group>
+
+          {/* // TESTING */}
+                <ReactiveButton
+                  rounded
+                  buttonState={loading ? 'loading' : 'idle'}
+                  idleText={'SUBMIT'}
+                  loadingText={'Loading'}
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    width: "80px",
+                    fontSize: "12px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                    // marginTop: "10px",
+                  }}>
+                </ReactiveButton>
+{/* 
+
+
               {!status?.isLoading ? (
                 <Button
                   variant="secondary"
@@ -166,7 +187,7 @@ export default function Login({ setUserId, setIsAdmin }) {
                 >
                   LOADING
                 </Button>
-              )}
+              )} */}
             </Form>
           </Card.Body>
         </Card>

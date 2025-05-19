@@ -6,12 +6,14 @@ import { useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import opsgLogo from "../Assets/img/opsg-logo.png";
 import "../Layout/navbar.css";
+import ReactiveButton from "reactive-button";
 
 export default function NavBar() {
   const navigate = useNavigate();
   const token = getToken();
 
   const [isLoggedIn, setIsLoggedIn] = useState("Login");
+  const [isLoading, setLoading] = useState(false);
 
   let userId;
   if (token) {
@@ -94,6 +96,7 @@ export default function NavBar() {
             <li className="nav-item active">
               <a
                 className="nav-link "
+                variant="secondary"
                 href="/"
                 style={{ paddingLeft: "20px", position: "relative" }}
               >
@@ -132,7 +135,75 @@ export default function NavBar() {
               )}
             </li>
           </ul>
+
+            {/* <ReactiveButton
+                  rounded
+                  buttonState={isLoading ? 'loading' : 'idle'}
+                  idleText={'LOGIN'}
+                  loadingText={'Loading'}
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    width: "80px",
+                    fontSize: "12px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                  }}>
+            </ReactiveButton> */}
+
           {token ? (
+            <ReactiveButton
+              rounded
+              idleText={'LOGOUT'}
+              type="button"
+              variant="secondary"
+              style={{
+                width: "80px",
+                backgroundColor: "rgb(121, 203, 187)",
+                fontSize: "12px",
+              }}
+              className="button"
+              onClick={handleLogout}
+              navigate="/"
+            >
+              {isLoggedIn}
+            </ReactiveButton>
+          ) : (
+            <ReactiveButton
+              rounded                  
+              idleText={'LOGIN'}
+              type="button"
+              variant="secondary"
+              style={{
+                marginRight: "5px",
+                backgroundColor: "rgb(121, 203, 187)",
+                fontSize: "12px",
+              }}
+              className="button"
+              onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
+            >
+              {isLoggedIn}
+            </ReactiveButton>
+          )}
+          {token ? (
+            <button className="nav-link" href="/" variant="secondary"></button>
+          ) : (
+            <ReactiveButton
+              rounded
+              idleText={'REGISTER'}
+              type="button"
+              style={{
+                backgroundColor: "rgb(121, 203, 187)",
+                fontSize: "12px",
+              }}
+              className="button"
+              onClick={() => navigate("/register")}
+            >
+            </ReactiveButton>
+
+
+
+          /* {token ? (
             <button
               type="button"
               variant="secondary"
@@ -174,7 +245,7 @@ export default function NavBar() {
               onClick={() => navigate("/register")}
             >
               REGISTER
-            </button>
+            </button> */
           )}
         </div>
       </nav>
