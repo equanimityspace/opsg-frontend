@@ -15,7 +15,7 @@ export const UserNav = (props) => {
 
   const handleClick = () => {
     localStorage.removeItem("token");
-    navigate("/login");
+    navigate("/");
   };
 
   // Button logic
@@ -56,13 +56,21 @@ export const UserNav = (props) => {
 
           <ul className="list-unstyled components">
             <li className="list-item">
-              <Button onClick={handleHomeClick} className="home-click">
+              <Button
+                onClick={handleHomeClick}
+                variant="link"
+                className="icon-btn"
+              >
                 <i className="bi bi-house"></i>
               </Button>
               <Link to="/">Home</Link>
             </li>
             <li className="list-item">
-              <Button onClick={handleInvoiceClick} className="invoice-click">
+              <Button
+                onClick={handleInvoiceClick}
+                variant="link"
+                className="icon-btn"
+              >
                 <i className="bi bi-people-fill"></i>
               </Button>
               <Link to="/admin/users">Invoices</Link>
@@ -70,14 +78,15 @@ export const UserNav = (props) => {
             <li className="list-item-unstyled">
               <Button
                 onClick={handleEditProfileClick}
-                className="edit-profile-click"
+                variant="link"
+                className="icon-btn"
               >
                 <i className="bi bi-gear"></i>
               </Button>
               <Link to={`/profile/${userId}`}>Edit profile</Link>
             </li>
             <li className="list-item">
-              <Button onClick={handleClick} className="Logout-icon-click">
+              <Button onClick={handleClick} variant="link" className="icon-btn">
                 <i className="bi bi-box-arrow-left"></i>
               </Button>
               <Link to="/" onClick={handleClick}>
