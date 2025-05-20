@@ -52,13 +52,18 @@ export default function UserSearch() {
           <Col key={user.id}>
             <Card>
               <Card.Body>
-                <Card.Title>
+                <Card.Title className="text-center">
                   {user.firstName} {user.lastName}
                 </Card.Title>
-                <Card.Text>({user.email})</Card.Text>
+                <Card.Text className="text-center">({user.email})</Card.Text>
               </Card.Body>
-              <Card.Footer>
-                <Link to={`/user/${user.id}`}>View Profile</Link>
+              <Card.Footer className="text-center">
+                <Link
+                  to={`/user/${user.id}`}
+                  className="btn btn-sm btn-outline-primary"
+                >
+                  View Profile
+                </Link>
               </Card.Footer>
             </Card>
           </Col>
