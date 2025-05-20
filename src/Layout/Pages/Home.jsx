@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Row, Col, Image, Container } from "react-bootstrap";
 // import React from "react";
 import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
+import opsgLogo from "../../Assets/img/opsg-logo.png";
 import nurseSmiling from "../../Assets/img/nurseSmiling.jpg"
 import NavBar from "../Navbar";
 import AnimationCountUp from "../../utils/AnimationCountUp";
@@ -27,16 +28,30 @@ const Home = () => {
 
   return (
     <div className="background">
+    <div className="backgroundAccent">
       {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
       <NavBar />
-      <Container className="main mt-5" fluid>
-        {/* animate fade in going down */}
-        <motion.div
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          custom={-1} // make y negative, so fade in from top moving down
+      <div className="nameLogo">
+        <div className="logoContainer">
+                  <img
+                    src={opsgLogo}
+                    // className="rounded-circle usr-image2"
+                    style={{
+                      width: "auto",
+                      height: "100px",
+                    }}
+                  ></img>
+            <h3 style={{fontWeight: "200", paddingTop: "32px", paddingLeft: "10px"}}>OnPoint Solutions Group</h3>
+        </div>
+
+          <Container className="main mt-5" fluid>
+            {/* animate fade in going down */}
+            <motion.div
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={-1} // make y negative, so fade in from top moving down
         >
           <Row className="justify-content-md-center">
             <Col className="display-1" md="auto">
@@ -66,8 +81,15 @@ const Home = () => {
           custom={1} // make y positive, so fade in from bottom moving up
         >
           <Row>
-            <Col md="auto">
-              <Image className="mainImage" style={{width: "90%", }} src={nurseSmiling} fluid rounded thumbnail />
+            <Col md="auto" style={{textAlign: "center"}}>
+              <Image 
+              className="mainImage" 
+              style={{
+                margin: "auto",
+                display: "block",
+                width: "auto", 
+                maxHeight: "600px",
+                }} src={nurseSmiling} fluid rounded thumbnail alt="Nurse Smiling" loading="lazy"/>
             </Col>
           </Row>
         </motion.div>
@@ -82,6 +104,8 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
+      </div>
+    </div>
     </div>
   );
 };

@@ -61,8 +61,10 @@ const [loading, setLoading] = useState(false);
 
   return (
     <>
+ <div className="background">
+    <div className="backgroundAccent">
       <NavBar />
-      <div className="d-flex justify-content-center vh-80">
+      <div  style={{ paddingTop: '120px' }} className="d-flex justify-content-center vh-80">
         {show ? (
           <InfoModal
             show={show}
@@ -73,7 +75,7 @@ const [loading, setLoading] = useState(false);
         ) : (
           <></>
         )}
-        <Card className="w-50 mt-5">
+        <Card className="w-50 mt-5" style={{display: "flex", }}>
           <Card.Header>
             <Nav variant="tabs" defaultActiveKey="/login">
               <Nav.Item>
@@ -157,41 +159,12 @@ const [loading, setLoading] = useState(false);
                     // marginTop: "10px",
                   }}>
                 </ReactiveButton>
-{/* 
-
-
-              {!status?.isLoading ? (
-                <Button
-                  variant="secondary"
-                  className="button3"
-                  type="submit"
-                  style={{
-                    width: "80px",
-                    fontSize: "12px",
-                    marginTop: "10px",
-                  }}
-                >
-                  SUBMIT
-                </Button>
-              ) : (
-                <Button
-                  variant="secondary"
-                  type="submit"
-                  disabled
-                  style={{
-                    width: "80px",
-                    fontSize: "12px",
-                    marginTop: "10px",
-                    backgroundColor: "rgb(121, 203, 187)",
-                  }}
-                >
-                  LOADING
-                </Button>
-              )} */}
             </Form>
           </Card.Body>
         </Card>
+        </div>
       </div>
+    </div>
     </>
   );
 }

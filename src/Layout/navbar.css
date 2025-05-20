@@ -17,7 +17,8 @@
 }
 
 .nav-item {
-  padding-right: 60px
+  
+  /* padding-right: 80px */
 }
 /* .btn-custom2, .button {
   size: small;
@@ -54,10 +55,11 @@
     unicode-bidi: isolate;
 } */
 
-/* .bg-light2 {
+.bg-light2 {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
-} */
+    background-color: #ffffff;  
+    /* background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important; */
+}
 
 /* .navbar2 {
     --bs-navbar-padding-x: 0;
