@@ -1,3 +1,8 @@
+.background {
+  background-color: #e5fffd;
+  height: 700px;
+}
+
 .btn-custom3, .button3 {
   border: none;
   background-color: rgb(121, 203, 187);
@@ -11,4 +16,14 @@
 .formLabel {
     font-size: 12px;
     padding-left: 2px;
+}
+
+.secondHeader {
+  display: inline-flex;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.mainImage {
+  
 }

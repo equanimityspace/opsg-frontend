@@ -201,7 +201,7 @@ export default function Registration() {
                   style={{
                     width: "80px",
                     fontSize: "12px",
-                    backgroundColor: "rgb(121, 203, 187)"
+                    backgroundColor: "#558e89",
                     // marginTop: "10px",
                   }}>
                 </ReactiveButton>

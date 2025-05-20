@@ -133,16 +133,18 @@ export default function Profile() {
             </h2>
             {!editMode && (
               <ReactiveButton
+
                 onClick={() => setEditMode(true)}
                 rounded
                 className="button3"
                 variant="secondary"
+                type={'submit'}
                 idleText="EDIT PROFILE"
                 style={{
                   marginRight: "5px",
                   width: "140px",
                   fontSize: "12px",
-                  backgroundColor: "rgb(121, 203, 187)",
+                  backgroundColor: "#558e89",
                 }}
               />
             )}
@@ -229,7 +231,7 @@ export default function Profile() {
                             marginRight: "5px",
                             width: "150px",
                             fontSize: "12px",
-                            backgroundColor: "rgb(121, 203, 187)",
+                            backgroundColor: "#558e89",
                           }}
                         />
                       </Col>
@@ -250,7 +252,7 @@ export default function Profile() {
                         marginRight: "18px",
                         width: "150px",
                         fontSize: "12px",
-                        backgroundColor: "rgb(121, 203, 187)",
+                        backgroundColor: "#558e89",
                       }}
                     />
                     <ReactiveButton
@@ -264,9 +266,10 @@ export default function Profile() {
                         width: "150px",
                         fontSize: "12px",
                         marginRight: "5px",
-                        backgroundColor: "rgb(121, 203, 187)",
+                        backgroundColor: "#558e89",
                       }}
                     />
+
                   </div>
                 )}
               </>
@@ -314,6 +317,7 @@ export default function Profile() {
                     rounded
                     idleText="SAVE"
                     loadingText="Loading"
+
                     variant="secondary"
                     className="button3"
                     style={{
@@ -321,7 +325,7 @@ export default function Profile() {
                       width: "90px",
                       fontSize: "12px",
                       marginTop: "8px",
-                      backgroundColor: "rgb(121, 203, 187)",
+                      backgroundColor: "#558e89",
                     }}
                   />
                   <ReactiveButton
@@ -335,7 +339,7 @@ export default function Profile() {
                       width: "90px",
                       fontSize: "12px",
                       marginTop: "8px",
-                      backgroundColor: "rgb(121, 203, 187)",
+                      backgroundColor: "#558e89",
                     }}
                   />
                 </div>

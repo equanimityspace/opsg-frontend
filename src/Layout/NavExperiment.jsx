@@ -8,7 +8,7 @@ import opsgLogo from "../Assets/img/opsg-logo.png";
 import "../Layout/navbar.css";
 import ReactiveButton from "reactive-button";
 
-export default function NavBar() {
+export default function NavBarExperiment() {
   const navigate = useNavigate();
   const token = getToken();
 
@@ -36,62 +36,44 @@ export default function NavBar() {
 
   const [isNotActive, setNotActive] = useState("true");
 
-  // const backToProfile = () => {
-  //   navigate(`/profile/${userId}`);
-  // };
-
-  //handle login/logout button change
-  // const buttonStatus = token ? "Log Out" : "Login";
-
-  // const token =
   return (
     <header>
-<nav className="navbar navbar-inverse bg-light2">
-  <div className="container-fluid" style={{diplay: "contents", paddingRight: "30px"}}>
-    <div className="navbar-header">
-          <div className="nameLogo navbar-brand">
+        <a className="navbarLayout"></a>
+        <nav className="navContainer"
+        style={{
+            display: "inlineGrid",
+            gridTemplateRows: "auto auto auto",
+        }}
+        >
+          <div className="nameLogo"
+            style={{
+              zIndex: "0",
+            }}
+          >
             <img
               src={opsgLogo}
-              className="rounded-circle usr-image2 nav navbar-nav"
+              className="rounded-circle usr-image2"
               style={{
-                marginLeft: "25px",
+                marginLeft: "30px",
+                marginTop: "18px",
               }}
               height={isNotActive ? "35" : "70"}
               width={isNotActive ? "35" : "70"}
             ></img>
             <h6
               style={{
-                marginLeft: "12px",
+                marginLeft: "17px",
               }}
             >
               OnPoint
             </h6>
           </div>
-        </div>
-
-
-        {/* <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button> */}
-
-        {/* <div className="collapse navbar-collapse" id="navbarNav" > */}
-          
-          <ul
-            className="nav navbar-nav  sidebar-header2"
+        <div>
+          <ul 
+            className="nav justify-content-start"
             style={{
+              paddingLeft: "100px",
               fontSize: "12px",
-              width: "40%",
-              display: "flex",
-              flexDirection: "row",
-              marginBottom: "15px",
             }}
           >
             <li className="nav-item active">
@@ -99,24 +81,34 @@ export default function NavBar() {
                 className="nav-link"
                 variant="secondary"
                 href="/"
+                style={{ 
+                  maxWidth: "300px",
+                  color: "black",
+                }}
               >
                 ABOUT
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="nav-link"
+                className="nav-link nav-link2"
                 href="/ourservices"
-                
+                style={{ 
+                  maxWidth: "300px",
+                  color: "black",              
+                }}
               >
                 SERVICES
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="nav-link"
+                className="nav-link nav-link2"
                 href="/contactForm"
-               
+                style={{ 
+                  maxWidth: "300px",
+                  color: "black",            
+                }}
               >
                 CONTACT
               </a>
@@ -124,39 +116,22 @@ export default function NavBar() {
             <li className="nav-item active">
               {token ? (
                 <a
-                  className="nav-link"
+                  className="nav-link nav-link2"
                   href={`/user/${userId}`}
-               
+                  style={{ 
+                    maxWidth: "300px",
+                    color: "black",    
+                  }}
                 >
                   PROFILE
                 </a>
               ) : (
-                <a className="nav-link" href="/"></a>
+                <a className="nav-link nav-link2" href="/"></a>
               )}
             </li>
-            </ul>
-  
-
-            {/* <ReactiveButton
-                  rounded
-                  buttonState={isLoading ? 'loading' : 'idle'}
-                  idleText={'LOGIN'}
-                  loadingText={'Loading'}
-                  variant="secondary"
-                  className="button3"
-                  type="submit"
-                  style={{
-                    width: "80px",
-                    fontSize: "12px",
-                    backgroundColor: "rgb(121, 203, 187)"
-                  }}>
-            </ReactiveButton> */}
-            <ul className="nav navbar-nav navbar-right" style={{display: "flex",
-              flexDirection: "row"
-              }}>
-      <li>
-        <span style={{ 
-              marginRight: "15px",}}>
+          </ul>
+        </div>
+        <div className="buttonContainer">
           {token ? (
             <ReactiveButton
               rounded
@@ -165,10 +140,10 @@ export default function NavBar() {
               variant="secondary"
               style={{
                 width: "80px",
-                backgroundColor: "#558e89",
+                backgroundColor: "rgb(121, 203, 187)",
                 fontSize: "12px",
               }}
-              // className=""
+              className="button"
               onClick={handleLogout}
               navigate="/"
             >
@@ -181,20 +156,18 @@ export default function NavBar() {
               type="button"
               variant="secondary"
               style={{
-                marginRight: "5px",
-                backgroundColor: "#558e89",
+                backgroundColor: "rgb(121, 203, 187)",
                 fontSize: "12px",
+                align: "center",
               }}
-              className="navbar-right"
+              className="button"
               onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
             >
               {isLoggedIn}
             </ReactiveButton>
           )}
-          </span>
-          </li>
-          <li>
-            <span>
+          </div>
+          <div className="buttonContainer">
           {token ? (
             <button className="nav-link" href="/" variant="secondary"></button>
           ) : (
@@ -203,70 +176,21 @@ export default function NavBar() {
               idleText={'REGISTER'}
               type="button"
               style={{
-                backgroundColor: "#558e89",
+                backgroundColor: "rgb(121, 203, 187)",
                 fontSize: "12px",
               }}
-              // className="button"
+              className="button"
               onClick={() => navigate("/register")}
             >
             </ReactiveButton>
-
-            
-
-
-
-          /* {token ? (
-            <button
-              type="button"
-              variant="secondary"
-              style={{
-                backgroundColor: "rgb(121, 203, 187)",
-                fontSize: "12px",
-              }}
-              className="button"
-              onClick={handleLogout}
-              navigate="/"
-            >
-              {isLoggedIn}
-            </button>
-          ) : (
-            <button
-              type="button"
-              variant="secondary"
-              style={{
-                backgroundColor: "rgb(121, 203, 187)",
-                fontSize: "12px",
-              }}
-              className="button"
-              onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
-            >
-              {isLoggedIn}
-            </button>
           )}
-          {token ? (
-            <button className="nav-link" href="/" variant="secondary"></button>
-          ) : (
-            <button
-              type="button"
-              style={{
-                backgroundColor: "rgb(121, 203, 187)",
-                fontSize: "12px",
-              }}
-              className="button"
-              width="20px"
-              onClick={() => navigate("/register")}
-            >
-              REGISTER
-            </button> */
-          )}
-          </span>
-          </li>
-           </ul>
         </div>
       </nav>
     </header>
   );
 }
+
+
 
 //TESTING NEW NAVBAR
 // const StickyNavigation = () => {
