@@ -43,7 +43,7 @@ const AdminNav = (props) => {
               <Link to="/admin/user">Users</Link>
             </li>
             <li className="icon-btn">
-              <i class="bi bi-search"></i>
+              <i className="bi bi-search"></i>
               <Link to="/admin/search">Search Users</Link>
             </li>
             <li className="list-item">
