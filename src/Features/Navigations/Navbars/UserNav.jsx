@@ -71,6 +71,7 @@ export const UserNav = (props) => {
               style={{
                 color: "black",
                 fontWeight: "200",
+                fontSize: "15px",
                 }}>HOME</Link>
             </li>
             <li className="list-item">
@@ -85,6 +86,7 @@ export const UserNav = (props) => {
               style={{
                 color: "black",
                 fontWeight: "200",
+                fontSize: "15px",
                 }}>INVOICES</Link>
             </li>
             <li className="list-item-unstyled">
@@ -99,6 +101,7 @@ export const UserNav = (props) => {
                style={{
                 color: "black",
                 fontWeight: "200",
+                fontSize: "15px",
                 }}
               >EDIT PROFILE</Link>
             </li>
@@ -110,6 +113,7 @@ export const UserNav = (props) => {
                style={{
                 color: "black",
                 fontWeight: "200",
+                fontSize: "15px",
                 }}
               >
                 LOG OUT

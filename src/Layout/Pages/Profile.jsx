@@ -118,12 +118,11 @@ export default function Profile() {
 
   return (
     <>
+    <UserPage />
      <div className="background">
       <div className="backgroundAccent">
-      <UserPage />
       <div
-        style={{ paddingTop: "60px" }}
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex justify-content-center align-items-center" style={{position: "absolute", top: "40%", right: "30%"}}
       >
         <div
           className="bg-white rounded shadow p-4"

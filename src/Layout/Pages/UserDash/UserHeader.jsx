@@ -7,9 +7,9 @@ import UserNav from "../../../Features/Navigations/Navbars/UserNav";
 
 export default function UserHeader() {
   return (
-    <div className="page">
-      <AdminNav />
-      <Container style={{color: "#558e89"}}>
+    <div className="page" style={{ backgroundColor: "none" }}>
+      <UserNav />
+      <Container>
         <Row className="justify-content-md-center">
           <Col xs={1} md={4}>
             <Image src={opsgLogo} roundedCircle className="small-image" />

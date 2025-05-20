@@ -89,6 +89,8 @@ const Home = () => {
                 display: "block",
                 width: "auto", 
                 maxHeight: "600px",
+                position: "absolute", 
+                left: "17.5%",
                 }} src={nurseSmiling} fluid rounded thumbnail alt="Nurse Smiling" loading="lazy"/>
             </Col>
           </Row>
@@ -97,13 +99,16 @@ const Home = () => {
         <Row className="justify-content-md-center text-primary mt-5 mb-5">
           <Col md="auto">
             {/* consider rising number */}
-            <h3>
+            <h3 style={{marginTop: "800px"}}>
               Trusted by over <AnimationCountUp from={0} to={50} />{" "}
               practitioners, providers, and hospitals.
             </h3>
           </Col>
         </Row>
       </Container>
+          <footer style={{backgroundColor: "#558e89", height: "400px", marginTop: "210px"}}>
+            <p className="footer">test footer insert names of reps or address? idk..</p> 
+          </footer>
       </div>
     </div>
     </div>

@@ -101,7 +101,7 @@ export default function Registration() {
             </Nav>
           </Card.Header>
           <Card.Body>
-            <Form onSubmit={submit}>
+            <Form onSubmit={submit} >
               <Form.Group className="mb-3" controlId="formBasicCompany">
                 <Form.Label
                   style={{
