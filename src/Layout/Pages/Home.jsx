@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Row, Col, Image, Container } from "react-bootstrap";
 // import React from "react";
 import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
+import nurseSmiling from "../../Assets/img/nurseSmiling.jpg"
 import NavBar from "../Navbar";
 import AnimationCountUp from "../../utils/AnimationCountUp";
 
@@ -25,7 +26,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="background">
       {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
       <NavBar />
       <Container className="main mt-5" fluid>
@@ -39,17 +40,19 @@ const Home = () => {
         >
           <Row className="justify-content-md-center">
             <Col className="display-1" md="auto">
-              Title With
+              You care for patients
             </Col>
           </Row>
-          <Row className="justify-content-md-center text-danger">
+          <Row className="justify-content-md-center" style={{color: "#558e89",}}>
             <Col className="display-1" md="auto">
-              Power
+              We'll take care of the rest
             </Col>
           </Row>
           <Row className="justify-content-md-center mt-3 mb-5">
             <Col className="text-muted" md="auto">
-              <h1>Company Motto</h1>
+              <h4 className="secondHeader">Credentials </h4>
+              <h4 className="secondHeader">Enrollments</h4>
+              <h4 className="secondHeader">Consulting</h4>
             </Col>
           </Row>
         </motion.div>
@@ -62,9 +65,9 @@ const Home = () => {
           viewport={{ once: true }}
           custom={1} // make y positive, so fade in from bottom moving up
         >
-          <Row className="justify-content-md-center">
+          <Row>
             <Col md="auto">
-              <Image src={opsgLaptop} fluid rounded thumbnail />
+              <Image className="mainImage" style={{width: "90%", }} src={nurseSmiling} fluid rounded thumbnail />
             </Col>
           </Row>
         </motion.div>
@@ -79,7 +82,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 

@@ -87,7 +87,6 @@ export default function NavBar() {
           <ul
             className="nav navbar-nav  sidebar-header2"
             style={{
-              // paddingLeft: "20px",
               fontSize: "12px",
               width: "40%",
               display: "flex",
@@ -166,7 +165,7 @@ export default function NavBar() {
               variant="secondary"
               style={{
                 width: "80px",
-                backgroundColor: "rgb(121, 203, 187)",
+                backgroundColor: "#558e89",
                 fontSize: "12px",
               }}
               // className=""
@@ -183,7 +182,7 @@ export default function NavBar() {
               variant="secondary"
               style={{
                 marginRight: "5px",
-                backgroundColor: "rgb(121, 203, 187)",
+                backgroundColor: "#558e89",
                 fontSize: "12px",
               }}
               className="navbar-right"
@@ -204,7 +203,7 @@ export default function NavBar() {
               idleText={'REGISTER'}
               type="button"
               style={{
-                backgroundColor: "rgb(121, 203, 187)",
+                backgroundColor: "#558e89",
                 fontSize: "12px",
               }}
               // className="button"

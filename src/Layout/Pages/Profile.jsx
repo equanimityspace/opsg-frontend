@@ -137,7 +137,7 @@ export default function Profile() {
                     marginRight: "5px",
                     width: "140px",
                     fontSize: "12px",
-                    backgroundColor: "rgb(121, 203, 187)"
+                    backgroundColor: "#558e89",
                   }}>
 
               </ReactiveButton>
@@ -245,7 +245,7 @@ export default function Profile() {
                     marginRight: "5px",
                     width: "150px",
                     fontSize: "12px",
-                    backgroundColor: "rgb(121, 203, 187)"
+                    backgroundColor: "#558e89",
                   }}>
                 </ReactiveButton>
 
@@ -341,7 +341,7 @@ export default function Profile() {
                     width: "90px",
                     fontSize: "12px",
                     marginTop: "8px",
-                    backgroundColor: "rgb(121, 203, 187)"
+                    backgroundColor: "#558e89",
                   }}>
                 </ReactiveButton>
 
@@ -360,7 +360,7 @@ export default function Profile() {
                     width: "90px",
                     fontSize: "12px",
                     marginTop: "8px",
-                    backgroundColor: "rgb(121, 203, 187)"
+                    backgroundColor: "#558e89",
                   }}>
                 </ReactiveButton>
 
@@ -402,7 +402,7 @@ export default function Profile() {
                     marginRight: "18px",
                     width: "150px",
                     fontSize: "12px",
-                    backgroundColor: "rgb(121, 203, 187)"
+                    backgroundColor: "#558e89",
                   }}>
                 </ReactiveButton>
 
@@ -434,7 +434,7 @@ export default function Profile() {
                     width: "150px",
                     fontSize: "12px",
                     marginRight: "240px",
-                    backgroundColor: "rgb(121, 203, 187)"
+                    backgroundColor: "#558e89",
                   }}>
                 </ReactiveButton>
 
