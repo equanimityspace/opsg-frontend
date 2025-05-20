@@ -1,12 +1,10 @@
 .backgroundAccent {
   background-color: #e5fffd;
-  height: 700px;
-  z-index: 0;
+  height: 950px;
 }
 
 .background {
   height: 2050px;
-  z-index: -1;
 }
 
 .btn-custom3, .button3 {

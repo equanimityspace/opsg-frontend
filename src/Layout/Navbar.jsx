@@ -51,7 +51,9 @@ export default function NavBar() {
     overflow: "hidden",
     position: "fixed", /* Set the navbar to fixed position */
     top: "0", /* Position the navbar at the top of the page */
-    width: "100%"}}>
+    width: "100%",
+    zIndex: "5",
+    }}>
       
 
   <div className="container-fluid" style={{diplay: "contents", paddingRight: "30px"}}>
@@ -95,11 +97,10 @@ export default function NavBar() {
           <ul
             className="nav navbar-nav  sidebar-header2"
             style={{
-              fontSize: "12px",
+              fontSize: "14px",
               display: "flex",
               flexDirection: "row",
               marginBottom: "15px",
-              justifyContent: "spaceBetween",
             }}
           >
             <li className="nav-item active">

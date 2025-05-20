@@ -33,7 +33,11 @@ export const UserNav = (props) => {
   //nvm using handleClick
   return (
     <div>
-      <div className="wrapper">
+      <div className="wrapper" 
+        style={{
+          backgroundColor: "white",
+          fontSize: "14px",
+          }}>
         <nav id="sidebar" className={isNotActive ? "active" : ""}>
           <button
             type="button"
@@ -63,7 +67,11 @@ export const UserNav = (props) => {
               >
                 <i className="bi bi-house"></i>
               </Button>
-              <Link to="/">Home</Link>
+              <Link to="/" 
+              style={{
+                color: "black",
+                fontWeight: "200",
+                }}>HOME</Link>
             </li>
             <li className="list-item">
               <Button
@@ -73,7 +81,11 @@ export const UserNav = (props) => {
               >
                 <i className="bi bi-people-fill"></i>
               </Button>
-              <Link to="/admin/users">Invoices</Link>
+              <Link to="/admin/users"               
+              style={{
+                color: "black",
+                fontWeight: "200",
+                }}>INVOICES</Link>
             </li>
             <li className="list-item-unstyled">
               <Button
@@ -83,14 +95,24 @@ export const UserNav = (props) => {
               >
                 <i className="bi bi-gear"></i>
               </Button>
-              <Link to={`/profile/${userId}`}>Edit profile</Link>
+              <Link to={`/profile/${userId}`}
+               style={{
+                color: "black",
+                fontWeight: "200",
+                }}
+              >EDIT PROFILE</Link>
             </li>
             <li className="list-item">
               <Button onClick={handleClick} variant="link" className="icon-btn">
                 <i className="bi bi-box-arrow-left"></i>
               </Button>
-              <Link to="/" onClick={handleClick}>
-                Log out
+              <Link to="/" onClick={handleClick}
+               style={{
+                color: "black",
+                fontWeight: "200",
+                }}
+              >
+                LOG OUT
               </Link>
             </li>
           </ul>

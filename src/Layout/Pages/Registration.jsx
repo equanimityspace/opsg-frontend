@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
 import ReactiveButton from "reactive-button";
+import "../../app.css";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -63,8 +64,10 @@ export default function Registration() {
 
   return (
     <>
+    <div className="background">
+     <div className="backgroundAccent">
       <NavBar />
-      <div className="d-flex justify-content-center vh-80">
+      <div style={{ paddingTop: '120px' }} className="d-flex justify-content-center vh-80">
         {show ? (
           <InfoModal
             show={show}
@@ -205,33 +208,11 @@ export default function Registration() {
                     // marginTop: "10px",
                   }}>
                 </ReactiveButton>
-
-              {/* {!status?.isLoading ? (
-                <Button variant="secondary" type="submit"
-                className="button3"
-                  style={{
-                    width: "80px",
-                    fontSize: "12px",
-                    marginTop: "10px",
-                  }}>
-                  SUBMIT
-                </Button>
-              ) : (
-                <Button variant="primary" type="submit" disabled
-                style={{
-                    width: "80px",
-                    fontSize: "12px",
-                    marginTop: "10px",
-                  }}
-                >
-                  LOADING
-                </Button>
-              )} */}
-
-
             </Form>
           </Card.Body>
         </Card>
+       </div>
+      </div>
       </div>
     </>
   );

@@ -64,7 +64,7 @@ const [loading, setLoading] = useState(false);
  <div className="background">
     <div className="backgroundAccent">
       <NavBar />
-      <div  style={{ paddingTop: '120px' }} className="d-flex justify-content-center vh-80">
+      <div  style={{paddingTop: '120px'}} className="d-flex justify-content-center vh-80">
         {show ? (
           <InfoModal
             show={show}
