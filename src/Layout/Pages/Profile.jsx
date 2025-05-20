@@ -433,7 +433,7 @@ export default function Profile() {
                   style={{
                     width: "150px",
                     fontSize: "12px",
-                    marginRight: "5px",
+                    marginRight: "240px",
                     backgroundColor: "rgb(121, 203, 187)"
                   }}>
                 </ReactiveButton>

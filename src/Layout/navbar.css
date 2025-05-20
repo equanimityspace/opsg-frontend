@@ -4,7 +4,6 @@
 
 .sidebar-header2 {
   margin-top: 1rem;
-  text-align: center;
   color: #000000;
 }
 
@@ -17,7 +16,10 @@
   padding-bottom: 20px;
 }
 
-.btn-custom2, .button {
+.nav-item {
+  padding-right: 60px
+}
+/* .btn-custom2, .button {
   size: small;
   position: relative;
   right: -300px; 
@@ -28,7 +30,7 @@
   border-radius: 10%;
   color: #000000;
   font-weight: 200;
-}
+} */
 
 
 @media (max-width: 768px) {
@@ -47,24 +49,24 @@
      }
 
 
-.div2 {
+/* .div2 {
     display: block;
     unicode-bidi: isolate;
-}
+} */
 
 .bg-light2 {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.navbar2 {
+/* .navbar2 {
     --bs-navbar-padding-x: 0;
     --bs-navbar-padding-y: 0.5rem;
     --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
     --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
     --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
     --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
-    /* --bs-navbar-brand-padding-y: 0.3125rem; */
+    --bs-navbar-brand-padding-y: 0.3125rem; 
     --bs-navbar-brand-margin-end: 1rem;
     --bs-navbar-brand-font-size: 1.25rem;
     --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
@@ -84,4 +86,4 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
-}
+} */
