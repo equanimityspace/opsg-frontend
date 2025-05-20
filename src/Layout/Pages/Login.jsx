@@ -3,6 +3,7 @@ import { useLoginMutation } from "../../Slices/mainSlice";
 import { useState } from "react";
 import NavBar from "../Navbar";
 import "../../app.css";
+import ReactiveButton from "reactive-button";
 
 import InfoModal from "../../utils/Modal";
 
@@ -23,9 +24,9 @@ export default function Login({ setUserId, setIsAdmin }) {
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
 
-  // //attempting to store user role at login
-  // const data = await response.JSON();
-  // localStorage.setItem("role", data.role);
+  //TESTING
+const [loading, setLoading] = useState(false);
+  
 
   // stores data from login form
   const [formData, setFormData] = useState({
@@ -79,6 +80,7 @@ export default function Login({ setUserId, setIsAdmin }) {
                 <Nav.Link
                   href="/login"
                   style={{
+                    variant: "secondary",
                     fontSize: "12px",
                     paddingBottom: "10px",
                     paddingTop: "15px",
@@ -91,6 +93,7 @@ export default function Login({ setUserId, setIsAdmin }) {
                 <Nav.Link
                   href="/register"
                   style={{
+                    variant: "secondary",
                     fontSize: "12px",
                     paddingBottom: "10px",
                     paddingTop: "15px",
@@ -115,6 +118,9 @@ export default function Login({ setUserId, setIsAdmin }) {
                   name="email"
                   placeholder="Enter email"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -127,27 +133,61 @@ export default function Login({ setUserId, setIsAdmin }) {
                 <Form.Control
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Enter password"
                   onChange={update}
+                  style={{
+                    fontSize: "12px",
+                  }}
                 />
               </Form.Group>
-              {!status?.isLoading ? (
-                <Button
-                  variant="primary"
+
+          {/* // TESTING */}
+                <ReactiveButton
+                  rounded
+                  buttonState={loading ? 'loading' : 'idle'}
+                  idleText={'SUBMIT'}
+                  loadingText={'Loading'}
+                  variant="secondary"
                   className="button3"
                   type="submit"
                   style={{
                     width: "80px",
                     fontSize: "12px",
+                    backgroundColor: "rgb(121, 203, 187)"
+                    // marginTop: "10px",
+                  }}>
+                </ReactiveButton>
+{/* 
+
+
+              {!status?.isLoading ? (
+                <Button
+                  variant="secondary"
+                  className="button3"
+                  type="submit"
+                  style={{
+                    width: "80px",
+                    fontSize: "12px",
+                    marginTop: "10px",
                   }}
                 >
                   SUBMIT
                 </Button>
               ) : (
-                <Button variant="primary" type="submit" disabled>
-                  Loading...
+                <Button
+                  variant="secondary"
+                  type="submit"
+                  disabled
+                  style={{
+                    width: "80px",
+                    fontSize: "12px",
+                    marginTop: "10px",
+                    backgroundColor: "rgb(121, 203, 187)",
+                  }}
+                >
+                  LOADING
                 </Button>
-              )}
+              )} */}
             </Form>
           </Card.Body>
         </Card>
