@@ -118,10 +118,11 @@ export default function Profile() {
 
   return (
     <>
-      <UserPage />
+    <UserPage />
+     <div className="background">
+      <div className="backgroundAccent">
       <div
-        style={{ paddingTop: "60px" }}
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex justify-content-center align-items-center" style={{position: "absolute", top: "40%", right: "30%"}}
       >
         <div
           className="bg-white rounded shadow p-4"
@@ -265,8 +266,8 @@ export default function Profile() {
                       style={{
                         width: "150px",
                         fontSize: "12px",
-                        marginRight: "5px",
-                        backgroundColor: "#558e89",
+                        marginRight: "234px",
+                        backgroundColor: "gray",
                       }}
                     />
 
@@ -339,7 +340,7 @@ export default function Profile() {
                       width: "90px",
                       fontSize: "12px",
                       marginTop: "8px",
-                      backgroundColor: "#558e89",
+                      backgroundColor: "gray",
                     }}
                   />
                 </div>
@@ -355,6 +356,8 @@ export default function Profile() {
         heading={modalHeading}
         body={modalBody}
       />
+       </div>
+      </div>
     </>
   );
 }

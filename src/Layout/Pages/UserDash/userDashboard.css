@@ -1,11 +1,25 @@
 .page {
-    background-color: rgb(48, 48, 48);
-    color: white;
-    padding-left: 50px;
-    padding-top: 10px;
-  }
-  
-  .small-image {
-    height: 7rem;
-  }
-  
+  color: white;
+}
+
+.small-image {
+  height: 8rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.navCol {
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.balanceCard {
+  padding-left: 500px;
+}

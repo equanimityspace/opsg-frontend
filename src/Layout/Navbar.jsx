@@ -46,7 +46,16 @@ export default function NavBar() {
   // const token =
   return (
     <header>
-<nav className="navbar navbar-inverse bg-light2">
+<nav className="navbar navbar-inverse bg-light2"
+  style={{  
+    overflow: "hidden",
+    position: "fixed", /* Set the navbar to fixed position */
+    top: "0", /* Position the navbar at the top of the page */
+    width: "100%",
+    zIndex: "5",
+    }}>
+      
+
   <div className="container-fluid" style={{diplay: "contents", paddingRight: "30px"}}>
     <div className="navbar-header">
           <div className="nameLogo navbar-brand">
@@ -62,6 +71,7 @@ export default function NavBar() {
             <h6
               style={{
                 marginLeft: "12px",
+                fontWeight: "200",
               }}
             >
               OnPoint
@@ -82,13 +92,12 @@ export default function NavBar() {
           <span className="navbar-toggler-icon"></span>
         </button> */}
 
-        {/* <div className="collapse navbar-collapse" id="navbarNav" > */}
+        {/* <div className="collapse navbar-collapse" > */}
           
           <ul
             className="nav navbar-nav  sidebar-header2"
             style={{
-              fontSize: "12px",
-              width: "40%",
+              fontSize: "14px",
               display: "flex",
               flexDirection: "row",
               marginBottom: "15px",
@@ -263,6 +272,7 @@ export default function NavBar() {
           </li>
            </ul>
         </div>
+        {/* </div> */}
       </nav>
     </header>
   );
