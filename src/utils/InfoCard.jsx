@@ -18,7 +18,7 @@ export default function InfoCard({
   linkHint,
 }) {
   return (
-    <Card bg={bg || "success"} style={{ width: "18rem" }}>
+    <Card className="info-card" bg={bg || "success"} style={{ width: "18rem" }}>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{subtitle}</Card.Subtitle>

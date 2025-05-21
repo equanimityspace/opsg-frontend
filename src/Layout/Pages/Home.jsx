@@ -5,9 +5,12 @@ import { Row, Col, Image, Container } from "react-bootstrap";
 // import React from "react";
 import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
 import opsgLogo from "../../Assets/img/opsg-logo.png";
-import nurseSmiling from "../../Assets/img/nurseSmiling.jpg"
+import nurseSmiling from "../../Assets/img/nurseSmiling.jpg";
 import NavBar from "../Navbar";
 import AnimationCountUp from "../../utils/AnimationCountUp";
+import infoCard from "../../utils/InfoCard";
+import InfoCard from "../../utils/InfoCard";
+import "./home.css";
 
 const Home = () => {
   // animate fading in
@@ -28,21 +31,29 @@ const Home = () => {
 
   return (
     <div className="background">
-    <div className="backgroundAccent">
-      {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
-      <NavBar />
-      <div className="nameLogo">
-        <div className="logoContainer">
-                  <img
-                    src={opsgLogo}
-                    // className="rounded-circle usr-image2"
-                    style={{
-                      width: "auto",
-                      height: "100px",
-                    }}
-                  ></img>
-            <h3 style={{fontWeight: "200", paddingTop: "32px", paddingLeft: "10px"}}>OnPoint Solutions Group</h3>
-        </div>
+      <div className="backgroundAccent">
+        {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
+        <NavBar />
+        <div className="nameLogo">
+          <div className="logoContainer">
+            <img
+              src={opsgLogo}
+              // className="rounded-circle usr-image2"
+              style={{
+                width: "auto",
+                height: "100px",
+              }}
+            ></img>
+            <h3
+              style={{
+                fontWeight: "200",
+                paddingTop: "32px",
+                paddingLeft: "10px",
+              }}
+            >
+              OnPoint Solutions Group
+            </h3>
+          </div>
 
           <Container className="main mt-5" fluid>
             {/* animate fade in going down */}
@@ -52,66 +63,117 @@ const Home = () => {
               whileInView="animate"
               viewport={{ once: true }}
               custom={-1} // make y negative, so fade in from top moving down
-        >
-          <Row className="justify-content-md-center">
-            <Col className="display-1" md="auto">
-              You care for patients
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center" style={{color: "#558e89",}}>
-            <Col className="display-1" md="auto">
-              We'll take care of the rest
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center mt-3 mb-5"
-          style={{
-            display: "flex",
-            paddingRight: "1rem",
-          }}
-          >
-            <Col className="text-muted" md="auto">
-            <div className="secondaryHeaderBox">
-              <div className="secondHeader">Credentials </div>
-              <div className="secondHeader">Enrollments</div>
-              <div className="secondHeader">Consulting</div>
-            </div>
-            </Col>
-          </Row>
-        </motion.div>
+            >
+              <Row className="justify-content-md-center">
+                <Col className="display-1" md="auto">
+                  You care for patients
+                </Col>
+              </Row>
+              <Row
+                className="justify-content-md-center"
+                style={{ color: "#558e89" }}
+              >
+                <Col className="display-1" md="auto">
+                  We'll take care of the rest
+                </Col>
+              </Row>
+              <Row
+                className="justify-content-md-center mt-3 mb-5"
+                style={{
+                  display: "flex",
+                  paddingRight: "1rem",
+                }}
+              >
+                <Col className="text-muted" md="auto">
+                  <div className="secondaryHeaderBox">
+                    <div className="secondHeader">Credentials </div>
+                    <div className="secondHeader">Enrollments</div>
+                    <div className="secondHeader">Consulting</div>
+                  </div>
+                </Col>
+              </Row>
+            </motion.div>
 
-        {/* animate fade in going up */}
-        <motion.div
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          custom={1} // make y positive, so fade in from bottom moving up
-        >
-          <Row>
-            <Col md="auto" style={{textAlign: "center"}}>
-            <div className="imageWrapper">
-              <Image 
-              className="mainImage" src={nurseSmiling} fluid rounded thumbnail alt="Nurse Smiling" loading="lazy"/>
-              </div>
-            </Col>
-          </Row>
-        </motion.div>
-        {/* no animation */}
-        <Row className="justify-content-md-center text-primary mt-5 mb-5">
-          <Col md="auto">
-            {/* consider rising number */}
-            <h3 style={{marginTop: "800px"}}>
-              Trusted by over <AnimationCountUp from={0} to={50} />{" "}
-              practitioners, providers, and hospitals.
-            </h3>
-          </Col>
-        </Row>
-      </Container>
-          <footer style={{backgroundColor: "#558e89", height: "400px", marginTop: "210px"}}>
-            <p className="footer">test footer insert names of reps or address? idk..</p> 
+            {/* animate fade in going up */}
+            <motion.div
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={1} // make y positive, so fade in from bottom moving up
+            >
+              <Row>
+                <Col md="auto" style={{ textAlign: "center" }}>
+                  <div className="imageWrapper">
+                    <Image
+                      className="mainImage"
+                      src={nurseSmiling}
+                      fluid
+                      rounded
+                      thumbnail
+                      alt="Nurse Smiling"
+                      loading="lazy"
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </motion.div>
+            {/* no animation */}
+            <Row className="justify-content-md-center text-primary mt-5 mb-5">
+              <Col md="auto">
+                {/* consider rising number */}
+                <h3 style={{ marginTop: "800px" }}>
+                  Trusted by over <AnimationCountUp from={0} to={50} />{" "}
+                  practitioners, providers, and hospitals.
+                </h3>
+              </Col>
+            </Row>
+            <Row className="justify-content-evenly g-4">
+              <Col xs="auto">
+                <InfoCard
+                  bg="primary"
+                  title="Credentials"
+                  subtitle="Get verified quickly"
+                  text="We’ll collect, verify, and store your nursing credentials securely."
+                  link="/credentials"
+                  linkHint="Learn more"
+                />
+              </Col>
+              <Col xs="auto">
+                <InfoCard
+                  bg="info"
+                  title="Enrollments"
+                  subtitle="Streamlined onboarding"
+                  text="Our platform automates enrollments so you can focus on patient care."
+                  link="/enrollments"
+                  linkHint="See plans"
+                />
+              </Col>
+              <Col xs="auto">
+                <InfoCard
+                  bg="success"
+                  title="Consulting"
+                  subtitle="Expert guidance"
+                  text="Work one-on-one with our team of healthcare IT specialists."
+                  link="/consulting"
+                  linkHint="Get started"
+                />
+              </Col>
+            </Row>
+          </Container>
+          <footer
+            style={{
+              backgroundColor: "#558e89",
+              height: "400px",
+              marginTop: "210px",
+            }}
+          >
+            <p className="footer">
+              test footer insert names of reps or address? idk..
+            </p>
           </footer>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
