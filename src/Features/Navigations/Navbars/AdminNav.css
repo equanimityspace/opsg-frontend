@@ -97,3 +97,6 @@
     transform: translateX(50%);
   }
 }
+.list-item {
+  color: white;
+}
