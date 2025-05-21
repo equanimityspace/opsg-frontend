@@ -131,32 +131,23 @@ const Home = () => {
             <Row className="justify-content-evenly g-4">
               <Col xs="auto">
                 <InfoCard
-                  bg="primary"
                   title="Credentials"
                   subtitle="Get verified quickly"
                   text="We’ll collect, verify, and store your nursing credentials securely."
-                  link="/credentials"
-                  linkHint="Learn more"
                 />
               </Col>
               <Col xs="auto">
                 <InfoCard
-                  bg="info"
                   title="Enrollments"
                   subtitle="Streamlined onboarding"
                   text="Our platform automates enrollments so you can focus on patient care."
-                  link="/enrollments"
-                  linkHint="See plans"
                 />
               </Col>
               <Col xs="auto">
                 <InfoCard
-                  bg="success"
                   title="Consulting"
                   subtitle="Expert guidance"
                   text="Work one-on-one with our team of healthcare IT specialists."
-                  link="/consulting"
-                  linkHint="Get started"
                 />
               </Col>
             </Row>

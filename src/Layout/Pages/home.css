@@ -1,4 +1,5 @@
 .info-card {
+  background-color: #79cbbb !important;
   transition: transform 0.25s ease-in-out;
   transform-origin: center center;
   z-index: 1;
