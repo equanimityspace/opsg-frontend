@@ -1,3 +1,4 @@
+import UserSearch from "../../../utils/SearchBarComponents/UserSearch";
 import AdminNav from "../../../Features/Navigations/Navbars/AdminNav";
 import { useGetAllUsersQuery } from "../../../Slices/mainSlice";
 
@@ -11,34 +12,48 @@ export default function AdminAllUsers() {
   const { data: users, error, isLoading } = useGetAllUsersQuery();
 
   return (
-    <Container data-bs-theme="dark" fluid>
+    <Container
+      fluid
+      data-bs-theme="dark"
+      style={{ backgroundColor: "#272932" }}
+    >
       <Row className="g-0">
-        <Col xs="auto" className="flex-shrink-0" style={{ width: "10rem" }}>
+        <Col
+          xs="auto"
+          className="flex-shrink-0"
+          style={{ width: "10rem", marginLeft: "2rem" }}
+        >
           <AdminNav />
         </Col>
-        <Col className="flex-grow-1 overflow-auto" lg={true}>
-          <ListGroup>
-            {users ? (
-              users.map((user) => {
-                const userId = user.id;
-                const name = `${user.firstName} ${user.lastName}`;
-                const email = user.email;
-                return (
-                  <ListGroup.Item
-                    action
-                    href={`/admin/users/user/${userId}`}
-                    key={userId}
-                  >
-                    {`${name} ${email}`}
-                  </ListGroup.Item>
-                );
-              })
-            ) : (
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            )}
-          </ListGroup>
+
+        <Col data-bs-theme="dark" className="flex-grow-1">
+          <Row className="mt-3 mb-4">
+            <Col>
+              <UserSearch />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col style={{ marginTop: "5px" }}>
+              {isLoading ? (
+                <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              ) : (
+                <ListGroup>
+                  {users.map((user) => (
+                    <ListGroup.Item
+                      action
+                      href={`/user/${user.id}`}
+                      key={user.id}
+                    >
+                      {user.firstName} {user.lastName} — {user.email}
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              )}
+            </Col>
+          </Row>
         </Col>
       </Row>
     </Container>
