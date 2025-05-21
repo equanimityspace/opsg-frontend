@@ -63,11 +63,18 @@ const Home = () => {
               We'll take care of the rest
             </Col>
           </Row>
-          <Row className="justify-content-md-center mt-3 mb-5">
+          <Row className="justify-content-md-center mt-3 mb-5"
+          style={{
+            display: "flex",
+            paddingRight: "1rem",
+          }}
+          >
             <Col className="text-muted" md="auto">
-              <h4 className="secondHeader">Credentials </h4>
-              <h4 className="secondHeader">Enrollments</h4>
-              <h4 className="secondHeader">Consulting</h4>
+            <div className="secondaryHeaderBox">
+              <div className="secondHeader">Credentials </div>
+              <div className="secondHeader">Enrollments</div>
+              <div className="secondHeader">Consulting</div>
+            </div>
             </Col>
           </Row>
         </motion.div>
@@ -82,16 +89,10 @@ const Home = () => {
         >
           <Row>
             <Col md="auto" style={{textAlign: "center"}}>
+            <div className="imageWrapper">
               <Image 
-              className="mainImage" 
-              style={{
-                margin: "auto",
-                display: "block",
-                width: "auto", 
-                maxHeight: "600px",
-                position: "absolute", 
-                left: "17.5%",
-                }} src={nurseSmiling} fluid rounded thumbnail alt="Nurse Smiling" loading="lazy"/>
+              className="mainImage" src={nurseSmiling} fluid rounded thumbnail alt="Nurse Smiling" loading="lazy"/>
+              </div>
             </Col>
           </Row>
         </motion.div>
