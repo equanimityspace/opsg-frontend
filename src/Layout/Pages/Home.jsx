@@ -64,11 +64,14 @@ const Home = () => {
               viewport={{ once: true }}
               custom={-1} // make y negative, so fade in from top moving down
             >
+              <div className="headerWrapper">
               <Row className="justify-content-md-center">
                 <Col className="display-1" md="auto">
                   You care for patients
                 </Col>
               </Row>
+              </div>
+              <div className="headerWrapper">
               <Row
                 className="justify-content-md-center"
                 style={{ color: "#558e89" }}
@@ -77,6 +80,7 @@ const Home = () => {
                   We'll take care of the rest
                 </Col>
               </Row>
+              </div>
               <Row
                 className="justify-content-md-center mt-3 mb-5"
                 style={{

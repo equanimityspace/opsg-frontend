@@ -47,10 +47,10 @@
 
 .secondaryHeaderBox {
   padding-top: 20px;
-  width: 359px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10%;
+  gap: 10vw;
+  justify-content: center;
 }
 
 .secondaryHeaderBox > * {
@@ -58,7 +58,7 @@
   justify-content: center;
 }
 
-.imageWrapper {
+.imageWrapper, .headerWrapper {
   border-color: solid black 10px;
   display: flex;
   justify-content: center;

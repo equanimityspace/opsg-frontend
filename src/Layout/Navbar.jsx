@@ -53,21 +53,22 @@ export default function NavBar() {
           <div className="navbar-header">
             <div className="navLogoWrapper" style={{
                 display: "flex",
-                marginLeft: "12px",
+                marginLeft: ".5vw",
                 fontWeight: "200",
                 flexDirection: "column",
                 flexWrap: "wrap",
-                alignItems: "center"
+                alignItems: "center",
+                width: "1vw"
               }}>
-            <img
-              src={opsgLogo}
-              className="rounded-circle usr-image2 nav navbar-nav"
-              height={isNotActive ? "35" : "70"}
-              width={isNotActive ? "35" : "70"}
-            ></img>
-            <h6>
-              OnPoint
-            </h6>
+              <img
+                src={opsgLogo}
+                className="rounded-circle usr-image2 nav navbar-nav"
+                height={isNotActive ? "35" : "70"}
+                width={isNotActive ? "35" : "70"}
+              ></img>
+              <h6>
+                OnPoint
+              </h6>
             </div>
         </div>
           
@@ -78,7 +79,8 @@ export default function NavBar() {
               display: "flex",
               flexDirection: "row",
               flexWrap: "noWrap",
-              gap: "5%",
+              gap: "4vw",
+
             }}
           >
             <li className="nav-item active">
