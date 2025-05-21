@@ -7,6 +7,7 @@ import { jwtDecode } from "jwt-decode";
 import opsgLogo from "../Assets/img/opsg-logo.png";
 import "../Layout/navbar.css";
 import ReactiveButton from "reactive-button";
+import { Button } from "react-bootstrap";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -36,63 +37,39 @@ export default function NavBar() {
 
   const [isNotActive, setNotActive] = useState("true");
 
-  // const backToProfile = () => {
-  //   navigate(`/profile/${userId}`);
-  // };
-
-  //handle login/logout button change
-  // const buttonStatus = token ? "Log Out" : "Login";
-
-  // const token =
   return (
     <header>
-<nav className="navbar navbar-inverse bg-light2"
-  style={{  
-    overflow: "hidden",
-    position: "fixed", /* Set the navbar to fixed position */
-    top: "0", /* Position the navbar at the top of the page */
-    width: "100%",
-    zIndex: "5",
-    }}>
-      
+      <nav className="navbar bg-light2"
+        style={{  
+          overflow: "hidden",
+          position: "fixed", /* Set the navbar to fixed position */
+          top: "0", /* Position the navbar at the top of the page */
+          width: "100%",
+          zIndex: "5",
+          }}>
+            
 
-  <div className="container-fluid" style={{diplay: "contents", paddingRight: "30px"}}>
-    <div className="navbar-header">
-          <div className="nameLogo navbar-brand">
+        <div className="container-fluid" style={{diplay: "contents"}}>
+          <div className="navbar-header">
+            <div className="navLogoWrapper" style={{
+                display: "flex",
+                marginLeft: "12px",
+                fontWeight: "200",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                alignItems: "center"
+              }}>
             <img
               src={opsgLogo}
               className="rounded-circle usr-image2 nav navbar-nav"
-              style={{
-                marginLeft: "25px",
-              }}
               height={isNotActive ? "35" : "70"}
               width={isNotActive ? "35" : "70"}
             ></img>
-            <h6
-              style={{
-                marginLeft: "12px",
-                fontWeight: "200",
-              }}
-            >
+            <h6>
               OnPoint
             </h6>
-          </div>
+            </div>
         </div>
-
-
-        {/* <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button> */}
-
-        {/* <div className="collapse navbar-collapse" > */}
           
           <ul
             className="nav navbar-nav  sidebar-header2"
@@ -100,7 +77,8 @@ export default function NavBar() {
               fontSize: "14px",
               display: "flex",
               flexDirection: "row",
-              marginBottom: "15px",
+              flexWrap: "noWrap",
+              gap: "5%",
             }}
           >
             <li className="nav-item active">
@@ -145,21 +123,6 @@ export default function NavBar() {
             </li>
             </ul>
   
-
-            {/* <ReactiveButton
-                  rounded
-                  buttonState={isLoading ? 'loading' : 'idle'}
-                  idleText={'LOGIN'}
-                  loadingText={'Loading'}
-                  variant="secondary"
-                  className="button3"
-                  type="submit"
-                  style={{
-                    width: "80px",
-                    fontSize: "12px",
-                    backgroundColor: "rgb(121, 203, 187)"
-                  }}>
-            </ReactiveButton> */}
             <ul className="nav navbar-nav navbar-right" style={{display: "flex",
               flexDirection: "row"
               }}>
@@ -219,150 +182,12 @@ export default function NavBar() {
               onClick={() => navigate("/register")}
             >
             </ReactiveButton>
-
-            
-
-
-
-          /* {token ? (
-            <button
-              type="button"
-              variant="secondary"
-              style={{
-                backgroundColor: "rgb(121, 203, 187)",
-                fontSize: "12px",
-              }}
-              className="button"
-              onClick={handleLogout}
-              navigate="/"
-            >
-              {isLoggedIn}
-            </button>
-          ) : (
-            <button
-              type="button"
-              variant="secondary"
-              style={{
-                backgroundColor: "rgb(121, 203, 187)",
-                fontSize: "12px",
-              }}
-              className="button"
-              onClick={handleLogout} // TODO make sure this is fine, I dont think its fine
-            >
-              {isLoggedIn}
-            </button>
-          )}
-          {token ? (
-            <button className="nav-link" href="/" variant="secondary"></button>
-          ) : (
-            <button
-              type="button"
-              style={{
-                backgroundColor: "rgb(121, 203, 187)",
-                fontSize: "12px",
-              }}
-              className="button"
-              width="20px"
-              onClick={() => navigate("/register")}
-            >
-              REGISTER
-            </button> */
           )}
           </span>
           </li>
            </ul>
         </div>
-        {/* </div> */}
       </nav>
     </header>
   );
 }
-
-//TESTING NEW NAVBAR
-// const StickyNavigation = () => {
-// const [currentId, setCurrentId] = useState(null);
-// const [currentTab, setCurrentTab] = useState(null);
-// const [tabContainerHeight, setTabContainerHeight] = useState(70);
-
-// useEffect(() => {
-//   const handleScroll = () => {
-//     checkTabContainerPosition();
-//     findCurrentTabSelector();
-//   };
-
-//   const handleResize = () => {
-//     if (currentId) {
-//       setSliderCss();
-//     }
-//   };
-
-//   $(window).on('scroll', handleScroll);
-//   $(window).on('resize', handleResize);
-
-//   return () => {
-//     $(window).off('scroll', handleScroll);
-//     $(window).off('resize', handleResize);
-//   };
-// }, []);
-
-// const checkTabContainerPosition = () => {
-//   const offset = $('.et-hero-tabs').offset().top + $('.et-hero-tabs').height() - tabContainerHeight;
-//   if ($(window).scrollTop() > offset) {
-//     $('.et-hero-tabs-container').toggleClass('et-hero-tabs-container--top');
-//   } else {
-//     $('.et-hero-tabs-container').toggleClass('et-hero-tabs-container--top');
-//   }
-// };
-
-// const findCurrentTabSelector = () => {
-//   const $window = $(window);
-//   let newCurrentId;
-//   let newCurrentTab;
-//   $window.find('.et-hero-tab').each((_, el) => {
-//     const id = $(el).attr('href');
-//     const offsetTop = $(id).offset().top - tabContainerHeight;
-//     const offsetBottom = $(id).offset().top + $(el).height() - tabContainerHeight;
-//     if ($window.scrollTop() > offsetTop && $window.scrollTop() < offsetBottom) {
-//       newCurrentId = id;
-//       newCurrentTab = $(el);
-//     }
-//   });
-//   if (currentId !== newCurrentId || currentId === null) {
-//     setCurrentId(newCurrentId);
-//     setCurrentTab(newCurrentTab);
-//     setSliderCss();
-//   }
-// };
-
-// const setSliderCss = () => {
-//   if (currentTab) {
-//     const width = currentTab.css('width');
-//     const left = currentTab.offset().left;
-//     $('.et-hero-tab-slider').css('width', width);
-//     $('.et-hero-tab-slider').css('left', left);
-//   }
-// };
-
-// const onTabClick = (event, element) => {
-//   event.preventDefault();
-//   const scrollTop = $(element.attr('href')).offset().top - tabContainerHeight + 1;
-//   $('html, body').animate({ scrollTop: scrollTop }, 600);
-// };
-
-// function StickyNavigation() {
-//   return (
-//     <nav className="et-hero-tabs-container">
-//       <div className="et-hero-tabs" onScroll={findCurrentTabSelector} ref={node => {
-//         if (node) {
-//           $(node).find('.et-hero-tab').on('click', (event) => {
-//             onTabClick(event);
-//           });
-//         }
-//       }>
-//         {/* ... your tab elements ... */}
-//       </div>
-//     </nav>
-//     );
-// }
-
-// export default StickyNavigation;

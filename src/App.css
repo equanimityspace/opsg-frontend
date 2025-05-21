@@ -22,12 +22,6 @@
     padding-left: 2px;
 }
 
-.secondHeader {
-  display: inline-flex;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 35px;
-}
 
 .logoContainer {
     display: flex;
@@ -35,5 +29,39 @@
     justify-content: center;
     margin-top: 30px;
     padding-top: 80px;
+}
+
+  @media (max-width: 768px) {
+       /* CSS styles for mobile devices (screens 768px and smaller) */
+       /* Example: Smaller font size, different layout, etc. */
+    body {
+    }
+     }
+@media (min-device-width: 769px) {
+       /* CSS styles for desktop devices (screens larger than 768px) */
+       /* Example: Larger font size, different layout, etc. */
+    body {
+        background-image: url("nurse-smiling.jpg")
+       }
+     }
+
+.secondaryHeaderBox {
+  padding-top: 20px;
+  width: 359px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
+}
+
+.secondaryHeaderBox > * {
+  border-radius: 1px;
+  justify-content: center;
+}
+
+.imageWrapper {
+  border-color: solid black 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0% 10% 0% 10%;
 }
 
