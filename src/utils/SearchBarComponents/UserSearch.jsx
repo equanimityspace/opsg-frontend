@@ -46,7 +46,7 @@ export default function UserSearch({ showAllUsers, onSearch, onShowAll }) {
         onChange={(e) => setTerm(e.target.value)}
         placeholder="Search by name or email"
       />
-      <Row>
+      <Row className="g-2 mb-3">
         <Col xs="auto">
           <ReactiveButton
             rounded
