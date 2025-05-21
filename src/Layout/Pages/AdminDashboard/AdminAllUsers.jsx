@@ -1,15 +1,12 @@
 import UserSearch from "../../../utils/SearchBarComponents/UserSearch";
 import AdminNav from "../../../Features/Navigations/Navbars/AdminNav";
 import { useGetAllUsersQuery } from "../../../Slices/mainSlice";
-
-import ListGroup from "react-bootstrap/ListGroup";
-import Spinner from "react-bootstrap/Spinner";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { useState } from "react";
+import { ListGroup, Spinner, Container, Row, Col } from "react-bootstrap";
 
 export default function AdminAllUsers() {
   const { data: users, error, isLoading } = useGetAllUsersQuery();
+  const [showAllUsers, setShowAllUsers] = useState(true);
 
   return (
     <Container
@@ -32,28 +29,29 @@ export default function AdminAllUsers() {
               <UserSearch />
             </Col>
           </Row>
-
-          <Row>
-            <Col style={{ marginTop: "5px" }}>
-              {isLoading ? (
-                <Spinner animation="border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
-              ) : (
-                <ListGroup>
-                  {users.map((user) => (
-                    <ListGroup.Item
-                      action
-                      href={`/user/${user.id}`}
-                      key={user.id}
-                    >
-                      {user.firstName} {user.lastName} — {user.email}
-                    </ListGroup.Item>
-                  ))}
-                </ListGroup>
-              )}
-            </Col>
-          </Row>
+          {showAllUsers && (
+            <Row>
+              <Col style={{ marginTop: "5px" }}>
+                {isLoading ? (
+                  <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                ) : (
+                  <ListGroup>
+                    {users.map((user) => (
+                      <ListGroup.Item
+                        action
+                        href={`/user/${user.id}`}
+                        key={user.id}
+                      >
+                        {user.firstName} {user.lastName} — {user.email}
+                      </ListGroup.Item>
+                    ))}
+                  </ListGroup>
+                )}
+              </Col>
+            </Row>
+          )}
         </Col>
       </Row>
     </Container>
