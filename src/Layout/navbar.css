@@ -2,13 +2,24 @@
     border: 2px solid white;
   }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     body {
     font-size: 14px;
     }
-     }
-@media (min-width: 769px) {
+    .mainScreenButtons {
+      width: 2px;
+    }
+    .bg-light2 {
+    --bs-bg-opacity: 1;
+    background-color: #ffffff;
+    max-height: 150px;  
+}
+}
+
+
+
+@media (min-width: 768px) {
 
     body {
     font-size: 18px;
@@ -16,12 +27,12 @@
     .nav-item {
       gap: 1rem;
     }
-     }
+    .bg-light2 {
+        --bs-bg-opacity: 1;
+        background-color: #ffffff;
+        max-height: 160px;  
+    }
 
-.bg-light2 {
-    --bs-bg-opacity: 1;
-    background-color: #ffffff;
-    max-height: 150px;  
 }
 
 /* Bootstrap button styling override */
@@ -34,10 +45,5 @@
 }
 
 .navBar .nav-toggle.toggle-active:after {
-  content: "";
   display: block;
-  width: 2px;
-  height: 2px;
-  margin-top: 0px;
-  background: black;
 }

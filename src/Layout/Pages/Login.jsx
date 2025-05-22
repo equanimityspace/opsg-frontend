@@ -62,9 +62,9 @@ const [loading, setLoading] = useState(false);
   return (
     <>
  <div className="background">
-    <div className="backgroundAccent">
+    <div className="backgroundAccent"></div>
       <NavBar />
-      <div  style={{paddingTop: '120px'}} className="d-flex justify-content-center vh-80">
+      <div  style={{ paddingTop: '120px' }} className="d-flex justify-content-center vh-80">
         {show ? (
           <InfoModal
             show={show}
@@ -162,7 +162,6 @@ const [loading, setLoading] = useState(false);
             </Form>
           </Card.Body>
         </Card>
-        </div>
       </div>
     </div>
     </>
