@@ -3,6 +3,8 @@ import AdminNav from "../../../Features/Navigations/Navbars/AdminNav";
 import { useGetAllUsersQuery } from "../../../Slices/mainSlice";
 import { useState } from "react";
 import { ListGroup, Spinner, Container, Row, Col } from "react-bootstrap";
+import "./adminAllUsers.css";
+import ReactiveButton from "reactive-button";
 
 export default function AdminAllUsers() {
   const { data: users, error, isLoading } = useGetAllUsersQuery();
@@ -23,13 +25,21 @@ export default function AdminAllUsers() {
           <AdminNav />
         </Col>
 
-        <Col data-bs-theme="dark" className="flex-grow-1">
+        <Col
+          data-bs-theme="dark"
+          className="flex-grow-1"
+          style={{ backgroundColor: "#272932", minHeight: "100vh" }}
+        >
           <Row className="mt-3 mb-4">
             <Col>
-              <UserSearch />
+              <UserSearch
+                showAllUsers={showAllUsers}
+                onShowAll={() => setShowAllUsers(true)}
+                onSearch={() => setShowAllUsers(false)}
+              />{" "}
             </Col>
           </Row>
-          {showAllUsers && (
+          {showAllUsers ? (
             <Row>
               <Col style={{ marginTop: "5px" }}>
                 {isLoading ? (
@@ -51,7 +61,7 @@ export default function AdminAllUsers() {
                 )}
               </Col>
             </Row>
-          )}
+          ) : null}
         </Col>
       </Row>
     </Container>
