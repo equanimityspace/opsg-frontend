@@ -1,16 +1,17 @@
 import { motion } from "motion/react";
 // const { scrollYProgress } = useScroll();
 
-import { Row, Col, Image, Container } from "react-bootstrap";
-// import React from "react";
+import { Row, Col, Image, Container, CardImg } from "react-bootstrap";
+import React from "react";
 import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
 import opsgLogo from "../../Assets/img/opsg-logo.png";
 import nurseSmiling from "../../Assets/img/nurseSmiling.jpg";
 import NavBar from "../Navbar";
 import AnimationCountUp from "../../utils/AnimationCountUp";
-import InfoCard from "../../utils/InfoCard";
 import "./home.css";
 import "../../../src/app.css";
+import HomeInfoCards from "../../utils/HomeInfoCards";
+import usaMap from "../../Assets/img/usaMap.png"
 
 const Home = () => {
   // animate fading in
@@ -127,8 +128,8 @@ const Home = () => {
                   </div>
 
               <div className="counterWrapper" style={{
-                   marginTop: "5vh",
-                   marginBottom: "5vh",
+                   marginTop: "7vh",
+                   marginBottom: "7vh",
                    display: "grid",                   
                    justifyContent: "center", 
                    }}>
@@ -143,7 +144,8 @@ const Home = () => {
                   Hospitals, providers, and practicioners
                 </h3>
               </div>
-
+            <img className="usMap" src={usaMap} alt="United States Map"></img>
+            
               <div className="cardsContainer" 
               style={{    
                 display: "flex",
@@ -152,28 +154,7 @@ const Home = () => {
                 gap: "3vw",
             }}>
                 <div>
-                <InfoCard
-                  className="homeCards"
-                  title="Credentials"
-                  subtitle="Get verified quickly"
-                  text="We’ll collect, verify, and store your nursing credentials securely."
-                />
-                </div>
-                <div>
-                <InfoCard
-                  className="homeCards"
-                  title="Enrollments"
-                  subtitle="Streamlined onboarding"
-                  text="Our platform automates enrollments so you can focus on patient care."
-                />
-                </div>
-                <div>
-                <InfoCard
-                  className="homeCards"
-                  title="Consulting"
-                  subtitle="Expert guidance"
-                  text="Work one-on-one with our team of healthcare IT specialists."
-                />
+                  <HomeInfoCards></HomeInfoCards>
                 </div>
               </div> 
             </motion.div>

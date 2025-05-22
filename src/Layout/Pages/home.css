@@ -1,4 +1,4 @@
-.info-card {
+/* .info-card {
   background-color: #79cbbb !important;
   transition: transform 0.25s ease-in-out;
   transform-origin: center center;
@@ -7,28 +7,60 @@
 .info-card:hover {
   transform: scale(1.25);
   z-index: 10;
-}
+} */
 
 .counterWrapper {
   padding-left: 2vw;
 }
 
 @media (max-width: 600px) {
-       /* CSS styles for mobile devices (screens 768px and smaller) */
-       /* Example: Smaller font size, different layout, etc. */
+  /* CSS styles for mobile devices (screens 768px and smaller) */
+  /* Example: Smaller font size, different layout, etc. */
+
   .footer {
-   background-color: #558e89;
-   height: 200px;
-   margin-top: 210px;
+    background-color: #558e89;
+    height: 200px;
+    margin-top: 210px;
+  }
+  .card {
+    background-color: #79cbbb !important;
+    transition: transform 0.25s ease-in-out;
+    transform-origin: center center;
+    z-index: 1;
+    display: grid;
+    width: 5vw;
+  }
+  .usMap {
+transform: translate(14%, 0%);
+    width: 75%;
   }
 }
 
 @media (min-device-width: 768px) {
-       /* CSS styles for desktop devices (screens larger than 768px) */
-       /* Example: Larger font size, different layout, etc. */
-    .footer {
-   background-color: #558e89;
-   height: 350px;
-   margin-top: 210px;
+  /* CSS styles for desktop devices (screens larger than 768px) */
+  /* Example: Larger font size, different layout, etc. */
+  .footer {
+    background-color: #558e89;
+    height: 350px;
+    margin-top: 210px;
   }
+  .homeInfoCards {
+    gap: 3vw;
+  }
+  .info-card {
+    background-color: #79cbbb !important;
+    transition: transform 0.25s ease-in-out;
+    transform-origin: center center;
+    z-index: 1;
+    display: inline-flex;
+  }
+  .info-card:hover {
+    transform: scale(1.25);
+    z-index: 10;
+  }
+  .usMap {
+    transform: translate(38%, 0%);
+    width: 55%;
+    margin-bottom: 100px;
+}
 }
