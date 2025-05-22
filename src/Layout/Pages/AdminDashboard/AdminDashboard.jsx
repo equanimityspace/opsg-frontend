@@ -11,8 +11,8 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 
 export default function AdminPage() {
-  const qbDisconnect = async () => {
-    await useDisconnectQuery();
+  const qbDisconnect = () => {
+    useDisconnectQuery(); // TODO fix  this!!!!
   };
 
   return (
