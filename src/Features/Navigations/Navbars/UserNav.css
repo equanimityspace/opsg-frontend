@@ -3,12 +3,13 @@
   left: 0;
   top: 0;
   height: 100vh;
-  background-color: #272932;
   border-radius: 5px;
 }
 .onPointLogoText {
   padding-top: 5px;
   padding-bottom: 20px;
+  font-weight: 200;
+  color: black;
 }
 #sidebarCollapse {
   position: absolute;
@@ -106,5 +107,5 @@
   background: none !important;
   border: none !important;
   padding: 0 !important;
-  color: white !important;
+  color: black !important;
 }

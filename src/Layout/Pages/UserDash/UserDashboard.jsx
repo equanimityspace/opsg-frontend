@@ -1,24 +1,45 @@
 import "./userDashboard.css";
-import opsgLogo from "../../../assets/img/opsg-logo.png";
-
-import { Row, Col, Image, Container } from "react-bootstrap";
 import { UserNav } from "../../../Features/Navigations/Navbars/UserNav";
+import opsgLogo from "../../../assets/img/opsg-logo.png";
+import InfoCard from "../../../utils/InfoCard";
+import { Row, Col, Image, Container } from "react-bootstrap";
+
 
 export default function UserPage() {
   return (
+  <div className="backgroundAccent">
     <div className="page">
-      <UserNav />
-      <Container data-bs-theme="dark">
+      <Container>
         <Row className="justify-content-md-center">
-          <Col xs={1} md={2}>
-            <Image src={opsgLogo} roundedCircle className="small-image" />
-          </Col>
-          <Col className="display-5 mt-4" md="auto">
-            OnPoint User Dashboard
-          </Col>
-        </Row>
-        <Row className="justify-content-md-center mt-4"></Row>
-      </Container>
+           <UserNav />
+            <Col className="display-3 mt-4"
+            style={{
+              fontWeight: "200",
+              color: "black",
+              fontSize: "30px",
+              paddingTop: "20px",
+              paddingBottom: "50px",
+            }}
+            >OnPoint User Dashboard</Col>
+          </Row>
+          <Row
+            className="justify-content-md-center mt-4"
+            xs={12}
+            md={12}
+            lg={12}
+          >
+            <Col className="balanceCard">
+              <InfoCard
+                bg="light"
+                title="BALANCE DUE"
+                text="import unpaid $ amount"
+              />
+            </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }
