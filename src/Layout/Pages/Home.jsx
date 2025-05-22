@@ -157,8 +157,6 @@ const Home = () => {
                   title="Credentials"
                   subtitle="Get verified quickly"
                   text="We’ll collect, verify, and store your nursing credentials securely."
-                  link="/credentials"
-                  linkHint="Learn more"
                 />
                 </div>
                 <div>
@@ -167,8 +165,6 @@ const Home = () => {
                   title="Enrollments"
                   subtitle="Streamlined onboarding"
                   text="Our platform automates enrollments so you can focus on patient care."
-                  link="/enrollments"
-                  linkHint="See plans"
                 />
                 </div>
                 <div>
@@ -177,8 +173,6 @@ const Home = () => {
                   title="Consulting"
                   subtitle="Expert guidance"
                   text="Work one-on-one with our team of healthcare IT specialists."
-                  link="/consulting"
-                  linkHint="Get started"
                 />
                 </div>
               </div> 
