@@ -1,5 +1,5 @@
 import { Card, CardBody, Row, Col, Container } from "react-bootstrap";
-import pen from "../../Assets/img/pen.png";
+import pen from "../../assets/img/pen.png";
 
 const EnrollmentCards = () => {
   const cardData = [
