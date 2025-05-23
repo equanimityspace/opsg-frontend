@@ -48,19 +48,19 @@ const ConsultingCards = () => {
         {cardData.map((card, index) => (
           <Col
             key={index}
-            xs={12}
-            sm={6}
-            md={4}
-            lg={3}
-            xl={4}
-            className="mb-4 d-flex justify-content-center"
+            xs={12} // Full width on extra small screens
+            sm={6} // 2 cards per row on small screens
+            md={4} // 3 cards per row on medium and larger screens
+            lg={4} // Ensures 3 cards per row on large screens
+            xl={4} // Ensures 3 cards per row on extra large screens
+            className="mb-4 d-flex"
           >
             <Card
               className="info-card flex-grow-1"
               style={{
                 backgroundColor: "#79cbbb",
-                minHeight: "220px",
-                maxWidth: "300px",
+                minHeight: "200px",
+                maxWidth: "250px",
               }}
             >
               <CardBody className="d-flex flex-column align-items-center text-center">

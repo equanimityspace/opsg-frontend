@@ -18,11 +18,13 @@ const ourServices = () => {
             paddingTop: "82px",
             backgroundColor: "#7c295e",
             textAlign: "center",
-            width: "100%",
+            width: "100%", // Changed from 80vw to 100%
           }}
         >
-          <h1 style={{ margin: "0" }}>Why Choose OnPoint Solutions?</h1>
-          <h3 style={{ margin: "0", padding: "0 10%" }}>
+          <h1 style={{ margin: 0 }}>Why Choose OnPoint Solutions?</h1>
+          <h3 style={{ margin: 0, padding: "0 10%" }}>
+            {" "}
+            {/* Added padding */}
             At OnPoint Solutions Group, our goal is to provide innovative
             credentialing and enrollment services that help our clients manage
             the constantly changing healthcare environment. We believe that
@@ -38,46 +40,30 @@ const ourServices = () => {
             tools to operationally and financially prosper is our passion.
           </h3>
         </div>
-        <div>
-          <h2>Credentials</h2>
-          <h3>Recredentialing, Applications and License Renewals</h3>
-          <CredentialsCards></CredentialsCards>
-        </div>
-        <div>
-          <h2>Enrollment</h2>
-          <h3>
-            Group Providers and Individual Providers Serving Commercial and
-            Government Payers, Medicare Opt-Out
-          </h3>
-          <EnrollmentCards></EnrollmentCards>
-        </div>
-        <div>
-          <h2>Consulting</h2>
-          <h3>
-            Development Planning Assessing Compliance, Risk, and Opportunities
-          </h3>
-          <ConsultingCards></ConsultingCards>
-        </div>
 
+        {/* Credentials Section */}
         <Container className="py-5">
-          <h2 style={{ textAlign: "center" }}>Credentials</h2>
-          <h3 style={{ textAlign: "center" }}>
+          <h2 className="text-center">Credentials</h2>
+          <h3 className="text-center mb-4">
             Recredentialing, Applications and License Renewals
           </h3>
           <CredentialsCards />
         </Container>
 
+        {/* Enrollment Section */}
         <Container className="py-5">
-          <h2 style={{ textAlign: "center" }}>Enrollment</h2>
-          <h3 style={{ textAlign: "center", margin: "auto", maxWidth: "55%" }}>
+          <h2 className="text-center">Enrollment</h2>
+          <h3 className="text-center mb-4 mx-auto" style={{ maxWidth: "55%" }}>
             Medicare Opt-Out, Group Providers and Individual Providers Serving
             Commercial and Government Payers
           </h3>
           <EnrollmentCards />
         </Container>
+
+        {/* Consulting Section */}
         <Container className="py-5">
-          <h2 style={{ textAlign: "center" }}>Consulting</h2>
-          <h3 style={{ textAlign: "center", margin: "auto", maxWidth: "40%" }}>
+          <h2 className="text-center">Consulting</h2>
+          <h3 className="text-center mb-4 mx-auto" style={{ maxWidth: "45%" }}>
             Development Planning Assessing Compliance, Risk, and Opportunities
           </h3>
           <ConsultingCards />
