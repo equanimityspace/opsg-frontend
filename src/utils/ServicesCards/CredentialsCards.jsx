@@ -25,7 +25,7 @@ const CredentialsCards = () => {
   ];
 
   return (
-    <Container className="py-5 enrollment-card-container">
+    <Container className="py-5 enrollment-card-container" style={{padddingBottom: "0px"}}>
       <Row className="justify-content-center">
         {cardData.map((card, index) => (
           <Col 

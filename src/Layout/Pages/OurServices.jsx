@@ -1,4 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap";
+import { motion } from "motion/react";
 import React from "react";
 import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
@@ -7,38 +8,56 @@ import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
 import "./ourservices.css"
 
 const ourServices = () => {
+
+  const fadeInAnimationVariants = {
+    initial: (direction) => ({
+      opacity: 0,
+      y: 100 * direction,
+    }),
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.2,
+      },
+    },
+  };
+
   return (
     <>
       <div className="backgroundAccent" style={{ zIndex: "-1", width: "100%" }}>
         <NavBar />
-        <div
-          style={{
-            display: "inline-flex",
-            flexDirection: "column",
-            paddingTop: "82px",
-            backgroundColor: "#7c295e",
-            textAlign: "center",
-            width: "100%", // Changed from 80vw to 100%
-          }}
-        >
-          <h1 style={{ margin: 0 }}>Why Choose OnPoint Solutions?</h1>
-          <h3 style={{ margin: 0, padding: "0 10%" }}> {/* Added padding */}
-            At OnPoint Solutions Group, our goal is to provide innovative
-            credentialing and enrollment services that help our clients manage
-            the constantly changing healthcare environment. We believe that
-            credentialing and enrollments are the start of the patient care
-            experience and the revenue cycle. Everything we do is focused on
-            assisting our clients with effectively managing their credentialing
-            and enrollment lifecycle, thereby increasing availability of care to
-            patients and generating more income in less time. We pride ourselves
-            with providing individualized care. We assign a certified provider
-            credentialing specialist (CPCS) to each client to ensure we are not
-            only meeting but exceeding our client's expectations. We give our
-            clients the ability to focus on patient care and providing them the
-            tools to operationally and financially prosper is our passion.
-          </h3>
-        </div>
-        
+          <Container className="main mt-5" fluid>
+            {/* animate fade in going down */}
+            <motion.div
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={-1} // make y negative, so fade in from top moving down
+            >
+              <Row className="justify-content-md-center">
+                <Col className="display-1" md="auto" style={{ margin: "auto", paddingTop: "100px", fontSize: "5vw", paddingBottom: "8vw" }}>
+                  Why Choose OnPoint Solutions?
+                </Col>
+              </Row>
+              <Row
+                className="justify-content-md-center"
+                style={{ color: "#558e89" }}
+              >
+                <Col className="display-1" md="auto" style={{fontSize: "2.5vw", width: "80vw"}}>
+                  <ul>
+                    <li>Support: Every client is assigned a Certified Provider Credentialing Specialist (CPCS) to ensure personalized service and attention to detail.</li>
+                   <li>Streamlined Processes: We manage the entire credentialing and enrollment lifecycle, so you can focus on what matters most—patient care.</li>
+                    <li>Faster Revenue Cycles: Our efficient systems help you get credentialed quicker, increasing patient access and accelerating your income.</li>
+                    <li>Individualized Service: No one-size-fits-all solutions here. We tailor our approach to meet your unique operational and financial goals.</li>
+                  </ul>
+                </Col>
+              </Row>
+              </motion.div>
+              </Container>
+              
         {/* Credentials Section */}
         <Container className="py-5">
           <h2 className="text-center">Credentials</h2>
