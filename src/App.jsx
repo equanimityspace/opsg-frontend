@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
-import ProtectedRoutes from "./utils/ProtectedRoutes";
 import { useState } from "react";
 import Home from "./Layout/Pages/Home";
 import Login from "./Layout/Pages/Login";
