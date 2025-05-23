@@ -40,9 +40,6 @@ export default function UserPage() {
             <Col>
               <FullName bg="primary" id={id} />
             </Col>
-            <Col className="balanceCard">
-              <Balance bg="danger" id={id} />
-            </Col>
           </Row>
           <Row className="justify-content-md-center"></Row>
         </Container>
