@@ -6,20 +6,9 @@ const ourServices = () => {
   return (
     <>
      <div className="background">
-      <div className="backgroundAccent">
+      <div className="backgroundAccent" style={{zIndex: "-1"}}>
       <NavBar />
-      <Container className="main" fluid>
-        <Row className="justify-content-md-center">
-          <Col className="text-muted" md="auto">
-            <h1>Our Services</h1>
-          </Col>
-        </Row>
-        <Row className="justify-content-md-center">
-          <Col md="auto">
-            <p>erghrehgg;regnewrglhnrwngelhblverjbghsregenwguhwieshglsubgeuisrhglueblurhbvlbksjbjrblebgrgb</p>
-          </Col>
-        </Row>
-      </Container>
+        <h1 style={{paddingTop: "150px"}}>start of this page</h1>
       </div>
     </div>
     </>
