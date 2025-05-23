@@ -13,6 +13,7 @@ import InfoModal from "../../utils/Modal";
 import "./../../app.css";
 import ReactiveButton from "reactive-button";
 import UserHeader from "./UserDash/UserHeader";
+import Footer from "../../utils/footer";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -365,6 +366,7 @@ export default function Profile() {
           body={modalBody}
         />
       </div>
+      <Footer />
     </>
   );
 }

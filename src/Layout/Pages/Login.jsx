@@ -6,6 +6,7 @@ import "../../app.css";
 import ReactiveButton from "reactive-button";
 
 import InfoModal from "../../utils/Modal";
+import Footer from "../../utils/footer";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -160,13 +161,14 @@ export default function Login({ setUserId, setIsAdmin }) {
                       backgroundColor: "#558e89",
                       // marginTop: "10px",
                     }}
-                  ></ReactiveButton>
+                  />
                 </Form>
               </Card.Body>
             </Card>
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
