@@ -1,7 +1,7 @@
 import { useGetCustomerObjectQuery } from "../../Slices/qbSlice";
 import InfoCard from "../InfoCard";
 
-function FullName({ id, bg }) {
+function BusinessName({ id, bg }) {
   const {
     data: arrCustomer,
     status,
@@ -22,4 +22,4 @@ function FullName({ id, bg }) {
   );
 }
 
-export default FullName;
+export default BusinessName;
