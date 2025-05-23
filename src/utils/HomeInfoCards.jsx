@@ -11,7 +11,7 @@ const HomeInfoCards = () => {
       alt: "Certificate",
       title: "Credentials",
       subtitle: "Get verified quickly",
-      text: "We’ll collect, verify, and store your nursing credentials securely.",
+      text: "We'll collect, verify, and store your nursing credentials securely.",
       link: "/credentials",
       linkHint: "View my credentials",
     },
