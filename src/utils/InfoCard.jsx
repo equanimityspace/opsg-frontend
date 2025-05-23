@@ -17,10 +17,13 @@ export default function InfoCard({
   text,
   link,
   linkHint,
-  image
+  image,
 }) {
   return (
-    <Card className="info-card" style={{ width: "18rem", backgroundColor: "#79cbbb" }}>
+    <Card
+      className="info-card w-60 h-100"
+      style={{ width: "18rem", backgroundColor: "#79cbbb" }}
+    >
       <Card.Body>
         <Card.Img {...image}></Card.Img>
         <Card.Title>{title}</Card.Title>
