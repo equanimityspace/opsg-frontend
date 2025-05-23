@@ -1,15 +1,20 @@
 import "./adminDashboard.css";
 import AdminNav from "../../../Features/Navigations/Navbars/AdminNav";
 import flowersImage from "../../../assets/img/beautiful-flowers.png";
+import InfoCard from "../../../utils/InfoCard";
+import { useDisconnectQuery } from "../../../Slices/qbSlice";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
-
-import InfoCard from "../../../utils/InfoCard";
+import Button from "react-bootstrap/Button";
 
 export default function AdminPage() {
+  const qbDisconnect = () => {
+    useDisconnectQuery(); // TODO fix  this!!!!
+  };
+
   return (
     <>
       <div className="page">
@@ -31,15 +36,29 @@ export default function AdminPage() {
             <Col>
               <InfoCard
                 bg="success"
-                title="Total Users"
-                text="import number of registered users"
+                title="Connect app to QuickBooks"
+                text={
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      window.location.href =
+                        "https://opsg-backend.onrender.com/qbauth/connect";
+                    }}
+                  >
+                    Connect
+                  </Button>
+                }
               />
             </Col>
             <Col>
               <InfoCard
                 bg="secondary"
-                title="Total Owed"
-                text="import unpaid $ amount"
+                title="Disconnect app from QuickBooks"
+                text={
+                  <Button variant="danger" onClick={() => qbDisconnect()}>
+                    Disconnect
+                  </Button>
+                }
               />
             </Col>
           </Row>

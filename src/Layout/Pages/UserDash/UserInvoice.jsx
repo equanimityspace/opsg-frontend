@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import Balance from "../../../utils/qbCustomer/Balance";
 import FullName from "../../../utils/qbCustomer/FullName";
 
-export default function UserPage() {
+export default function UserInvoice() {
   const objId = useParams();
   const id = objId.userId;
 
@@ -39,6 +39,9 @@ export default function UserPage() {
           >
             <Col>
               <FullName bg="primary" id={id} />
+            </Col>
+            <Col className="balanceCard">
+              <Balance bg="danger" id={id} />
             </Col>
           </Row>
           <Row className="justify-content-md-center"></Row>
