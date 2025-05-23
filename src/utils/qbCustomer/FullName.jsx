@@ -10,7 +10,9 @@ function BusinessName({ id, bg }) {
 
   return (
     <>
-      {!isLoading && arrCustomer[0] ? (
+      {arrCustomer === null && status === "fulfilled" ? (
+        <></>
+      ) : !isLoading ? (
         <InfoCard
           bg={bg}
           title={arrCustomer[0]?.FullyQualifiedName}
