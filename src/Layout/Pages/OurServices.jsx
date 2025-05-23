@@ -5,7 +5,6 @@ import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
 
-
 const ourServices = () => {
   return (
     <>
@@ -45,12 +44,17 @@ const ourServices = () => {
         </div>
         <div>
           <h2>Enrollment</h2>
-          <h3>Group Providers and Individual Providers Serving Commercial and Government Payers, Medicare Opt-Out</h3>
+          <h3>
+            Group Providers and Individual Providers Serving Commercial and
+            Government Payers, Medicare Opt-Out
+          </h3>
           <EnrollmentCards></EnrollmentCards>
         </div>
         <div>
           <h2>Consulting</h2>
-          <h3>Development Planning Assessing Compliance, Risk, and Opportunities</h3>
+          <h3>
+            Development Planning Assessing Compliance, Risk, and Opportunities
+          </h3>
           <ConsultingCards></ConsultingCards>
         </div>
       </div>
