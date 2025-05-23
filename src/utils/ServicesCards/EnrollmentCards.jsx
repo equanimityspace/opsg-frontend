@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardBody } from "react-bootstrap";
-import pen from "../../Assets/img/pen.png";
+import pen from "../../assets/img/pen.png";
 
 const EnrollmentCards = () => {
   const cardData = [

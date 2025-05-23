@@ -4,7 +4,7 @@ import { useState } from "react";
 import { getToken, deleteToken } from "../utils/tokenService";
 import { useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
-import opsgLogo from "../Assets/img/opsg-logo.png";
+import opsgLogo from "../assets/img/opsg-logo.png";
 import "../Layout/navbar.css";
 import ReactiveButton from "reactive-button";
 import { Button } from "react-bootstrap";
@@ -114,7 +114,11 @@ export default function NavBar() {
           <div className="mobileButtonWrapper">
             <ul
               className="nav looooook mobileButtonWrapper"
-              style={{ display: "flex", flexDirection: "row", position: "anchor-right"}}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                position: "anchor-right",
+              }}
             >
               <li>
                 <span
