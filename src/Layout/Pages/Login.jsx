@@ -6,7 +6,6 @@ import "../../app.css";
 import ReactiveButton from "reactive-button";
 
 import InfoModal from "../../utils/Modal";
-import ProtectedRoutes from "../../utils/ProtectedRoutes";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
