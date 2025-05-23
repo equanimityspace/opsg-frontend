@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardBody } from "react-bootstrap";
-import certificate from "../Assets/img/certificate.png"
+import certificate from "../../Assets/img/certificate.png"
 
 
 const CredentialsCards = () => {

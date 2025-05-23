@@ -1,6 +1,11 @@
 import { Row, Col, Container } from "react-bootstrap";
 import React from "react";
 import NavBar from "../Navbar";
+import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
+import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
+import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
+
+
 const ourServices = () => {
   return (
     <>
@@ -32,6 +37,21 @@ const ourServices = () => {
             clients the ability to focus on patient care and providing them the
             tools to operationally and financially prosper is our passion.
           </h3>
+        </div>
+        <div>
+          <h2>Credentials</h2>
+          <h3>Recredentialing, Applications and License Renewals</h3>
+          <CredentialsCards></CredentialsCards>
+        </div>
+        <div>
+          <h2>Enrollment</h2>
+          <h3>Group Providers and Individual Providers Serving Commercial and Government Payers, Medicare Opt-Out</h3>
+          <EnrollmentCards></EnrollmentCards>
+        </div>
+        <div>
+          <h2>Consulting</h2>
+          <h3>Development Planning Assessing Compliance, Risk, and Opportunities</h3>
+          <ConsultingCards></ConsultingCards>
         </div>
       </div>
     </>
