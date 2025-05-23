@@ -78,19 +78,19 @@ export default function ContactFormPage() {
 
   return (
     <>
-      <motion.div
-        variants={fadeInAnimationVariants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        custom={-1}
-      >
-        <h2 style={{ textAlign: "center", paddingTop: "100px" }}>
-          We'd Love To Hear From You!
-        </h2>
-        <div className="background" style={{ minHeight: "100vh" }}>
-          <div className="backgroundAccent" style={{ minHeight: "100vh" }}>
-            <NavBar />
+      <div className="background" style={{ minHeight: "100vh" }}>
+        <div className="backgroundAccent" style={{ minHeight: "100vh" }}>
+          <NavBar />
+          <motion.div
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            custom={-1}
+          >
+            <h2 style={{ textAlign: "center", paddingTop: "100px" }}>
+              We'd Love To Hear From You!
+            </h2>
 
             <div
               className="d-flex justify-content-center align-items-center"
@@ -223,9 +223,10 @@ export default function ContactFormPage() {
                 </Card>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
+
       <Footer />
     </>
   );
