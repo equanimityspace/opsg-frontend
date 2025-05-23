@@ -43,8 +43,8 @@ const EnrollmentCards = () => {
   ];
 
   return (
-    <Container className="py-5 enrollment-card-container">
-      <Row className="justify-content-center">
+ <Container fluid> {/* Changed to fluid to avoid container padding */}
+      <Row className="justify-content-center g-1">
         {cardData.map((card, index) => (
           <Col 
             key={index} 
@@ -53,12 +53,13 @@ const EnrollmentCards = () => {
             md={4}     // 3 cards per row on medium and larger screens
             lg={4}     // Ensures 3 cards per row on large screens
             xl={4}     // Ensures 3 cards per row on extra large screens
-            className="mb-4 d-flex"
+            className="mb-4 d-flex justify-content-center"
           >
             <Card
                 className="info-card flex-grow-1"
                 style={{ backgroundColor: "#79cbbb",
                 minHeight: "200px", 
+                width: "100%",
                 maxWidth: "250px"
                  }}
               >
