@@ -10,14 +10,14 @@ function Balance({ id, bg }) {
 
   return (
     <>
-      {!isLoading ? (
+      {!isLoading && arrCustomer[0] ? (
         arrCustomer[0]?.Balance === 0 ? (
           <InfoCard bg="success" title="No outstanding balance 🎉" />
         ) : (
           <InfoCard
             bg={bg}
             title="Outstanding Balance"
-            text={`$${arrCustomer[0].Balance}`}
+            text={`$${arrCustomer[0]?.Balance}`}
           />
         )
       ) : (
