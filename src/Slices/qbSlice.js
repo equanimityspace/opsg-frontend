@@ -1,9 +1,9 @@
-import qbApi from "../App/qbApi";
+import api from "../App/api";
 
-const quickbooksApi = qbApi.injectEndpoints({
+const qbApi = api.injectEndpoints({
   endpoints: (build) => ({
     getCustomerObject: build.query({
-      query: ({ id }) => ({
+      query: (id) => ({
         url: `/qbauth/customer/${id}`,
         method: "GET",
       }),
@@ -18,4 +18,4 @@ const quickbooksApi = qbApi.injectEndpoints({
   }),
 });
 
-export const { useGetCustomerObjectQuery, useDisconnectQuery } = quickbooksApi;
+export const { useGetCustomerObjectQuery, useDisconnectQuery } = qbApi;
