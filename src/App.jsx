@@ -26,10 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Registration />} />
-        <Route
-          path="/login"
-          element={<Login setUserId={setUserId} setIsAdmin={setIsAdmin} />}
-        />
+        <Route path="/login" element={<Login />} />
         {/* <Route path="/unauthorized" element={<UnauthorizedPage/>} /> */}
         <Route path="/ourservices" element={<OurServices />} />
         <Route path="/contactform" element={<ContactForm />} />
