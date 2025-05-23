@@ -1,17 +1,20 @@
 import { useGetCustomerObjectQuery } from "../../Slices/qbSlice";
 import InfoCard from "../InfoCard";
 
-function FullName(id, bg) {
+function FullName({ id, bg }) {
   const {
-    data: objCustomer,
+    data: arrCustomer,
     status,
     isLoading,
   } = useGetCustomerObjectQuery(id);
-
   return (
     <>
-      {objCustomer?.FullyQualifiedName && !isLoading ? (
-        <InfoCard bg={bg} title={objCustomer.FullyQualifiedName} />
+      {!isLoading ? (
+        <InfoCard
+          bg={bg}
+          title={arrCustomer[0]?.FullyQualifiedName}
+          subtitle={`Billed to ${arrCustomer[0]?.PrimaryEmailAddr.Address}`}
+        />
       ) : (
         <InfoCard bg={bg} title="Loading..." />
       )}
