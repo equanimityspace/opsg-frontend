@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
-const ProtectedRoutes = ({ userId, isAdmin }) => {
+const ProtectedRoutes = () => {
   const token = localStorage.getItem("token");
 
   if (!token) {
