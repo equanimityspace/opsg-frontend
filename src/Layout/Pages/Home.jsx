@@ -12,6 +12,8 @@ import "./home.css";
 import "../../../src/app.css";
 import HomeInfoCards from "../../utils/HomeInfoCards";
 import usaMap from "../../Assets/img/usaMap.png";
+import phone from "../../Assets/img/phone.png";
+import fax from "../../Assets/img/fax.png";
 
 const Home = () => {
   // animate fading in
@@ -167,7 +169,7 @@ const Home = () => {
           <footer
             style={{
               backgroundColor: "#558e89",
-              height: "80vh",
+              height: "40vh",
               marginTop: "100px",
             }}
           >
@@ -176,38 +178,44 @@ const Home = () => {
                 flexWrap: "wrap",
                 wrapDirection: "column",
                 justifySelf: "center",
-                gap: "18vw",
+                gap: "8vw",
                 paddingTop: "5vh",
               }}>
             <div className="footerTextBoxes">
-                <p>M. Michelle Zachary, CPCS, CPMSM</p>
-                <p>
+                <p>M. Michelle Zachary, CPCS, CPMSM<br />  
                   <a href="mailto:szachary@onpointsolutionsgroup.org">
-                    szachary@onpointsolutionsgroup.org
-                  </a>
+                  szachary@onpointsolutionsgroup.org</a>
                 </p>
             </div>
             <div className="footerTextBoxes">
-                <p>M. Catherine Cutrone, CPCS</p>
-                <p>
+                <p>M. Catherine Cutrone, CPCS<br />
                   <a href="mailto:ccutrone@onpointsolutionsgroup.org">
-                    ccutrone@onpointsolutionsgroup.org        
-                  </a>
+                    ccutrone@onpointsolutionsgroup.org</a>
                 </p>
             </div>
           </div>
-            <div className="footerTextBoxes"
+            <div className="btmFooterTextBox"
             style={{
-                display: "flex-box",
-                flexDirection: "column",
-                alignItems: "center",
-                width: "50vw",
-                transform: "translate(70%, 50%)",
+                // display: "flex-box",
+                // flexDirection: "column",
+                // alignItems: "center",
+                // width: "50vw",
+                // transform: "translate(70%, 50%)",
             }}>
-                <p>p: 970-394-5560  |  f: 970-317-2233</p> 
-                <p>General Inquiries:
-                  <a href="mailto: onpointsolutions.co@gmail.com">onpointsolutions.co@gmail.com
-                  </a>
+
+              <p className="wrap-box strict">General Inquiries:<br />
+                <img src={phone} 
+                style={{
+                  width: "5%",
+                  margin: "1vw"}}>
+                    </img>(970) 394-5560<br />
+
+                <img src={fax}
+                style={{
+                  width: "5%",
+                  margin: "1vw",}}>
+
+                  </img>(970) 317-2233<br />
                 </p>
             </div>
           </footer>
