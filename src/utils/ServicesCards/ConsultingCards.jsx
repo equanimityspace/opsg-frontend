@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardBody } from "react-bootstrap";
-import flipChart from "../Assets/img/flipChart.png"
+import flipChart from "../../Assets/img/flipChart.png"
 
 
 const ConsultingCards = () => {
