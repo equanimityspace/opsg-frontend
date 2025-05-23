@@ -1,7 +1,7 @@
 import { useGetCustomerObjectQuery } from "../../Slices/qbSlice";
 import InfoCard from "../InfoCard";
 
-function FullName(id, bg) {
+function Balance(id, bg) {
   const {
     data: objCustomer,
     status,
@@ -27,4 +27,4 @@ function FullName(id, bg) {
   );
 }
 
-export default FullName;
+export default Balance;
