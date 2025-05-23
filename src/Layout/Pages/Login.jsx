@@ -6,6 +6,7 @@ import "../../app.css";
 import ReactiveButton from "reactive-button";
 
 import InfoModal from "../../utils/Modal";
+import ProtectedRoutes from "../../utils/ProtectedRoutes";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -13,7 +14,7 @@ import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 // import storeToken from "../../utils/tokenService";
 
-export default function Login({ setUserId, setIsAdmin }) {
+export default function Login() {
   const navigate = useNavigate();
   const [login, status] = useLoginMutation();
 
@@ -48,8 +49,11 @@ export default function Login({ setUserId, setIsAdmin }) {
       const payload = await login(formData).unwrap();
       const userId = payload.user.id;
       const isAdmin = payload.user.isAdmin;
-      setUserId(userId);
-      setIsAdmin(isAdmin);
+      if (isAdmin) {
+        navigate(`/admin/dashboard`);
+      } else {
+        navigate(`/user/${userId}`);
+      }
       navigate("/login/redirect");
     } catch (err) {
       console.error(err);
