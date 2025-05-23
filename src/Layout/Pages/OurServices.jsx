@@ -4,11 +4,12 @@ import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
+import "./ourservices.css"
 
 const ourServices = () => {
   return (
     <>
-      <div className="backgroundAccent" style={{ zIndex: "-1" }}>
+      <div className="backgroundAccent" style={{ zIndex: "-1", width: "100%" }}>
         <NavBar />
         <div
           style={{
@@ -17,11 +18,11 @@ const ourServices = () => {
             paddingTop: "82px",
             backgroundColor: "#7c295e",
             textAlign: "center",
-            width: "80vw",
+            width: "100%",
           }}
         >
-          <h1 style={{ margin: 0 }}>Why Choose OnPoint Solutions?</h1>
-          <h3 style={{ margin: 0 }}>
+          <h1 style={{ margin: "0" }}>Why Choose OnPoint Solutions?</h1>
+          <h3 style={{ margin: "0", padding: "0 10%" }}>
             At OnPoint Solutions Group, our goal is to provide innovative
             credentialing and enrollment services that help our clients manage
             the constantly changing healthcare environment. We believe that
@@ -57,6 +58,23 @@ const ourServices = () => {
           </h3>
           <ConsultingCards></ConsultingCards>
         </div>
+
+        <Container className="py-5">
+          <h2 style={{textAlign: "center"}}>Credentials</h2>
+          <h3 style={{textAlign: "center"}}>Recredentialing, Applications and License Renewals</h3>
+          <CredentialsCards />
+        </Container>
+
+        <Container className="py-5">
+          <h2 style={{textAlign: "center"}}>Enrollment</h2>
+          <h3 style={{textAlign: "center", margin: "auto", maxWidth: "55%"}}>Medicare Opt-Out, Group Providers and Individual Providers Serving Commercial and Government Payers</h3>
+          <EnrollmentCards />
+        </Container>
+        <Container className="py-5">
+          <h2 style={{textAlign: "center"}}>Consulting</h2>
+          <h3 style={{textAlign: "center", margin: "auto", maxWidth: "40%"}}>Development Planning Assessing Compliance, Risk, and Opportunities</h3>
+          <ConsultingCards />
+        </Container>
       </div>
     </>
   );
