@@ -14,7 +14,7 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./app/store.js";
+import store from "./App/store.js";
 import ContextProvider from "./Features/Navigations/ContextProvider.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
