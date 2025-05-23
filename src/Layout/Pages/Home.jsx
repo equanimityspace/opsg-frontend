@@ -8,9 +8,9 @@ import opsgLogo from "../../Assets/img/opsg-logo.png";
 import nurseSmiling from "../../Assets/img/nurseSmiling.jpg";
 import NavBar from "../Navbar";
 import AnimationCountUp from "../../utils/AnimationCountUp";
-import infoCard from "../../utils/InfoCard";
 import InfoCard from "../../utils/InfoCard";
 import "./home.css";
+import "../../../src/app.css";
 
 const Home = () => {
   // animate fading in
@@ -34,25 +34,33 @@ const Home = () => {
       <div className="backgroundAccent">
         {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
         <NavBar />
-        <div className="nameLogo">
-          <div className="logoContainer">
+          <div className="nameLogo">
+            <div className="logoContainer" 
+            style={{
+              display: "flex", 
+              alignItems: "center", 
+              fontSize: "clamp(16px, 3vw, 100px)",
+              fontWeight: "200",
+              // width: "auto",
+              // height: "clamp(1rem, 2vh, 2rem)",
+              // paddingTop: "clamp(1vh, 23vh, 30vh)",
+              // paddingBottom: "clamp(1vh, 8vh, 8vh)",
+              }}>
             <img
               src={opsgLogo}
               // className="rounded-circle usr-image2"
               style={{
-                width: "auto",
-                height: "100px",
+                width: "10vw",
+                height: "auto",
+                paddingRight: "1vw",
               }}
             ></img>
-            <h3
-              style={{
-                fontWeight: "200",
-                paddingTop: "32px",
-                paddingLeft: "10px",
-              }}
-            >
-              OnPoint Solutions Group
-            </h3>
+            <Row>
+              <Col
+            >OnPoint Solutions Group
+
+             </Col>
+            </Row>
           </div>
 
           <Container className="main mt-5" fluid>
@@ -77,15 +85,16 @@ const Home = () => {
                   We'll take care of the rest
                 </Col>
               </Row>
+
               <Row
                 className="justify-content-md-center mt-3 mb-5"
                 style={{
                   display: "flex",
-                  paddingRight: "1rem",
+
                 }}
               >
-                <Col className="text-muted" md="auto">
-                  <div className="secondaryHeaderBox">
+                <Col className="text-muted">
+                  <div className="secondaryHeaderBox" style={{verticalAlign: "middle"}}>
                     <div className="secondHeader">Credentials </div>
                     <div className="secondHeader">Enrollments</div>
                     <div className="secondHeader">Consulting</div>
@@ -102,69 +111,78 @@ const Home = () => {
               viewport={{ once: true }}
               custom={1} // make y positive, so fade in from bottom moving up
             >
-              <Row>
-                <Col md="auto" style={{ textAlign: "center" }}>
-                  <div className="imageWrapper">
-                    <Image
+                  <div className="mainImage">
+                    <img
                       className="mainImage"
                       src={nurseSmiling}
-                      fluid
-                      rounded
-                      thumbnail
+                      fluid="true"
+                      rounded="true"
+                      thumbnail="true"
                       alt="Nurse Smiling"
                       loading="lazy"
+                      style={{
+                        margin: "auto",
+                      }}
                     />
                   </div>
-                </Col>
-              </Row>
-            </motion.div>
-            {/* no animation */}
-            <Row className="justify-content-md-center text-primary mt-5 mb-5">
-              <Col md="auto">
-                {/* consider rising number */}
-                <h3 style={{ marginTop: "800px" }}>
+
+              <div className="counterWrapper" style={{
+                   marginTop: "5vh",
+                   marginBottom: "5vh",
+                   display: "grid",                   
+                   justifyContent: "center", 
+                   }}>
+                <h3 style={{
+                   fontSize: "clamp(3.5vw, 6px, 2vw)",
+                   display: "flex",
+                   flexWrap: "wrap",
+                   flexDirection: "column",
+                   alignItems: "center",
+                   }}>
                   Trusted by over <AnimationCountUp from={0} to={50} />{" "}
-                  practitioners, providers, and hospitals.
+                  Hospitals, providers, and practicioners
                 </h3>
-              </Col>
-            </Row>
-            <Row className="justify-content-evenly g-4">
-              <Col xs="auto">
+              </div>
+
+              <div className="cardsContainer" 
+              style={{    
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-around",
+                gap: "3vw",
+            }}>
+                <div>
                 <InfoCard
-                  bg="primary"
+                  className="homeCards"
                   title="Credentials"
                   subtitle="Get verified quickly"
                   text="We’ll collect, verify, and store your nursing credentials securely."
-                  link="/credentials"
-                  linkHint="Learn more"
                 />
-              </Col>
-              <Col xs="auto">
+                </div>
+                <div>
                 <InfoCard
-                  bg="info"
+                  className="homeCards"
                   title="Enrollments"
                   subtitle="Streamlined onboarding"
                   text="Our platform automates enrollments so you can focus on patient care."
-                  link="/enrollments"
-                  linkHint="See plans"
                 />
-              </Col>
-              <Col xs="auto">
+                </div>
+                <div>
                 <InfoCard
-                  bg="success"
+                  className="homeCards"
                   title="Consulting"
                   subtitle="Expert guidance"
                   text="Work one-on-one with our team of healthcare IT specialists."
-                  link="/consulting"
-                  linkHint="Get started"
                 />
-              </Col>
-            </Row>
+                </div>
+              </div> 
+            </motion.div>
+            {/* no animation */}
           </Container>
           <footer
             style={{
               backgroundColor: "#558e89",
-              height: "400px",
+              height: "200px",
               marginTop: "210px",
             }}
           >

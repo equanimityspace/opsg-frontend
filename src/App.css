@@ -1,12 +1,3 @@
-.backgroundAccent {
-  background-color: #e5fffd;
-  height: 950px;
-}
-
-.background {
-  height: 2050px;
-}
-
 .btn-custom3, .button3 {
   border: none;
   background-color: rgb(121, 203, 187);
@@ -23,45 +14,92 @@
 }
 
 
-.logoContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 30px;
-    padding-top: 80px;
-}
-
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
        /* CSS styles for mobile devices (screens 768px and smaller) */
        /* Example: Smaller font size, different layout, etc. */
     body {
+      
     }
-     }
-@media (min-device-width: 769px) {
+    .logoContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 200;
+        width: auto;
+        padding-top: 18vh;
+      }
+
+     .backgroundAccent {
+        background-color: #e5fffd;
+        height: 85vh;
+      }
+     .secondaryHeaderBox {
+        padding-top: 2vh;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        font-size: 14px;
+        justify-content: center;
+      }
+
+      .secondaryHeaderBox > * {
+        border-radius: 1vw;
+      }
+
+      .mainImage {
+        display: flex;
+        height: 60vw;
+        /* width: auto;
+
+        border-color: solid black 10px;
+        display: contents; */
+      }
+    }
+
+@media (min-device-width: 768px) {
        /* CSS styles for desktop devices (screens larger than 768px) */
        /* Example: Larger font size, different layout, etc. */
     body {
         background-image: url("nurse-smiling.jpg")
        }
-     }
+    .logoContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 200;
+        width: auto;
+        padding-top: 20vh;
+      }
 
-.secondaryHeaderBox {
-  padding-top: 20px;
-  width: 359px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10%;
-}
+     .backgroundAccent {
+        background-color: #e5fffd;
+        height: 130vh;
+      }
+     .secondaryHeaderBox {
+        padding-top: 2vh;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        font-size: 25px;
+        justify-content: center;
+      }
 
-.secondaryHeaderBox > * {
-  border-radius: 1px;
-  justify-content: center;
-}
+      .secondaryHeaderBox > * {
+        border-radius: 1vw;
+      }
 
-.imageWrapper {
-  border-color: solid black 10px;
-  display: flex;
-  justify-content: center;
-  margin: 0% 10% 0% 10%;
-}
+      .imageWrapper {
+        border-color: solid black 10px;
+        display: flex;
+        display: contents;
+      }
 
+      .mainImage {
+        width: auto;
+        height: 60vw;
+        display: flex;
+        
+      }
+    }

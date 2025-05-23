@@ -36,19 +36,41 @@ export const UserNav = (props) => {
       <div className="wrapper" 
         style={{
           backgroundColor: "white",
-          fontSize: "14px",
           }}>
         <nav id="sidebar" className={isNotActive ? "active" : ""}>
           <button
             type="button"
             id="sidebarCollapse"
             onClick={() => setNotActive(!isNotActive)}
-            className="btn btn-custom"
+            className="btn btn-custom2"
           >
             <span className={isNotActive ? "" : "hidden"}>{arrowRight}</span>
             <span className={isNotActive ? "hidden" : ""}>{crossIcon}</span>
           </button>
-          <div className="sidebar-header">
+
+          <div className="sidebar-header2">
+            <div className="navLogoWrapper" style={{
+                display: "flex",
+                marginLeft: ".5vw",
+                fontWeight: "200",
+                fontSize: "clamp(12px, 3vw, 20px)",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                alignItems: "center",
+              }}>
+              <img
+                src={opsgLogo}
+                className="rounded-circle usr-image2 nav navbar-nav"
+                  height={isNotActive ? "0" : "80"}
+                  width={isNotActive ? "0" : "80"}
+                // style={{width: "clamp(35px, 1vw, 10px)", height: "clamp(35px, 1vw, 10px)"}}
+              ></img>
+              <h4 className="onPointLogoText" style={{color: "black", fontWeight: "200"}}
+              >OnPoint</h4>
+            </div>
+          </div>
+
+          {/* <div className="sidebar-header2">
             <img
               src={opsgLogo}
               className="rounded-circle usr-image"
@@ -56,7 +78,9 @@ export const UserNav = (props) => {
               width={isNotActive ? "20" : "70"}
             ></img>
             <h3 className="onPointLogoText">OnPoint</h3>
-          </div>
+          </div> */}
+
+
 
           <ul className="list-unstyled components">
             <li className="list-item">
@@ -71,7 +95,7 @@ export const UserNav = (props) => {
               style={{
                 color: "black",
                 fontWeight: "200",
-                fontSize: "15px",
+                fontSize: "clamp(1px, 5vw, 16px)",
                 }}>HOME</Link>
             </li>
             <li className="list-item">
@@ -86,7 +110,7 @@ export const UserNav = (props) => {
               style={{
                 color: "black",
                 fontWeight: "200",
-                fontSize: "15px",
+                fontSize: "clamp(12px, 4.5vw, 16px)",
                 }}>INVOICES</Link>
             </li>
             <li className="list-item-unstyled">
@@ -101,7 +125,7 @@ export const UserNav = (props) => {
                style={{
                 color: "black",
                 fontWeight: "200",
-                fontSize: "15px",
+                fontSize: "clamp(12px, 8vw, 16px)",
                 }}
               >EDIT PROFILE</Link>
             </li>
@@ -113,7 +137,7 @@ export const UserNav = (props) => {
                style={{
                 color: "black",
                 fontWeight: "200",
-                fontSize: "15px",
+                fontSize: "clamp(12px, 8vw, 16px)",
                 }}
               >
                 LOG OUT
