@@ -54,7 +54,6 @@ export default function Login() {
       } else {
         navigate(`/user/${userId}`);
       }
-      navigate("/login/redirect");
     } catch (err) {
       console.error(err);
       setResponse(err);
