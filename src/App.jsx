@@ -9,6 +9,7 @@ import OurServices from "./Layout/Pages/OurServices";
 import ContactForm from "./Layout/Pages/ContactForm";
 import UserPage from "./Layout/Pages/UserDash/UserDashboard";
 import Profile from "./Layout/Pages/Profile";
+import UserInvoice from "./Layout/Pages/UserDash/UserInvoice";
 
 import AdminPage from "./Layout/Pages/AdminDashboard/AdminDashboard";
 import AdminAllUsers from "./Layout/Pages/AdminDashboard/AdminAllUsers";
@@ -44,6 +45,7 @@ function App() {
         />
         <Route path={`/user/:userId`} element={<UserPage />} />
         <Route path={`/profile/:userId`} element={<Profile />} />
+        <Route path={`/profile/invoices/:userId`} element={<UserInvoice />} />
 
         <Route path={"/admin/search"} element={<AdminSearch />} />
         <Route path={"/admin/dashboard"} element={<AdminPage />} />
