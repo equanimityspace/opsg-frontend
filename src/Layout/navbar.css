@@ -13,8 +13,17 @@
     .bg-light2 {
     --bs-bg-opacity: 1;
     background-color: #ffffff;
-    max-height: 150px;  
-}
+    padding-bottom: 3em;
+    }
+    .mobileButtonWrapper {
+      display: contents;
+      position: absolute;
+      bottom: 2vw;
+      right: 2vw;
+    }
+    .navLogoWrapper {
+      position: relative;
+    }
 }
 
 
@@ -30,7 +39,7 @@
     .bg-light2 {
         --bs-bg-opacity: 1;
         background-color: #ffffff;
-        max-height: 160px;  
+        max-height: 90px;  
     }
 
 }

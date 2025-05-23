@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
  * @param {string} text - body text
  * @param {string} link - optional link
  * @param {string} linkHint - text describing link. required if there is a link
+ * @param {string} image - imgage for card
  */
 
 export default function InfoCard({
@@ -16,10 +17,12 @@ export default function InfoCard({
   text,
   link,
   linkHint,
+  image
 }) {
   return (
     <Card className="info-card" style={{ width: "18rem", backgroundColor: "#79cbbb" }}>
       <Card.Body>
+        <Card.Img {...image}></Card.Img>
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{subtitle}</Card.Subtitle>
         <Card.Text>{text}</Card.Text>

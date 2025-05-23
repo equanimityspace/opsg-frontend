@@ -26,17 +26,19 @@ export const UserNav = (props) => {
     navigate(`/`);
   };
   const handleInvoiceClick = () => {
-    navigate(`admin/users`);
+    navigate(`/profile/invoices/${userId}`);
   };
   //importing handle logout for logout button
   //nvm its in another function copy and pasting it
   //nvm using handleClick
   return (
     <div>
-      <div className="wrapper" 
+      <div
+        className="wrapper"
         style={{
           backgroundColor: "white",
-          }}>
+        }}
+      >
         <nav id="sidebar" className={isNotActive ? "active" : ""}>
           <button
             type="button"
@@ -49,7 +51,9 @@ export const UserNav = (props) => {
           </button>
 
           <div className="sidebar-header2">
-            <div className="navLogoWrapper" style={{
+            <div
+              className="navLogoWrapper"
+              style={{
                 display: "flex",
                 marginLeft: ".5vw",
                 fontWeight: "200",
@@ -57,16 +61,21 @@ export const UserNav = (props) => {
                 flexDirection: "column",
                 flexWrap: "wrap",
                 alignItems: "center",
-              }}>
+              }}
+            >
               <img
                 src={opsgLogo}
                 className="rounded-circle usr-image2 nav navbar-nav"
-                  height={isNotActive ? "0" : "80"}
-                  width={isNotActive ? "0" : "80"}
+                height={isNotActive ? "0" : "80"}
+                width={isNotActive ? "0" : "80"}
                 // style={{width: "clamp(35px, 1vw, 10px)", height: "clamp(35px, 1vw, 10px)"}}
               ></img>
-              <h4 className="onPointLogoText" style={{color: "black", fontWeight: "200"}}
-              >OnPoint</h4>
+              <h4
+                className="onPointLogoText"
+                style={{ color: "black", fontWeight: "200" }}
+              >
+                OnPoint
+              </h4>
             </div>
           </div>
 
@@ -80,8 +89,6 @@ export const UserNav = (props) => {
             <h3 className="onPointLogoText">OnPoint</h3>
           </div> */}
 
-
-
           <ul className="list-unstyled components">
             <li className="list-item">
               <Button
@@ -91,12 +98,16 @@ export const UserNav = (props) => {
               >
                 <i className="bi bi-house"></i>
               </Button>
-              <Link to="/" 
-              style={{
-                color: "black",
-                fontWeight: "200",
-                fontSize: "clamp(1px, 5vw, 16px)",
-                }}>HOME</Link>
+              <Link
+                to="/"
+                style={{
+                  color: "black",
+                  fontWeight: "200",
+                  fontSize: "clamp(1px, 5vw, 16px)",
+                }}
+              >
+                HOME
+              </Link>
             </li>
             <li className="list-item">
               <Button
@@ -106,12 +117,16 @@ export const UserNav = (props) => {
               >
                 <i className="bi bi-people-fill"></i>
               </Button>
-              <Link to="/admin/users"               
-              style={{
-                color: "black",
-                fontWeight: "200",
-                fontSize: "clamp(12px, 4.5vw, 16px)",
-                }}>INVOICES</Link>
+              <Link
+                to={`/profile/invoices/${userId}`}
+                style={{
+                  color: "black",
+                  fontWeight: "200",
+                  fontSize: "clamp(12px, 4.5vw, 16px)",
+                }}
+              >
+                INVOICES
+              </Link>
             </li>
             <li className="list-item-unstyled">
               <Button
@@ -121,23 +136,28 @@ export const UserNav = (props) => {
               >
                 <i className="bi bi-gear"></i>
               </Button>
-              <Link to={`/profile/${userId}`}
-               style={{
-                color: "black",
-                fontWeight: "200",
-                fontSize: "clamp(12px, 8vw, 16px)",
+              <Link
+                to={`/profile/${userId}`}
+                style={{
+                  color: "black",
+                  fontWeight: "200",
+                  fontSize: "clamp(12px, 8vw, 16px)",
                 }}
-              >EDIT PROFILE</Link>
+              >
+                EDIT PROFILE
+              </Link>
             </li>
             <li className="list-item">
               <Button onClick={handleClick} variant="link" className="icon-btn">
                 <i className="bi bi-box-arrow-left"></i>
               </Button>
-              <Link to="/" onClick={handleClick}
-               style={{
-                color: "black",
-                fontWeight: "200",
-                fontSize: "clamp(12px, 8vw, 16px)",
+              <Link
+                to="/"
+                onClick={handleClick}
+                style={{
+                  color: "black",
+                  fontWeight: "200",
+                  fontSize: "clamp(12px, 8vw, 16px)",
                 }}
               >
                 LOG OUT
