@@ -7,9 +7,12 @@ function BusinessName({ id, bg }) {
     status,
     isLoading,
   } = useGetCustomerObjectQuery(id);
+
   return (
     <>
-      {!isLoading ? (
+      {arrCustomer === null && status === "fulfilled" ? (
+        <></>
+      ) : !isLoading ? (
         <InfoCard
           bg={bg}
           title={arrCustomer[0]?.FullyQualifiedName}

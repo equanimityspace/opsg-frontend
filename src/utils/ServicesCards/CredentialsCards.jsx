@@ -14,14 +14,14 @@ const CredentialsCards = () => {
     {
       src: certificate,
       alt: "Certificate",
-       className: "homeCards",
-       title: "ASC",
+      className: "homeCards",
+      title: "ASC",
     },
     {
       src: certificate,
       alt: "Certificate",
-       className: "homeCards",
-       title: "Staffing Agencies",
+      className: "homeCards",
+      title: "Staffing Agencies",
     },
   ];
 
@@ -31,19 +31,37 @@ const CredentialsCards = () => {
       {cardData.map((card, index) => (
         <Col key={index} xs={12} sm={6} md={4} lg={3} xl={4} className="mb-4 d-flex">
         <Card
-          className="info-card flex-grow-1"
-          style={{ backgroundColor: "#79cbbb", minHeight: "220px", maxWidth: "300px"}}
+          key={index}
+          className="info-card"
+          style={{ backgroundColor: "#79cbbb", margin: "3vw" }}
         >
-          <CardBody className="d-flex flex-column align-items-center text-center">
-            <Card.Img 
-            src={card.src} 
-            alt={card.alt}
+          <CardBody
             style={{
-              width: "25%",
-              paddingBottom: "4vh",
-              paddingTop: "3vh",
-            }}/>
-            <Card.Title>{card.title}</Card.Title>
+              display: "flex",
+              flexDirection: "column",
+              maxWidth: "270px",
+            }}
+          >
+            <Card.Img
+              src={card.src}
+              alt={card.alt}
+              className="override"
+              style={{
+                width: "25%",
+                display: "block",
+                alignSelf: "anchor-center",
+                paddingBottom: "4vh",
+                paddingTop: "3vh",
+              }}
+            />
+            <Card.Title
+              style={{
+                display: "block",
+                paddingBottom: "1em",
+              }}
+            >
+              {card.title}
+            </Card.Title>
           </CardBody>
          </Card>
         </Col>

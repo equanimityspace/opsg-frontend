@@ -1,72 +1,87 @@
 import "./adminDashboard.css";
 import AdminNav from "../../../Features/Navigations/Navbars/AdminNav";
-import flowersImage from "../../../assets/img/beautiful-flowers.png";
 import InfoCard from "../../../utils/InfoCard";
-import { useDisconnectQuery } from "../../../Slices/qbSlice";
-
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button";
+import opsgLogo from "../../../assets/img/opsg-logo.png";
+import { Row, Col, Container, Button, Image } from "react-bootstrap";
 
 export default function AdminPage() {
-  const qbDisconnect = () => {
-    useDisconnectQuery(); // TODO fix  this!!!!
-  };
-
   return (
-    <>
-      <div className="page">
-        <Container data-bs-theme="dark">
-          <Row>
-            <Col className="navCol">
-              <AdminNav />
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col className="display-3 mt-4">OnPoint Admin Dashboard</Col>
-          </Row>
-          <Row
-            className="justify-content-md-center mt-4"
-            xs={12}
-            md={12}
-            lg={12}
-          >
-            <Col>
-              <InfoCard
-                bg="success"
-                title="Connect app to QuickBooks"
-                text={
-                  <Button
-                    variant="primary"
-                    onClick={() => {
-                      window.location.href =
-                        "https://opsg-backend.onrender.com/qbauth/connect";
-                    }}
-                  >
-                    Connect
-                  </Button>
-                }
-              />
-            </Col>
-            <Col>
-              <InfoCard
-                bg="secondary"
-                title="Disconnect app from QuickBooks"
-                text={
-                  <Button variant="danger" onClick={() => qbDisconnect()}>
-                    Disconnect
-                  </Button>
-                }
-              />
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Image src={flowersImage} roundedCircle className="mb-3 mt-3" />
-          </Row>
-        </Container>
-      </div>
-    </>
+    <div className="admin-dashboard dark-theme">
+      <Container fluid>
+        <Row className="g-0">
+          {/* Navigation Column */}
+          <Col xs={2} className="nav-column">
+            <AdminNav />
+          </Col>
+
+          {/* Content Column */}
+          <Col xs={10} className="content-column">
+            <Container>
+              {/* Header */}
+              <Row className="mb-5">
+                <Col>
+                  <div className="d-flex align-items-center">
+                    <Image
+                      src={opsgLogo}
+                      alt="OPSG Logo"
+                      width={60}
+                      className="me-3 logo-hover"
+                    />
+                    <h1 className="admin-title">
+                      <span className="text-gradient">OnPoint</span> Admin
+                      Dashboard
+                    </h1>
+                  </div>
+                </Col>
+              </Row>
+
+              {/* Action Cards */}
+              <Row className="g-4 mb-5">
+                <Col md={6}>
+                  <InfoCard
+                    variant="dark"
+                    title="Connect to QuickBooks"
+                    titleClass="text-success"
+                    bodyClass="bg-dark"
+                    text={
+                      <Button
+                        variant="success"
+                        className="w-100"
+                        onClick={() => {
+                          window.location.href =
+                            "https://opsg-backend.onrender.com/qbauth/connect";
+                        }}
+                      >
+                        Connect
+                      </Button>
+                    }
+                  />
+                </Col>
+                <Col md={6}>
+                  <InfoCard
+                    variant="dark"
+                    title="Disconnect from QuickBooks"
+                    titleClass="text-danger"
+                    bodyClass="bg-dark"
+                    text={
+                      <Button
+                        variant="outline-danger"
+                        className="w-100"
+                        onClick={() => {
+                          window.location.href =
+                            "https://opsg-backend.onrender.com/qbauth/connect";
+                        }}
+                      >
+                        Disconnect
+                      </Button>
+                    }
+                  />
+                </Col>
+              </Row>
+            </Container>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }

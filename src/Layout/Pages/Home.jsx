@@ -2,18 +2,16 @@ import { motion } from "motion/react";
 // const { scrollYProgress } = useScroll();
 
 import { Row, Col, Image, Container, CardImg } from "react-bootstrap";
-import React from "react";
-import opsgLaptop from "../../assets/img/opsg-laptop.jpg";
-import opsgLogo from "../../Assets/img/opsg-logo.png";
-import nurseSmiling from "../../Assets/img/nurseSmiling.jpg";
+import opsgLogo from "../../assets/img/opsg-logo.png";
+import nurseSmiling from "../../assets/img/nurseSmiling.jpg";
 import NavBar from "../Navbar";
 import AnimationCountUp from "../../utils/AnimationCountUp";
 import "./home.css";
 import "../../../src/app.css";
 import HomeInfoCards from "../../utils/HomeInfoCards";
-import usaMap from "../../Assets/img/usaMap.png";
-import phone from "../../Assets/img/phone.png";
-import fax from "../../Assets/img/fax.png";
+import usaMap from "../../assets/img/usaMap.png";
+import phone from "../../assets/img/phone.png";
+import fax from "../../assets/img/fax.png";
 
 const Home = () => {
   // animate fading in
@@ -71,7 +69,7 @@ const Home = () => {
               custom={-1} // make y negative, so fade in from top moving down
             >
               <Row className="justify-content-md-center">
-                <Col className="display-1" md="auto" style={{margin: "auto"}}>
+                <Col className="display-1" md="auto" style={{ margin: "auto" }}>
                   You care for patients
                 </Col>
               </Row>
@@ -173,50 +171,70 @@ const Home = () => {
               marginTop: "100px",
             }}
           >
-            <div className="footerTextWrapper" 
-            style={{ display: "flex",
+            <div
+              className="footerTextWrapper"
+              style={{
+                display: "flex",
                 flexWrap: "wrap",
                 wrapDirection: "column",
                 justifySelf: "center",
                 gap: "8vw",
                 paddingTop: "5vh",
-              }}>
-            <div className="footerTextBoxes">
-                <p>M. Michelle Zachary, CPCS, CPMSM<br />  
+              }}
+            >
+              <div className="footerTextBoxes">
+                <p>
+                  M. Michelle Zachary, CPCS, CPMSM
+                  <br />
                   <a href="mailto:szachary@onpointsolutionsgroup.org">
-                  szachary@onpointsolutionsgroup.org</a>
+                    szachary@onpointsolutionsgroup.org
+                  </a>
                 </p>
-            </div>
-            <div className="footerTextBoxes">
-                <p>M. Catherine Cutrone, CPCS<br />
+              </div>
+              <div className="footerTextBoxes">
+                <p>
+                  M. Catherine Cutrone, CPCS
+                  <br />
                   <a href="mailto:ccutrone@onpointsolutionsgroup.org">
-                    ccutrone@onpointsolutionsgroup.org</a>
+                    ccutrone@onpointsolutionsgroup.org
+                  </a>
                 </p>
+              </div>
             </div>
-          </div>
-            <div className="btmFooterTextBox"
-            style={{
-                // display: "flex-box",
-                // flexDirection: "column",
-                // alignItems: "center",
-                // width: "50vw",
-                // transform: "translate(70%, 50%)",
-            }}>
-
-              <p className="wrap-box strict">General Inquiries:<br />
-                <img src={phone} 
-                style={{
-                  width: "5%",
-                  margin: "1vw"}}>
-                    </img>(970) 394-5560<br />
-
-                <img src={fax}
-                style={{
-                  width: "5%",
-                  margin: "1vw",}}>
-
-                  </img>(970) 317-2233<br />
-                </p>
+            <div
+              className="btmFooterTextBox"
+              style={
+                {
+                  // display: "flex-box",
+                  // flexDirection: "column",
+                  // alignItems: "center",
+                  // width: "50vw",
+                  // transform: "translate(70%, 50%)",
+                }
+              }
+            >
+              <p className="wrap-box strict">
+                General Inquiries:
+                <br />
+                <img
+                  src={phone}
+                  style={{
+                    width: "5%",
+                    margin: "1vw",
+                  }}
+                ></img>
+                (970) 394-5560
+                <br />
+                <img
+                  src={fax}
+                  style={{
+                    width: "5%",
+                    margin: "1vw",
+                  }}
+                ></img>
+                (970) 317-2233
+                <br />
+              </p>
             </div>
           </footer>
         </div>
