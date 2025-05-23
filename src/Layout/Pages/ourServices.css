@@ -30,6 +30,27 @@
   padding-left: 8px !important;
 }
 
+.whyChoose {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.whyChooseParag {
+   padding: 1vw;
+   list-style-type: "";
+}
+
+.cardheader {
+    padding-bottom: 2vw;
+    font-weight: 200;
+}
+
+.cardPara {
+    padding-bottom: 3vw;
+    font-weight: 200;
+    font-size: 1.5vw
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .info-card {
