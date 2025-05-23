@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardBody } from "react-bootstrap";
+import { Card, CardBody, Row, Col, Container } from "react-bootstrap";
 import pen from "../../Assets/img/pen.png";
 
 const EnrollmentCards = () => {
@@ -43,44 +43,30 @@ const EnrollmentCards = () => {
   ];
 
   return (
-    <div>
+    <Container className="py-5 enrollment-card-container">
+        <Row className="justify-content-center">
       {cardData.map((card, index) => (
+        <Col key={index} xs={12} sm={6} md={4} lg={3} xl={4} className="mb-4 justify-content-center d-flex">
         <Card
-          key={index}
-          className="info-card"
-          style={{ backgroundColor: "#79cbbb", margin: "3vw" }}
+          className="info-card flex-grow-1"
+          style={{ backgroundColor: "#79cbbb", minHeight: "220px", maxWidth: "300px"}}
         >
-          <CardBody
+          <CardBody className="d-flex flex-column align-items-center text-center">
+            <Card.Img 
+            src={card.src} 
+            alt={card.alt}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              maxWidth: "270px",
-            }}
-          >
-            <Card.Img
-              src={card.src}
-              alt={card.alt}
-              className="override"
-              style={{
-                width: "25%",
-                display: "block",
-                alignSelf: "anchor-center",
-                paddingBottom: "4vh",
-                paddingTop: "3vh",
-              }}
-            />
-            <Card.Title
-              style={{
-                display: "block",
-                paddingBottom: "1em",
-              }}
-            >
-              {card.title}
-            </Card.Title>
+              width: "25%",
+              paddingBottom: "4vh",
+              paddingTop: "3vh",
+            }}/>
+            <Card.Title>{card.title}</Card.Title>
           </CardBody>
-        </Card>
+         </Card>
+        </Col>
       ))}
-    </div>
+     </Row>
+    </Container>
   );
 };
 
