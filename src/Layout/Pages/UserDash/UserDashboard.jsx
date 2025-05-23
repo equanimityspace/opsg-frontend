@@ -3,11 +3,14 @@ import { UserNav } from "../../../Features/Navigations/Navbars/UserNav";
 import opsgLogo from "../../../assets/img/opsg-logo.png";
 import InfoCard from "../../../utils/InfoCard";
 import { Row, Col, Image, Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+
+import Balance from "../../../utils/qbCustomer/Balance";
+import FullName from "../../../utils/qbCustomer/FullName";
 
 export default function UserPage() {
-  if (!isLoading) {
-    console.log(customerData);
-  }
+  const objId = useParams();
+  const id = objId.userId;
 
   return (
     <div className="backgroundAccent">
@@ -34,12 +37,11 @@ export default function UserPage() {
             md={12}
             lg={12}
           >
+            <Col>
+              <FullName bg="primary" id={id} />
+            </Col>
             <Col className="balanceCard">
-              <InfoCard
-                bg="light"
-                title="BALANCE DUE"
-                text="import unpaid $ amount"
-              />
+              <Balance bg="danger" id={id} />
             </Col>
           </Row>
           <Row className="justify-content-md-center"></Row>
