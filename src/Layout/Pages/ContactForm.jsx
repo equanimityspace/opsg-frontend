@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import ReactiveButton from "reactive-button";
 import ReCAPTCHA from "react-google-recaptcha";
+import Footer from "../../utils/footer";
 
 export default function ContactFormPage() {
   const [formData, setFormData] = useState({
@@ -200,6 +201,7 @@ export default function ContactFormPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -4,7 +4,8 @@ import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
-import "./ourservices.css"
+import "./ourservices.css";
+import Footer from "../../utils/footer";
 
 const ourServices = () => {
   return (
@@ -22,7 +23,9 @@ const ourServices = () => {
           }}
         >
           <h1 style={{ margin: 0 }}>Why Choose OnPoint Solutions?</h1>
-          <h3 style={{ margin: 0, padding: "0 10%" }}> {/* Added padding */}
+          <h3 style={{ margin: 0, padding: "0 10%" }}>
+            {" "}
+            {/* Added padding */}
             At OnPoint Solutions Group, our goal is to provide innovative
             credentialing and enrollment services that help our clients manage
             the constantly changing healthcare environment. We believe that
@@ -38,27 +41,37 @@ const ourServices = () => {
             tools to operationally and financially prosper is our passion.
           </h3>
         </div>
-        
+
         {/* Credentials Section */}
         <Container className="py-5">
           <h2 className="text-center">Credentials</h2>
-          <h3 className="text-center mb-4">Recredentialing, Applications and License Renewals</h3>
+          <h3 className="text-center mb-4">
+            Recredentialing, Applications and License Renewals
+          </h3>
           <CredentialsCards />
         </Container>
-        
+
         {/* Enrollment Section */}
         <Container className="py-5">
           <h2 className="text-center">Enrollment</h2>
-          <h3 className="text-center mb-4 mx-auto" style={{ maxWidth: "55%" }}>Medicare Opt-Out, Group Providers and Individual Providers Serving Commercial and Government Payers</h3>
+          <h3 className="text-center mb-4 mx-auto" style={{ maxWidth: "55%" }}>
+            Medicare Opt-Out, Group Providers and Individual Providers Serving
+            Commercial and Government Payers
+          </h3>
           <EnrollmentCards />
         </Container>
-        
+
         {/* Consulting Section */}
         <Container className="py-5">
           <h2 className="text-center">Consulting</h2>
-          <h3 className="text-center mb-4 mx-auto" style={{ maxWidth: "45%" }}>Development Planning Assessing Compliance, Risk, and Opportunities</h3>
+          <h3 className="text-center mb-4 mx-auto" style={{ maxWidth: "45%" }}>
+            Development Planning Assessing Compliance, Risk, and Opportunities
+          </h3>
           <ConsultingCards />
         </Container>
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );
