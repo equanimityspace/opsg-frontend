@@ -6,6 +6,7 @@ import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
 import "./ourservices.css"
+import Footer from "../../utils/footer";
 
 const ourServices = () => {
 
@@ -91,6 +92,7 @@ const ourServices = () => {
           <ConsultingCards />
         </Container>
       </div>
+      <Footer />
     </>
   );
 };
