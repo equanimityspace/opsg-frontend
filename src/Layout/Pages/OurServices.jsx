@@ -5,10 +5,12 @@ import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
-import "./ourservices.css"
+
+import "./ourservices.css";
+
+import Footer from "../../utils/footer";
 
 const ourServices = () => {
-
   const fadeInAnimationVariants = {
     initial: (direction) => ({
       opacity: 0,
@@ -54,21 +56,38 @@ const ourServices = () => {
               >
                 <Col className="display-1" md="auto" 
                 style={{
-                  fontSize: "2vw", 
-                  fontWeight: "200", 
-                  width: "80vw", 
-                  paddingBottom: "6vw" 
-                  }}>
-                  <ul className="whyChoose">
-                    <li className="whyChooseParag"><strong>Support:</strong> Every client is assigned a Certified Provider Credentialing Specialist (CPCS) to ensure personalized service and attention to detail.</li>
-                   <li className="whyChooseParag"><strong>Streamlined Processes:</strong> We manage the entire credentialing and enrollment lifecycle, so you can focus on what matters most—patient care.</li>
-                    <li className="whyChooseParag"><strong>Faster Revenue Cycles:</strong> Our efficient systems help you get credentialed quicker, increasing patient access and accelerating your income.</li>
-                    <li className="whyChooseParag"><strong>Individualized Service:</strong> No one-size-fits-all solutions here. We tailor our approach to meet your unique operational and financial goals.</li>
-                  </ul>
-                </Col>
-              </Row>
-              </motion.div>
-              </Container>
+                  fontSize: "2vw",
+                  fontWeight: "200",
+                  width: "80vw",
+                  paddingBottom: "6vw",
+                }}
+              >
+                <ul className="whyChoose">
+                  <li className="whyChooseParag">
+                    <strong>Support:</strong> Every client is assigned a
+                    Certified Provider Credentialing Specialist (CPCS) to ensure
+                    personalized service and attention to detail.
+                  </li>
+                  <li className="whyChooseParag">
+                    <strong>Streamlined Processes:</strong> We manage the entire
+                    credentialing and enrollment lifecycle, so you can focus on
+                    what matters most—patient care.
+                  </li>
+                  <li className="whyChooseParag">
+                    <strong>Faster Revenue Cycles:</strong> Our efficient
+                    systems help you get credentialed quicker, increasing
+                    patient access and accelerating your income.
+                  </li>
+                  <li className="whyChooseParag">
+                    <strong>Individualized Service:</strong> No
+                    one-size-fits-all solutions here. We tailor our approach to
+                    meet your unique operational and financial goals.
+                  </li>
+                </ul>
+              </Col>
+            </Row>
+          </motion.div>
+        </Container>
 
         {/* Credentials Section */}
         <Container className="py-5 justify-content-center">
@@ -82,7 +101,7 @@ const ourServices = () => {
             }}>Recredentialing, Applications and License Renewals</h3>
           <CredentialsCards />
         </Container>
-        
+
         {/* Enrollment Section */}
         <Container className="py-5">
           <h2 className="text-center cardheader">Enrollment</h2>
@@ -95,7 +114,7 @@ const ourServices = () => {
             }}>Medicare Opt-Out, Group Providers and Individual Providers Serving Commercial and Government Payers</h3>
           <EnrollmentCards />
         </Container>
-        
+
         {/* Consulting Section */}
         <Container className="py-5">
           <h2 className="text-center cardheader">Consulting</h2>
@@ -109,6 +128,7 @@ const ourServices = () => {
           <ConsultingCards />
         </Container>
       </div>
+      <Footer />
     </>
   );
 };

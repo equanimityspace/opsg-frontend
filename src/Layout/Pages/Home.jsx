@@ -10,8 +10,7 @@ import "./home.css";
 import "../../../src/app.css";
 import HomeInfoCards from "../../utils/HomeInfoCards";
 import usaMap from "../../assets/img/usaMap.png";
-import phone from "../../assets/img/phone.png";
-import fax from "../../assets/img/fax.png";
+import Footer from "../../utils/footer";
 
 const Home = () => {
   // animate fading in
@@ -31,8 +30,11 @@ const Home = () => {
   };
 
   return (
-    <div className="background">
-      <div className="backgroundAccent">
+    <div
+      className="background"
+      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
+      <div className="backgroundAccent" style={{ flex: 1 }}>
         {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
         <NavBar />
         <div className="nameLogo">
@@ -164,79 +166,7 @@ const Home = () => {
             </motion.div>
             {/* no animation */}
           </Container>
-          <footer
-            style={{
-              backgroundColor: "#558e89",
-              height: "40vh",
-              marginTop: "100px",
-            }}
-          >
-            <div
-              className="footerTextWrapper"
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                wrapDirection: "column",
-                justifySelf: "center",
-                gap: "8vw",
-                paddingTop: "5vh",
-              }}
-            >
-              <div className="footerTextBoxes">
-                <p>
-                  M. Michelle Zachary, CPCS, CPMSM
-                  <br />
-                  <a href="mailto:szachary@onpointsolutionsgroup.org">
-                    szachary@onpointsolutionsgroup.org
-                  </a>
-                </p>
-              </div>
-              <div className="footerTextBoxes">
-                <p>
-                  M. Catherine Cutrone, CPCS
-                  <br />
-                  <a href="mailto:ccutrone@onpointsolutionsgroup.org">
-                    ccutrone@onpointsolutionsgroup.org
-                  </a>
-                </p>
-              </div>
-            </div>
-            <div
-              className="btmFooterTextBox"
-              style={
-                {
-                  // display: "flex-box",
-                  // flexDirection: "column",
-                  // alignItems: "center",
-                  // width: "50vw",
-                  // transform: "translate(70%, 50%)",
-                }
-              }
-            >
-              <p className="wrap-box strict">
-                General Inquiries:
-                <br />
-                <img
-                  src={phone}
-                  style={{
-                    width: "5%",
-                    margin: "1vw",
-                  }}
-                ></img>
-                (970) 394-5560
-                <br />
-                <img
-                  src={fax}
-                  style={{
-                    width: "5%",
-                    margin: "1vw",
-                  }}
-                ></img>
-                (970) 317-2233
-                <br />
-              </p>
-            </div>
-          </footer>
+          <Footer />
         </div>
       </div>
     </div>

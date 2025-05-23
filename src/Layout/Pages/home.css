@@ -16,8 +16,8 @@
   /* CSS styles for mobile devices (screens 768px and smaller) */
   /* Example: Smaller font size, different layout, etc. */
 
-  .footerTextWrapper {
-  }
+  /* .footerTextWrapper {
+  } */
 
   .footerTextBoxes {
     display: flex;
@@ -63,17 +63,34 @@
   }
   .footer {
     background-color: #558e89;
-    position: 
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+  }
+
+  .footerTextBoxes {
+    margin-bottom: 20px;
+  }
+}
+.background {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.backgroundAccent {
+  flex: 1;
+}
+
+@media (max-width: 768) {
+  .footerTextWrapper {
+    flex-direction: column;
+    gap: 20px;
   }
   .btmFooterTextBox {
-    width: 55vw;
-    transform: translate(70%, 50%);
-    line-break: strict;
+    text-align: center;
   }
-  .footerTextBoxes {
-    width: 40vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .btmFooterTextBox img {
+    width: 24px !important;
   }
 }
