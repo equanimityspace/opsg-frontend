@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, CardBody } from "react-bootstrap";
-import certificate from "../../assets/img/certificate.png";
+import { Card, CardBody, Row, Col, Container } from "react-bootstrap";
+import certificate from "../../Assets/img/certificate.png"
+
 
 const CredentialsCards = () => {
   const cardData = [
@@ -25,8 +26,10 @@ const CredentialsCards = () => {
   ];
 
   return (
-    <div>
+    <Container>
+        <Row className="justify-content-center">
       {cardData.map((card, index) => (
+        <Col key={index} xs={12} sm={6} md={4} lg={3} xl={4} className="mb-4 d-flex">
         <Card
           key={index}
           className="info-card"
@@ -60,9 +63,11 @@ const CredentialsCards = () => {
               {card.title}
             </Card.Title>
           </CardBody>
-        </Card>
+         </Card>
+        </Col>
       ))}
-    </div>
+     </Row>
+    </Container>
   );
 };
 
