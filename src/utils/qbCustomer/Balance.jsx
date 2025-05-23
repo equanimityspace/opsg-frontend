@@ -1,23 +1,23 @@
 import { useGetCustomerObjectQuery } from "../../Slices/qbSlice";
 import InfoCard from "../InfoCard";
 
-function Balance(id, bg) {
+function Balance({ id, bg }) {
   const {
-    data: objCustomer,
+    data: arrCustomer,
     status,
     isLoading,
   } = useGetCustomerObjectQuery(id);
 
   return (
     <>
-      {objCustomer?.Balance ? (
-        objCustomer.Balance === 0 ? (
+      {!isLoading ? (
+        arrCustomer[0]?.Balance === 0 ? (
           <InfoCard bg="success" title="No outstanding balance 🎉" />
         ) : (
           <InfoCard
             bg={bg}
             title="Outstanding Balance"
-            text={objCustomer.Balance}
+            text={`$${arrCustomer[0].Balance}`}
           />
         )
       ) : (
