@@ -4,7 +4,7 @@ import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
-import "./ourservices.css"
+import "./ourServices.css";
 
 const ourServices = () => {
   return (
@@ -60,19 +60,26 @@ const ourServices = () => {
         </div>
 
         <Container className="py-5">
-          <h2 style={{textAlign: "center"}}>Credentials</h2>
-          <h3 style={{textAlign: "center"}}>Recredentialing, Applications and License Renewals</h3>
+          <h2 style={{ textAlign: "center" }}>Credentials</h2>
+          <h3 style={{ textAlign: "center" }}>
+            Recredentialing, Applications and License Renewals
+          </h3>
           <CredentialsCards />
         </Container>
 
         <Container className="py-5">
-          <h2 style={{textAlign: "center"}}>Enrollment</h2>
-          <h3 style={{textAlign: "center", margin: "auto", maxWidth: "55%"}}>Medicare Opt-Out, Group Providers and Individual Providers Serving Commercial and Government Payers</h3>
+          <h2 style={{ textAlign: "center" }}>Enrollment</h2>
+          <h3 style={{ textAlign: "center", margin: "auto", maxWidth: "55%" }}>
+            Medicare Opt-Out, Group Providers and Individual Providers Serving
+            Commercial and Government Payers
+          </h3>
           <EnrollmentCards />
         </Container>
         <Container className="py-5">
-          <h2 style={{textAlign: "center"}}>Consulting</h2>
-          <h3 style={{textAlign: "center", margin: "auto", maxWidth: "40%"}}>Development Planning Assessing Compliance, Risk, and Opportunities</h3>
+          <h2 style={{ textAlign: "center" }}>Consulting</h2>
+          <h3 style={{ textAlign: "center", margin: "auto", maxWidth: "40%" }}>
+            Development Planning Assessing Compliance, Risk, and Opportunities
+          </h3>
           <ConsultingCards />
         </Container>
       </div>
