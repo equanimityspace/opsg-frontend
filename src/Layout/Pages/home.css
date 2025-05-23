@@ -1,37 +1,43 @@
-/* .info-card {
+
+.counterWrapper {
+  padding-left: 2vw;
+}
+.info-card {
   background-color: #79cbbb !important;
   transition: transform 0.25s ease-in-out;
   transform-origin: center center;
   z-index: 1;
 }
 .info-card:hover {
-  transform: scale(1.25);
+  transform: scale(1.25) !important;
   z-index: 10;
-} */
-
-.counterWrapper {
-  padding-left: 2vw;
 }
 
 @media (max-width: 600px) {
   /* CSS styles for mobile devices (screens 768px and smaller) */
   /* Example: Smaller font size, different layout, etc. */
 
-  .footer {
-    background-color: #558e89;
-    height: 200px;
-    margin-top: 210px;
+  .footerTextWrapper {
   }
-  .card {
+
+  .footerTextBoxes {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info-card {
     background-color: #79cbbb !important;
     transition: transform 0.25s ease-in-out;
     transform-origin: center center;
     z-index: 1;
     display: grid;
-    width: 5vw;
+    scale: 75%;
+    text-align: center;
+    width: 16em;
+    height: 22em;
   }
   .usMap {
-transform: translate(14%, 0%);
+    transform: translate(14%, 0%);
     width: 75%;
   }
 }
@@ -53,10 +59,8 @@ transform: translate(14%, 0%);
     transform-origin: center center;
     z-index: 1;
     display: inline-flex;
-  }
-  .info-card:hover {
-    transform: scale(1.25);
-    z-index: 10;
+    scale: 95%;
+    text-align: center;
   }
   .usMap {
     transform: translate(38%, 0%);

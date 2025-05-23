@@ -11,7 +11,7 @@ import AnimationCountUp from "../../utils/AnimationCountUp";
 import "./home.css";
 import "../../../src/app.css";
 import HomeInfoCards from "../../utils/HomeInfoCards";
-import usaMap from "../../Assets/img/usaMap.png"
+import usaMap from "../../Assets/img/usaMap.png";
 
 const Home = () => {
   // animate fading in
@@ -35,18 +35,16 @@ const Home = () => {
       <div className="backgroundAccent">
         {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
         <NavBar />
-          <div className="nameLogo">
-            <div className="logoContainer" 
+        <div className="nameLogo">
+          <div
+            className="logoContainer"
             style={{
-              display: "flex", 
-              alignItems: "center", 
+              display: "flex",
+              alignItems: "center",
               fontSize: "clamp(16px, 3vw, 100px)",
               fontWeight: "200",
-              // width: "auto",
-              // height: "clamp(1rem, 2vh, 2rem)",
-              // paddingTop: "clamp(1vh, 23vh, 30vh)",
-              // paddingBottom: "clamp(1vh, 8vh, 8vh)",
-              }}>
+            }}
+          >
             <img
               src={opsgLogo}
               // className="rounded-circle usr-image2"
@@ -57,10 +55,7 @@ const Home = () => {
               }}
             ></img>
             <Row>
-              <Col
-            >OnPoint Solutions Group
-
-             </Col>
+              <Col>OnPoint Solutions Group</Col>
             </Row>
           </div>
 
@@ -74,7 +69,7 @@ const Home = () => {
               custom={-1} // make y negative, so fade in from top moving down
             >
               <Row className="justify-content-md-center">
-                <Col className="display-1" md="auto">
+                <Col className="display-1" md="auto" style={{margin: "auto"}}>
                   You care for patients
                 </Col>
               </Row>
@@ -91,11 +86,13 @@ const Home = () => {
                 className="justify-content-md-center mt-3 mb-5"
                 style={{
                   display: "flex",
-
                 }}
               >
                 <Col className="text-muted">
-                  <div className="secondaryHeaderBox" style={{verticalAlign: "middle"}}>
+                  <div
+                    className="secondaryHeaderBox"
+                    style={{ verticalAlign: "middle" }}
+                  >
                     <div className="secondHeader">Credentials </div>
                     <div className="secondHeader">Enrollments</div>
                     <div className="secondHeader">Consulting</div>
@@ -112,64 +109,107 @@ const Home = () => {
               viewport={{ once: true }}
               custom={1} // make y positive, so fade in from bottom moving up
             >
-                  <div className="mainImage">
-                    <img
-                      className="mainImage"
-                      src={nurseSmiling}
-                      fluid="true"
-                      rounded="true"
-                      thumbnail="true"
-                      alt="Nurse Smiling"
-                      loading="lazy"
-                      style={{
-                        margin: "auto",
-                      }}
-                    />
-                  </div>
+              <div className="mainImage">
+                <img
+                  className="mainImage"
+                  src={nurseSmiling}
+                  fluid="true"
+                  rounded="true"
+                  thumbnail="true"
+                  alt="Nurse Smiling"
+                  loading="lazy"
+                  style={{
+                    margin: "auto",
+                  }}
+                />
+              </div>
 
-              <div className="counterWrapper" style={{
-                   marginTop: "7vh",
-                   marginBottom: "7vh",
-                   display: "grid",                   
-                   justifyContent: "center", 
-                   }}>
-                <h3 style={{
-                   fontSize: "clamp(3.5vw, 6px, 2vw)",
-                   display: "flex",
-                   flexWrap: "wrap",
-                   flexDirection: "column",
-                   alignItems: "center",
-                   }}>
+              <div
+                className="counterWrapper"
+                style={{
+                  marginTop: "7vh",
+                  marginBottom: "7vh",
+                  display: "grid",
+                  justifyContent: "center",
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: "clamp(3.5vw, 6px, 2vw)",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
                   Trusted by over <AnimationCountUp from={0} to={50} />{" "}
                   Hospitals, providers, and practicioners
                 </h3>
               </div>
-            <img className="usMap" src={usaMap} alt="United States Map"></img>
-            
-              <div className="cardsContainer" 
-              style={{    
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "space-around",
-                gap: "3vw",
-            }}>
+              <img className="usMap" src={usaMap} alt="United States Map"></img>
+
+              <div
+                className="cardsContainer"
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "space-around",
+                  gap: "3vw",
+                }}
+              >
                 <div>
                   <HomeInfoCards></HomeInfoCards>
                 </div>
-              </div> 
+              </div>
             </motion.div>
             {/* no animation */}
           </Container>
           <footer
             style={{
               backgroundColor: "#558e89",
-              height: "200px",
-              marginTop: "210px",
+              height: "80vh",
+              marginTop: "100px",
             }}
           >
-            <p className="footer">
-              test footer insert names of reps or address? idk..
-            </p>
+            <div className="footerTextWrapper" 
+            style={{ display: "flex",
+                flexWrap: "wrap",
+                wrapDirection: "column",
+                justifySelf: "center",
+                gap: "18vw",
+                paddingTop: "5vh",
+              }}>
+            <div className="footerTextBoxes">
+                <p>M. Michelle Zachary, CPCS, CPMSM</p>
+                <p>
+                  <a href="mailto:szachary@onpointsolutionsgroup.org">
+                    szachary@onpointsolutionsgroup.org
+                  </a>
+                </p>
+            </div>
+            <div className="footerTextBoxes">
+                <p>M. Catherine Cutrone, CPCS</p>
+                <p>
+                  <a href="mailto:ccutrone@onpointsolutionsgroup.org">
+                    ccutrone@onpointsolutionsgroup.org        
+                  </a>
+                </p>
+            </div>
+          </div>
+            <div className="footerTextBoxes"
+            style={{
+                display: "flex-box",
+                flexDirection: "column",
+                alignItems: "center",
+                width: "50vw",
+                transform: "translate(70%, 50%)",
+            }}>
+                <p>p: 970-394-5560  |  f: 970-317-2233</p> 
+                <p>General Inquiries:
+                  <a href="mailto: onpointsolutions.co@gmail.com">onpointsolutions.co@gmail.com
+                  </a>
+                </p>
+            </div>
           </footer>
         </div>
       </div>
