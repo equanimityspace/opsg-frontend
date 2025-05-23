@@ -4,15 +4,7 @@ import opsgLogo from "../../../assets/img/opsg-logo.png";
 import InfoCard from "../../../utils/InfoCard";
 import { Row, Col, Image, Container } from "react-bootstrap";
 
-import { useGetCustomerObjectQuery } from "../../../Slices/qbSlice";
-import { useParams } from "react-router-dom";
-
 export default function UserPage() {
-  const userId = useParams();
-  const { data: customerData, isLoading } = useGetCustomerObjectQuery(
-    userId.userId
-  );
-
   if (!isLoading) {
     console.log(customerData);
   }
