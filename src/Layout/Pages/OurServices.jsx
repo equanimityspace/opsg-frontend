@@ -1,4 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap";
+import { motion } from "motion/react";
 import React from "react";
 import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
@@ -43,9 +44,9 @@ const ourServices = () => {
         </div>
 
         {/* Credentials Section */}
-        <Container className="py-5">
-          <h2 className="text-center">Credentials</h2>
-          <h3 className="text-center mb-4">
+        <Container className="py-5 justify-content-center">
+          <h2 className="text-center cardheader">Credentials</h2>
+          <h3 className="text-center mb-4 mx-auto cardPara">
             Recredentialing, Applications and License Renewals
           </h3>
           <CredentialsCards />
