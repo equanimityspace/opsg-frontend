@@ -60,16 +60,15 @@ const ConsultingCards = () => {
             <Card
                 className="info-card flex-grow-1"
                 style={{ backgroundColor: "#79cbbb",
-                minHeight: "200px", 
+                minHeight: "200px",
                 width: "100%",
-                maxWidth: "250px"
+                maxWidth: "250px",
                  }}
               >
                 <CardBody className="d-flex flex-column align-items-center text-center">
                   <Card.Img 
                     src={card.src} 
                     alt={card.alt} 
-                    className="override"
                     style={{
                       width: "25%",
                       paddingBottom: "4vh",

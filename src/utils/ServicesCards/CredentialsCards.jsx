@@ -49,7 +49,7 @@ const CredentialsCards = () => {
                   <Card.Img 
                     src={card.src} 
                     alt={card.alt} 
-                    className="override"
+
                     style={{
                       width: "25%",
                       paddingBottom: "4vh",

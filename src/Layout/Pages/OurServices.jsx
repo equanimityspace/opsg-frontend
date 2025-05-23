@@ -43,14 +43,14 @@ const ourServices = () => {
                   margin: "auto", 
                   paddingTop: "1.5em", 
                   fontSize: "5vw", 
-                  paddingBottom: ".75em" 
+                  paddingBottom: ".75em",
+                  color: "#558e89",
                   }}>
                   Why Choose OnPoint Solutions?
                 </Col>
               </Row>
               <Row
                 className="justify-content-md-center"
-                style={{ color: "#558e89" }}
               >
                 <Col className="display-1" md="auto" 
                 style={{
@@ -73,21 +73,39 @@ const ourServices = () => {
         {/* Credentials Section */}
         <Container className="py-5 justify-content-center">
           <h2 className="text-center cardheader">Credentials</h2>
-          <h3 className="text-center mb-4 mx-auto cardPara">Recredentialing, Applications and License Renewals</h3>
+          <h3 className="text-center mb-4 mx-auto cardPara" 
+          style={{ 
+            maxWidth: "55%",
+            fontWeight: "200",
+            paddingBottom: "2vw", 
+            fontSize: "1.6vw", 
+            }}>Recredentialing, Applications and License Renewals</h3>
           <CredentialsCards />
         </Container>
         
         {/* Enrollment Section */}
         <Container className="py-5">
           <h2 className="text-center cardheader">Enrollment</h2>
-          <h3 className="text-center mb-4 mx-auto cardPara" style={{ maxWidth: "55%" }}>Medicare Opt-Out, Group Providers and Individual Providers Serving Commercial and Government Payers</h3>
+          <h3 className="text-center mb-4 mx-auto cardPara" 
+          style={{ 
+            maxWidth: "55%",
+            fontWeight: "200",
+            paddingBottom: "2vw", 
+            fontSize: "1.6vw", 
+            }}>Medicare Opt-Out, Group Providers and Individual Providers Serving Commercial and Government Payers</h3>
           <EnrollmentCards />
         </Container>
         
         {/* Consulting Section */}
         <Container className="py-5">
           <h2 className="text-center cardheader">Consulting</h2>
-          <h3 className="text-center mb-4 mx-auto cardPara" style={{ maxWidth: "45%" }}>Development Planning Assessing Compliance, Risk, and Opportunities</h3>
+          <h3 className="text-center mb-4 mx-auto cardPara" 
+          style={{ 
+            maxWidth: "55%",
+            fontWeight: "200",
+            paddingBottom: "2vw", 
+            fontSize: "1.6vw", 
+            }}>Development Planning Assessing Compliance, Risk, and Opportunities</h3>
           <ConsultingCards />
         </Container>
       </div>

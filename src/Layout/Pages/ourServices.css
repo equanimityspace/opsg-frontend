@@ -35,25 +35,47 @@
   flex-wrap: wrap;
 }
 
-.whyChooseParag {
+/* .whyChooseParag {
    padding: 1vw;
    list-style-type: "";
-}
+} */
 
 .cardheader {
     padding-bottom: 2vw;
     font-weight: 200;
 }
 
-.cardPara {
+/* .cardPara {
     padding-bottom: 3vw;
     font-weight: 200;
     font-size: 1.5vw
-}
+} */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .info-card {
     min-height: 300px !important;
   }
+.whyChooseParag {
+   padding: 1vw;
+   list-style-type: "";
+}
+.cardPara {
+    padding-bottom: 5vw; 
+}
+}
+
+@media (max-width: 600px) {
+  /* CSS styles for mobile devices (screens 768px and smaller) */
+  /* Example: Smaller font size, different layout, etc. */
+.whyChooseParag {
+   padding: 2vw;
+   list-style-type: "";
+   font-size: 12px;
+}
+.cardPara {
+    padding-bottom: 3vw;
+    font-weight: 200;
+    font-size: 3.5vw
+}
 }
