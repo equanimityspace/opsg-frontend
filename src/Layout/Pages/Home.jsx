@@ -31,8 +31,11 @@ const Home = () => {
   };
 
   return (
-    <div className="background">
-      <div className="backgroundAccent">
+    <div
+      className="background"
+      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
+      <div className="backgroundAccent" style={{ flex: 1 }}>
         {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
         <NavBar />
         <div className="nameLogo">
@@ -167,75 +170,87 @@ const Home = () => {
           <footer
             style={{
               backgroundColor: "#558e89",
-              height: "40vh",
-              marginTop: "100px",
+              padding: "40px 0",
+              width: "100%",
+              marginTop: "auto",
             }}
           >
-            <div
-              className="footerTextWrapper"
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                wrapDirection: "column",
-                justifySelf: "center",
-                gap: "8vw",
-                paddingTop: "5vh",
-              }}
-            >
-              <div className="footerTextBoxes">
-                <p>
-                  M. Michelle Zachary, CPCS, CPMSM
-                  <br />
-                  <a href="mailto:szachary@onpointsolutionsgroup.org">
-                    szachary@onpointsolutionsgroup.org
-                  </a>
-                </p>
+            <Container>
+              <div
+                className="footerTextWrapper"
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  gap: "8vw",
+                  marginBottom: "30px",
+                }}
+              >
+                <div className="footerTextBoxes">
+                  <p>
+                    M. Michelle Zachary, CPCS, CPMSM
+                    <br />
+                    <a href="mailto:szachary@onpointsolutionsgroup.org">
+                      szachary@onpointsolutionsgroup.org
+                    </a>
+                  </p>
+                </div>
+                <div className="footerTextBoxes">
+                  <p>
+                    M. Catherine Cutrone, CPCS
+                    <br />
+                    <a href="mailto:ccutrone@onpointsolutionsgroup.org">
+                      ccutrone@onpointsolutionsgroup.org
+                    </a>
+                  </p>
+                </div>
               </div>
-              <div className="footerTextBoxes">
-                <p>
-                  M. Catherine Cutrone, CPCS
-                  <br />
-                  <a href="mailto:ccutrone@onpointsolutionsgroup.org">
-                    ccutrone@onpointsolutionsgroup.org
-                  </a>
-                </p>
+
+              <div className="btmFooterTextBox">
+                <Row className="justify-content-center mb-3">
+                  <Col className="text-center">
+                    <h4>General Inquiries</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <div className="d-flex justify-content-center align-items-center">
+                      <img
+                        src={opsgLogo}
+                        alt="Logo"
+                        style={{ width: "100px" }}
+                      />
+                    </div>
+                  </Col>
+                </Row>
+                <Row className="justify-content-center">
+                  <Col className="text-center">
+                    <div className="d-flex justify-content-center align-items-center">
+                      <img
+                        src={phone}
+                        style={{
+                          width: "50px",
+                          marginRight: "8px",
+                        }}
+                      ></img>
+                      <span>(970) 394-5560</span>
+                    </div>
+                  </Col>
+                  <Col className="text-center">
+                    <div className="d-flex justify-content-center align-items-center">
+                      <img
+                        src={fax}
+                        style={{
+                          width: "50px",
+                          marginRight: "8px",
+                        }}
+                      ></img>
+                      <span>(970) 317-2233</span>
+                    </div>
+                  </Col>
+                </Row>
               </div>
-            </div>
-            <div
-              className="btmFooterTextBox"
-              style={
-                {
-                  // display: "flex-box",
-                  // flexDirection: "column",
-                  // alignItems: "center",
-                  // width: "50vw",
-                  // transform: "translate(70%, 50%)",
-                }
-              }
-            >
-              <p className="wrap-box strict">
-                General Inquiries:
-                <br />
-                <img
-                  src={phone}
-                  style={{
-                    width: "5%",
-                    margin: "1vw",
-                  }}
-                ></img>
-                (970) 394-5560
-                <br />
-                <img
-                  src={fax}
-                  style={{
-                    width: "5%",
-                    margin: "1vw",
-                  }}
-                ></img>
-                (970) 317-2233
-                <br />
-              </p>
-            </div>
+            </Container>
           </footer>
         </div>
       </div>
