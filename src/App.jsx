@@ -32,7 +32,7 @@ function App() {
         <Route path="/contactform" element={<ContactForm />} />
 
         {/* Protected Routes */}
-        <Route path="/login/redirect" element={<ProtectedRoutes />} />
+        {/* <Route path="/login/redirect" element={<ProtectedRoutes />} /> */}
         <Route path={`/user/:userId`} element={<UserPage />} />
         <Route path={`/profile/:userId`} element={<Profile />} />
         <Route path={`/profile/invoices/:userId`} element={<UserInvoice />} />
