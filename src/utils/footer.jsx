@@ -10,7 +10,7 @@ const Footer = () => {
         backgroundColor: "#558e89",
         padding: "40px 0",
         width: "100%",
-        marginTop: "auto",
+        marginTop: "15%",
       }}
     >
       <Container>

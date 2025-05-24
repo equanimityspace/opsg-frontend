@@ -5,10 +5,9 @@ import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
-
-import "./ourservices.css";
-
+import "../../layout/pages/ourServices.css";
 import Footer from "../../utils/footer";
+import medicalDocument from "../../assets/img/medical-document.jpg";
 
 const ourServices = () => {
   const fadeInAnimationVariants = {
@@ -28,106 +27,148 @@ const ourServices = () => {
 
   return (
     <>
-      <div className="backgroundAccent" style={{ zIndex: "-1", width: "100%" }}>
+      <div
+        className="backgroundAccent"
+        style={{ zIndex: "-1", width: "100%", height: "98vh" }}
+      >
         <NavBar />
-          <Container className="main mt-5" fluid>
-            {/* animate fade in going down */}
-            <motion.div
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              custom={-1} // make y negative, so fade in from top moving down
-            >
-              <Row className="justify-content-md-center">
-                <Col className="display-1" md="auto" 
-                style={{ 
-                  margin: "auto", 
-                  paddingTop: "1.5em", 
-                  fontSize: "5vw", 
-                  paddingBottom: ".75em",
+        <Container className="main mt-5" fluid>
+          {/* animate fade in going down */}
+          <motion.div
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            custom={-1} // make y negative, so fade in from top moving down
+          >
+            <Row className="justify-content-md-center">
+              <Col
+                className="display-1"
+                md="auto"
+                style={{
+                  margin: "auto",
+                  paddingTop: "1.5em",
+                  fontSize: "5vw",
+                  paddingBottom: "2vw",
                   color: "#558e89",
-                  }}>
-                  Why Choose OnPoint Solutions?
-                </Col>
-              </Row>
-              <Row
-                className="justify-content-md-center"
+                }}
               >
-                <Col className="display-1" md="auto" 
+                Why Choose OnPoint Solutions?
+              </Col>
+            </Row>
+          </motion.div>
+        </Container>
+              {/* <div
+                className="display-1 row"
+                md="auto"
                 style={{
                   fontSize: "2vw",
                   fontWeight: "200",
                   width: "80vw",
                   paddingBottom: "6vw",
                 }}
+              > */}
+              <div className="whyContainer"
+              style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "20px",
+              }}
               >
-                <ul className="whyChoose">
-                  <li className="whyChooseParag">
+                <div className="whyParasBox"
+                style={{
+                    margin: "2vw",
+                    maxWidth: "600px",
+                    fontWeight: "200",
+                    fontSize: "1.6vw",
+                }}
+                >
+                  <p>
                     <strong>Support:</strong> Every client is assigned a
                     Certified Provider Credentialing Specialist (CPCS) to ensure
                     personalized service and attention to detail.
-                  </li>
-                  <li className="whyChooseParag">
+                  </p>
+                  <p>
                     <strong>Streamlined Processes:</strong> We manage the entire
                     credentialing and enrollment lifecycle, so you can focus on
                     what matters most—patient care.
-                  </li>
-                  <li className="whyChooseParag">
+                  </p>
+                  <p>
                     <strong>Faster Revenue Cycles:</strong> Our efficient
                     systems help you get credentialed quicker, increasing
                     patient access and accelerating your income.
-                  </li>
-                  <li className="whyChooseParag">
+                  </p>
+                  <p>
                     <strong>Individualized Service:</strong> No
                     one-size-fits-all solutions here. We tailor our approach to
                     meet your unique operational and financial goals.
-                  </li>
-                </ul>
-              </Col>
-            </Row>
-          </motion.div>
-        </Container>
+                  </p>
+                </div>
+
+                  <img
+                    src={medicalDocument}
+                    classname="servicesImage"
+                    style={{
+                      width: "30%",
+                    }}
+                  ></img>
+          </div>
+
 
         {/* Credentials Section */}
         <Container className="py-5 justify-content-center">
           <h2 className="text-center cardheader">Credentials</h2>
-          <h3 className="text-center mb-4 mx-auto cardPara" 
-          style={{ 
-            maxWidth: "55%",
-            fontWeight: "200",
-            paddingBottom: "2vw", 
-            fontSize: "1.6vw", 
-            }}>Recredentialing, Applications and License Renewals</h3>
+          <h3
+            className="text-center mb-4 mx-auto cardPara"
+            style={{
+              paddingBottom: "5vw",
+              fontWeight: "200",
+              fontSize: "2vw",
+              maxWidth: "60%",
+            }}
+          >
+            Recredentialing, Applications and License Renewals
+          </h3>
           <CredentialsCards />
         </Container>
 
         {/* Enrollment Section */}
         <Container className="py-5">
           <h2 className="text-center cardheader">Enrollment</h2>
-          <h3 className="text-center mb-4 mx-auto cardPara" 
-          style={{ 
-            maxWidth: "55%",
-            fontWeight: "200",
-            paddingBottom: "2vw", 
-            fontSize: "1.6vw", 
-            }}>Medicare Opt-Out, Group Providers and Individual Providers Serving Commercial and Government Payers</h3>
+          <h3
+            className="text-center mb-4 mx-auto cardPara"
+            style={{
+              paddingBottom: "5vw",
+              fontWeight: "200",
+              fontSize: "2vw",
+              maxWidth: "60%",
+            }}
+          >
+            Medicare Opt-Out, Group Providers and Individual Providers Serving
+            Commercial and Government Payers
+          </h3>
           <EnrollmentCards />
         </Container>
 
         {/* Consulting Section */}
         <Container className="py-5">
           <h2 className="text-center cardheader">Consulting</h2>
-          <h3 className="text-center mb-4 mx-auto cardPara" 
-          style={{ 
-            maxWidth: "55%",
-            fontWeight: "200",
-            paddingBottom: "2vw", 
-            fontSize: "1.6vw", 
-            }}>Development Planning Assessing Compliance, Risk, and Opportunities</h3>
+          <h3
+            className="text-center mb-4 mx-auto cardPara"
+            style={{
+              paddingBottom: "4vw",
+              fontWeight: "200",
+              fontSize: "2vw",
+              maxWidth: "60%",
+            }}
+          >
+            Development Planning Assessing Compliance, Risk, and Opportunities
+          </h3>
           <ConsultingCards />
         </Container>
       </div>
+      <div style={{ paddingTop: "322vh" }}></div>
       <Footer />
     </>
   );

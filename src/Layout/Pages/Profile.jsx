@@ -366,7 +366,6 @@ export default function Profile() {
           body={modalBody}
         />
       </div>
-      <Footer />
     </>
   );
 }
