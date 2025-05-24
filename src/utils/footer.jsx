@@ -8,64 +8,63 @@ const Footer = () => {
     <footer
       style={{
         backgroundColor: "#558e89",
-        padding: "40px 0",
+        padding: "20px 0",
         width: "100%",
         marginTop: "auto",
       }}
     >
       <Container>
-        <div
-          className="footerTextWrapper"
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "8vw",
-          }}
-        >
-          <div className="footerTextBoxes">
-            <p>
+        <Row className="mb-3">
+          {" "}
+          <Col className="text-start">
+            {" "}
+            <p style={{ margin: 0 }}>
+              {" "}
               M. Michelle Zachary, CPCS, CPMSM
               <br />
               <a href="mailto:szachary@onpointsolutionsgroup.org">
                 szachary@onpointsolutionsgroup.org
               </a>
             </p>
-          </div>
-          <div className="footerTextBoxes">
-            <p>
+          </Col>
+          <Col className="text-end">
+            {" "}
+            <p style={{ margin: 0 }}>
               M. Catherine Cutrone, CPCS
               <br />
               <a href="mailto:ccutrone@onpointsolutionsgroup.org">
                 ccutrone@onpointsolutionsgroup.org
               </a>
             </p>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
         <div className="btmFooterTextBox">
-          <Row className="justify-content-center mb-3">
+          <Row className="justify-content-center mb-2">
+            {" "}
             <Col className="text-center">
-              <h4>General Inquiries</h4>
+              <h4 style={{ marginBottom: "10px" }}>General Inquiries</h4>{" "}
             </Col>
           </Row>
           <Row>
             <Col>
               <div className="d-flex justify-content-center align-items-center">
-                <img src={opsgLogo} alt="Logo" style={{ width: "100px" }} />
+                <img src={opsgLogo} alt="Logo" style={{ width: "80px" }} />{" "}
               </div>
             </Col>
           </Row>
-          <Row className="justify-content-center">
+          <Row className="justify-content-center mt-2">
+            {" "}
             <Col className="text-center">
               <div className="d-flex justify-content-center align-items-center">
                 <img
                   src={phone}
                   style={{
-                    width: "50px",
-                    marginRight: "8px",
+                    width: "40px",
+                    marginRight: "5px",
                   }}
-                ></img>
+                  alt="Phone"
+                />
                 <span>(970) 394-5560</span>
               </div>
             </Col>
@@ -74,10 +73,11 @@ const Footer = () => {
                 <img
                   src={fax}
                   style={{
-                    width: "50px",
-                    marginRight: "8px",
+                    width: "40px",
+                    marginRight: "5px",
                   }}
-                ></img>
+                  alt="Fax"
+                />
                 <span>(970) 317-2233</span>
               </div>
             </Col>
