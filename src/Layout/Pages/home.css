@@ -1,6 +1,17 @@
 .counterWrapper {
   padding-left: 2vw;
 }
+.counterWrapperContainer {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+.centeredCounter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .info-card {
   background-color: #79cbbb !important;
   transition: transform 0.25s ease-in-out;
@@ -37,7 +48,6 @@
   }
   .usMap {
     transform: translate(14%, 0%);
-    width: 75%;
   }
 }
 

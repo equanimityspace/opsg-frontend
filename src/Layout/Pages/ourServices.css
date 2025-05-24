@@ -30,25 +30,15 @@
   padding-left: 8px !important;
 }
 
-.whyChoose {
+/* .whyChoose {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
-.whyChooseParag {
-   padding: 1vw;
-   list-style-type: "";
-}
 
 .cardheader {
     padding-bottom: 2vw;
     font-weight: 200;
-}
-
-.cardPara {
-    padding-bottom: 3vw;
-    font-weight: 200;
-    font-size: 1.5vw
 }
 
 /* Responsive adjustments */
@@ -56,4 +46,48 @@
   .info-card {
     min-height: 300px !important;
   }
+.whyChooseParag {
+   padding: 2vw;
+   list-style-type: "";
+   font-size: 2vw;
+   font-weight: 200;
+   width: 80vw;
+   padding-bottom: 6vw;
+}
+.cardPara {
+    padding-bottom: 5vw; 
+    font-weight: 200;
+    font-size: 1.5vw;
+    max-width: 50%;
+}
+.servicesImage {
+  margin-right: 20px;
+  width: 150px;
+  height: 150px;
+}
+.whyContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.whyParasBox {
+  max-width: 600px;
+}
+}
+
+@media (max-width: 600px) {
+  /* CSS styles for mobile devices (screens 768px and smaller) */
+  /* Example: Smaller font size, different layout, etc. */
+.whyChooseParag {
+   padding: 2vw;
+   list-style-type: "";
+   font-size: 12px;
+}
+.cardPara {
+    padding-bottom: 3vw;
+    font-weight: 200;
+    font-size: 3.5vw;
+    max-width: 55%;
+}
 }

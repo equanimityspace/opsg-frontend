@@ -14,7 +14,7 @@ export default function AnimationCountUp({ from, to }) {
     element.textContent = String(from);
 
     const controls = animate(from, to, {
-      duration: 1.5,
+      duration: 1.4,
       ease: "easeOut",
       onUpdate(value) {
         element.textContent = value.toFixed(0);
