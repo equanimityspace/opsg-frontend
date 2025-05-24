@@ -5,7 +5,6 @@ import InfoCard from "../../../utils/InfoCard";
 import { Row, Col, Image, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import FullName from "../../../utils/qbCustomer/FullName";
-import Footer from "../../../utils/footer";
 
 export default function UserInvoice() {
   const objId = useParams();
@@ -45,7 +44,6 @@ export default function UserInvoice() {
           </Col>
         </Row>
       </Container>
-      <Footer />
     </div>
   );
 }
