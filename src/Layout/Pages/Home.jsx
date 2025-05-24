@@ -113,6 +113,8 @@ const Home = () => {
                 loading="lazy"
                 style={{
                   margin: "auto",
+                  borderRadius: "2%",
+                  filter: "drop-shadow(8px 8px 10px gray)",
                 }}
               />
             </div>
@@ -131,15 +133,17 @@ const Home = () => {
               >
                 <h3 className="centeredCounter"
                   style={{
-                    fontSize: "clamp(3.5vw, 6px, 2vw)",
+                    fontSize: "clamp(4.5vw, 6px, 2vw)",
                     display: "flex",
                     flexWrap: "wrap",
                     flexDirection: "column",
                     alignItems: "center",
-                    fontFamily: "var(--bs-body-font-family)",
-                    fontSize: "200%",
-                    fontWeight: "var(--bs-body-font-weight)",
+                    fontFamily: "arial",
+                    color: "#558e89",
+                    opacity: "100%",
+                    fontWeight: "200",
                     lineHeight: "var(--bs-body-line-height)",
+                    zIndex: "2",
                   }}
                 >
                   Trusted by over <AnimationCountUp from={0} to={50} /> Hospitals,

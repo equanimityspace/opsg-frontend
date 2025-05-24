@@ -37,7 +37,7 @@ const HomeInfoCards = () => {
         <Card
           key={index}
           className="info-card"
-          style={{ backgroundColor: "#79cbbb", margin: "3vw" }}
+          style={{ backgroundColor: "#79cbbb", margin: "3vw", zIndex: "1", }}
         >
           <CardBody
             style={{
