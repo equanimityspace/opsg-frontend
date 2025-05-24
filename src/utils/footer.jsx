@@ -8,31 +8,54 @@ const Footer = () => {
     <footer
       style={{
         backgroundColor: "#558e89",
-        padding: "20px 0",
+        padding: "20px 0px 50px 0px",
         width: "100%",
         marginTop: "15%",
       }}
     >
       <Container>
-        <Row className="mb-3">
+        <Row className="mb-3" >
           {" "}
           <Col className="text-start">
             {" "}
-            <p style={{ margin: 0 }}>
+            <p style={{ 
+              margin: 0, 
+              paddingTop: "4vw", 
+              paddingBottom: "3vw",    
+              display: "inline-block",
+              textAlign: "center",
+              paddingLeft: "15vw"
+              }}>
               {" "}
               M. Michelle Zachary, CPCS, CPMSM
               <br />
-              <a href="mailto:szachary@onpointsolutionsgroup.org">
+              <a href="mailto:szachary@onpointsolutionsgroup.org"
+              style={{
+                color: "black",
+                textDecoration: "none"
+              }}
+              >
                 szachary@onpointsolutionsgroup.org
               </a>
             </p>
           </Col>
           <Col className="text-end">
             {" "}
-            <p style={{ margin: 0 }}>
+            <p style={{ 
+              margin: 0, 
+              paddingTop: "4vw",     
+              display: "inline-block",
+              textAlign: "center",
+              paddingRight: "15vw"
+              }}>
               M. Catherine Cutrone, CPCS
               <br />
-              <a href="mailto:ccutrone@onpointsolutionsgroup.org">
+              <a href="mailto:ccutrone@onpointsolutionsgroup.org"
+              style={{
+                color: "black",
+                textDecoration: "none"
+              }}
+              >
                 ccutrone@onpointsolutionsgroup.org
               </a>
             </p>
@@ -49,7 +72,7 @@ const Footer = () => {
           <Row>
             <Col>
               <div className="d-flex justify-content-center align-items-center">
-                <img src={opsgLogo} alt="Logo" style={{ width: "80px" }} />{" "}
+                <img src={opsgLogo} alt="Logo" style={{ width: "8%" }} />{" "}
               </div>
             </Col>
           </Row>
@@ -60,7 +83,7 @@ const Footer = () => {
                 <img
                   src={phone}
                   style={{
-                    width: "40px",
+                    width: "3vw",
                     marginRight: "5px",
                   }}
                   alt="Phone"
@@ -73,7 +96,7 @@ const Footer = () => {
                 <img
                   src={fax}
                   style={{
-                    width: "40px",
+                    width: "3vw",
                     marginRight: "5px",
                   }}
                   alt="Fax"

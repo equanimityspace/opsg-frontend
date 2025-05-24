@@ -169,7 +169,7 @@ const ourServices = () => {
           <ConsultingCards />
         </Container>
       </div>
-      <div style={{ paddingTop: "clamp(1120vh, 200vh, 1em)" }}></div>
+      <div style={{ paddingTop: "clamp(270vh, 200vh, 1em)" }}></div>
       <Footer />
     </>
   );
