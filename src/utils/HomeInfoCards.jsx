@@ -12,8 +12,6 @@ const HomeInfoCards = () => {
       title: "Credentials",
       subtitle: "Get verified quickly",
       text: "We'll collect, verify, and store your nursing credentials securely.",
-      link: "/credentials",
-      linkHint: "View my credentials",
     },
     {
       src: stethoscope,
@@ -22,8 +20,6 @@ const HomeInfoCards = () => {
       title: "Enrollments",
       subtitle: "Streamlined onboarding",
       text: "Our platform automates enrollments so you can focus on patient care.",
-      link: "/credentials",
-      linkHint: "View enrollment information",
     },
     {
       src: medicalBag,
@@ -32,8 +28,6 @@ const HomeInfoCards = () => {
       title: "Consulting",
       subtitle: "Expert guidance",
       text: "Work one-on-one with our team of healthcare IT specialists.",
-      link: "/credentials",
-      linkHint: "Learn more about consulting",
     },
   ];
 
@@ -43,7 +37,7 @@ const HomeInfoCards = () => {
         <Card
           key={index}
           className="info-card"
-          style={{ backgroundColor: "#79cbbb", margin: "3vw" }}
+          style={{ backgroundColor: "#79cbbb", margin: "3vw", zIndex: "1", }}
         >
           <CardBody
             style={{
@@ -55,13 +49,12 @@ const HomeInfoCards = () => {
             <Card.Img
               src={card.src}
               alt={card.alt}
-              className="override"
               style={{
                 width: "25%",
                 display: "block",
                 alignSelf: "anchor-center",
                 paddingBottom: "4vh",
-                paddingTop: "3vh",
+                paddingTop: "2.5vh",
               }}
             />
             <Card.Title
@@ -75,7 +68,7 @@ const HomeInfoCards = () => {
             <Card.Subtitle className="mb-2 text-muted">
               {card.subtitle}
             </Card.Subtitle>
-            <Card.Text>{card.text}</Card.Text>
+            <Card.Text style={{ paddingBottom: "2vh" }}>{card.text}</Card.Text>
             {card.link && (
               <Card.Link href={card.link}>{card.linkHint}</Card.Link>
             )}
