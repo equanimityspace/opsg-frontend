@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, CardBody, Row, Col, Container } from "react-bootstrap";
-import flipChart from "../../Assets/img/flipChart.png"
-
+import flipChart from "../../assets/img/flipChart.png";
 
 const ConsultingCards = () => {
   const cardData = [
@@ -42,8 +41,6 @@ const ConsultingCards = () => {
       title: "Staff department core functions",
     },
   ];
-
-
   return (
  <Container fluid> {/* Changed to fluid to avoid container padding */}
       <Row className="justify-content-center g-1">
@@ -85,6 +82,7 @@ const ConsultingCards = () => {
       </Row>
     </Container>
   );
-  }
+};
+
 
 export default ConsultingCards;

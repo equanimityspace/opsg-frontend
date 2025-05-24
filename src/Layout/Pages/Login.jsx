@@ -14,7 +14,7 @@ import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 // import storeToken from "../../utils/tokenService";
 
-export default function Login({ setUserId, setIsAdmin }) {
+export default function Login() {
   const navigate = useNavigate();
   const [login, status] = useLoginMutation();
 
@@ -49,9 +49,11 @@ export default function Login({ setUserId, setIsAdmin }) {
       const payload = await login(formData).unwrap();
       const userId = payload.user.id;
       const isAdmin = payload.user.isAdmin;
-      setUserId(userId);
-      setIsAdmin(isAdmin);
-      navigate("/login/redirect");
+      if (isAdmin) {
+        navigate(`/admin/dashboard`);
+      } else {
+        navigate(`/user/${userId}`);
+      }
     } catch (err) {
       console.error(err);
       setResponse(err);

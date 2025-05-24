@@ -25,7 +25,7 @@ const usersApi = api.injectEndpoints({
         url: "/auth/getAllUsers/",
         method: "GET",
       }),
-      providesTags: ["User"],
+      invalidatesTags: ["User"],
     }),
 
     getUser: build.query({
@@ -33,7 +33,7 @@ const usersApi = api.injectEndpoints({
         url: `/auth/getUser/${id}`,
         method: "GET",
       }),
-      providesTags: ["User"],
+      invalidatesTags: ["User"],
     }),
 
     updateUserProfile: build.mutation({
