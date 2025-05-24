@@ -111,6 +111,8 @@ const ourServices = () => {
                     classname="servicesImage"
                     style={{
                       width: "30%",
+                      borderRadius: "2%",
+                      filter: "drop-shadow(8px 8px 10px gray)",
                     }}
                   ></img>
           </div>
@@ -157,7 +159,6 @@ const ourServices = () => {
           <h3
             className="text-center mb-4 mx-auto cardPara"
             style={{
-              paddingBottom: "4vw",
               fontWeight: "200",
               fontSize: "2vw",
               maxWidth: "60%",
@@ -168,7 +169,7 @@ const ourServices = () => {
           <ConsultingCards />
         </Container>
       </div>
-      <div style={{ paddingTop: "322vh" }}></div>
+      <div style={{ paddingTop: "clamp(1120vh, 200vh, 1em)" }}></div>
       <Footer />
     </>
   );
