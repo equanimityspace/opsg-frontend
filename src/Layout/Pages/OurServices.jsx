@@ -5,7 +5,7 @@ import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
-import "../../layout/pages/ourServices.css";
+import "../../layout/Pages/ourServices.css";
 import Footer from "../../utils/footer";
 import medicalDocument from "../../assets/img/medical-document.jpg";
 
@@ -58,7 +58,7 @@ const ourServices = () => {
             </Row>
           </motion.div>
         </Container>
-              {/* <div
+        {/* <div
                 className="display-1 row"
                 md="auto"
                 style={{
@@ -68,55 +68,56 @@ const ourServices = () => {
                   paddingBottom: "6vw",
                 }}
               > */}
-              <div className="whyContainer"
-              style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "20px",
-              }}
-              >
-                <div className="whyParasBox"
-                style={{
-                    margin: "2vw",
-                    maxWidth: "600px",
-                    fontWeight: "200",
-                    fontSize: "1.6vw",
-                }}
-                >
-                  <p>
-                    <strong>Support:</strong> Every client is assigned a
-                    Certified Provider Credentialing Specialist (CPCS) to ensure
-                    personalized service and attention to detail.
-                  </p>
-                  <p>
-                    <strong>Streamlined Processes:</strong> We manage the entire
-                    credentialing and enrollment lifecycle, so you can focus on
-                    what matters most—patient care.
-                  </p>
-                  <p>
-                    <strong>Faster Revenue Cycles:</strong> Our efficient
-                    systems help you get credentialed quicker, increasing
-                    patient access and accelerating your income.
-                  </p>
-                  <p>
-                    <strong>Individualized Service:</strong> No
-                    one-size-fits-all solutions here. We tailor our approach to
-                    meet your unique operational and financial goals.
-                  </p>
-                </div>
-
-                  <img
-                    src={medicalDocument}
-                    classname="servicesImage"
-                    style={{
-                      width: "30%",
-                      borderRadius: "2%",
-                      filter: "drop-shadow(8px 8px 10px gray)",
-                    }}
-                  ></img>
+        <div
+          className="whyContainer"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "20px",
+          }}
+        >
+          <div
+            className="whyParasBox"
+            style={{
+              margin: "2vw",
+              maxWidth: "600px",
+              fontWeight: "200",
+              fontSize: "1.6vw",
+            }}
+          >
+            <p>
+              <strong>Support:</strong> Every client is assigned a Certified
+              Provider Credentialing Specialist (CPCS) to ensure personalized
+              service and attention to detail.
+            </p>
+            <p>
+              <strong>Streamlined Processes:</strong> We manage the entire
+              credentialing and enrollment lifecycle, so you can focus on what
+              matters most—patient care.
+            </p>
+            <p>
+              <strong>Faster Revenue Cycles:</strong> Our efficient systems help
+              you get credentialed quicker, increasing patient access and
+              accelerating your income.
+            </p>
+            <p>
+              <strong>Individualized Service:</strong> No one-size-fits-all
+              solutions here. We tailor our approach to meet your unique
+              operational and financial goals.
+            </p>
           </div>
 
+          <img
+            src={medicalDocument}
+            classname="servicesImage"
+            style={{
+              width: "30%",
+              borderRadius: "2%",
+              filter: "drop-shadow(8px 8px 10px gray)",
+            }}
+          ></img>
+        </div>
 
         {/* Credentials Section */}
         <Container className="py-5 justify-content-center">
