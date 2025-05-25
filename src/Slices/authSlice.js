@@ -4,7 +4,7 @@ import { storeToken } from "../utils/tokenService";
 
 // register
 const registerSlice = createSlice({
-  name: "register",
+  name: "siteRegister",
   initialState: {},
   reducers: {},
   extraReducers: (builder) => {
@@ -13,7 +13,7 @@ const registerSlice = createSlice({
 });
 
 const loginSlice = createSlice({
-  name: "login",
+  name: "siteLogin",
   initialState: {},
   reducers: {},
   extraReducers: (builder) => {
@@ -39,7 +39,7 @@ const updateUserProfileSlice = createSlice({
   },
 });
 
-export const registerReducer = registerSlice.reducer;
-export const loginReducer = loginSlice.reducer;
+export const siteRegisterReducer = registerSlice.reducer;
+export const siteLoginReducer = loginSlice.reducer;
 export const getAllUsersReducer = getAllUsersSlice.reducer;
 export const updateUserProfileReducer = updateUserProfileSlice.reducer;
