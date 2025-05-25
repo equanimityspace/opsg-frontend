@@ -32,16 +32,15 @@ const Home = () => {
   return (
     <div
       className="background"
-      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+      style={{ minHeight: "100vh"}}
     >
-      <div className="backgroundAccent" style={{ flex: 1 }}>
+      <div className="backgroundAccent" style={{ height: "14%", width: "100%" }}>
         {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
         <NavBar />
         <div className="nameLogo">
           <div
             className="logoContainer"
             style={{
-              display: "flex",
               alignItems: "center",
               fontSize: "clamp(16px, 3vw, 100px)",
               fontWeight: "200",

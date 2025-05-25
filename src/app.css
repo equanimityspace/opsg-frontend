@@ -33,6 +33,7 @@
      .backgroundAccent {
         background-color: #e5fffd;
         height: 85vh;
+        width: 100%;
       }
      .secondaryHeaderBox {
         padding-top: 2vh;
@@ -75,7 +76,8 @@
 
      .backgroundAccent {
         background-color: #e5fffd;
-        height: 130vh;
+        height: 120vh;
+        width: 100%;
       }
      .secondaryHeaderBox {
         padding-top: 2vh;
