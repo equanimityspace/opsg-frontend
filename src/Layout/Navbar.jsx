@@ -7,7 +7,7 @@ import { jwtDecode } from "jwt-decode";
 import opsgLogo from "../assets/img/opsg-logo.png";
 import "../Layout/navbar.css";
 import ReactiveButton from "reactive-button";
-import { Button } from "react-bootstrap";
+import ListGroup from "react-bootstrap/ListGroup";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -75,7 +75,7 @@ export default function NavBar() {
             </div>
           </div>
 
-          <ul
+          <ListGroup
             className="nav navbar-nav  sidebar-header2"
             style={{
               display: "flex",
@@ -85,34 +85,42 @@ export default function NavBar() {
               fontSize: "clamp(1.25vw, 10vw, 10px)",
             }}
           >
-            <li className="nav-item active">
-              <a className="nav-link" variant="secondary" href="/">
-                ABOUT
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/ourservices">
-                SERVICES
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/contactform">
-                CONTACT
-              </a>
-            </li>
-            <li className="nav-item active">
-              {token ? (
-                <a className="nav-link" href={`/user/${userId}`}>
-                  PROFILE
-                </a>
-              ) : (
-                <a className="nav-link" href="/"></a>
-              )}
-            </li>
-          </ul>
+            <ListGroup.Item
+              className="nav-item active"
+              action
+              onClick={() => navigate("/")}
+            >
+              ABOUT
+            </ListGroup.Item>
+            <ListGroup.Item
+              className="nav-item"
+              action
+              onClick={() => navigate("/ourservices")}
+            >
+              SERVICES
+            </ListGroup.Item>
+            <ListGroup.Item
+              className="nav-item"
+              action
+              onClick={() => navigate("/contactform")}
+            >
+              CONTACT
+            </ListGroup.Item>
+            {token ? (
+              <ListGroup.Item
+                className="nav-item active"
+                action
+                onClick={() => navigate(`/user/${userId}`)}
+              >
+                PROFILE
+              </ListGroup.Item>
+            ) : (
+              <></>
+            )}
+          </ListGroup>
 
           <div className="mobileButtonWrapper">
-            <ul
+            <ListGroup
               className="nav looooook mobileButtonWrapper"
               style={{
                 display: "flex",
@@ -120,7 +128,7 @@ export default function NavBar() {
                 position: "anchor-right",
               }}
             >
-              <li>
+              <ListGroup.Item>
                 <span
                   style={{
                     marginRight: "15px",
@@ -161,8 +169,8 @@ export default function NavBar() {
                     </ReactiveButton>
                   )}
                 </span>
-              </li>
-              <li>
+              </ListGroup.Item>
+              <ListGroup.Item>
                 <span>
                   {token ? (
                     <button
@@ -184,8 +192,8 @@ export default function NavBar() {
                     ></ReactiveButton>
                   )}
                 </span>
-              </li>
-            </ul>
+              </ListGroup.Item>
+            </ListGroup>
           </div>
         </div>
       </nav>
