@@ -20,28 +20,25 @@ import AdminSearch from "./Layout/Pages/AdminDashboard/AdminSearch";
 
 function App() {
   return (
-    <>
+    <Routes>
+      {/* Admin Routes (most specific first) */}
+      <Route path="/admin/user/user/:userId" element={<AdminUser />} />
+      <Route path="/admin/user" element={<AdminAllUsers />} />
+      <Route path="/admin/search" element={<AdminSearch />} />
+      <Route path="/admin/dashboard" element={<AdminPage />} />
+
+      {/* User Protected Routes */}
+      <Route path="/profile/invoices/:userId" element={<UserInvoice />} />
+      <Route path="/profile/:userId" element={<Profile />} />
+      <Route path="/user/:userId" element={<UserPage />} />
+
       {/* Visitor Routes */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
-        {/* <Route path="/unauthorized" element={<UnauthorizedPage/>} /> */}
-        <Route path="/ourservices" element={<OurServices />} />
-        <Route path="/contactform" element={<ContactForm />} />
-
-        {/* Protected Routes */}
-        {/* <Route path="/login/redirect" element={<ProtectedRoutes />} /> */}
-        <Route path={`/user/:userId`} element={<UserPage />} />
-        <Route path={`/profile/:userId`} element={<Profile />} />
-        <Route path={`/profile/invoices/:userId`} element={<UserInvoice />} />
-
-        <Route path={"/admin/search"} element={<AdminSearch />} />
-        <Route path={"/admin/dashboard"} element={<AdminPage />} />
-        <Route path={"/admin/user"} element={<AdminAllUsers />} />
-        <Route path={`/admin/user/user/:userId`} element={<AdminUser />} />
-      </Routes>
-    </>
+      <Route path="/contactform" element={<ContactForm />} />
+      <Route path="/ourservices" element={<OurServices />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Registration />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 
