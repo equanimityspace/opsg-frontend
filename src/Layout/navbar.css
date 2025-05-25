@@ -14,6 +14,7 @@
     --bs-bg-opacity: 1;
     background-color: #ffffff;
     padding-bottom: 3em;
+    width: 100%;
     }
     .mobileButtonWrapper {
       display: contents;
@@ -39,7 +40,8 @@
     .bg-light2 {
         --bs-bg-opacity: 1;
         background-color: #ffffff;
-        max-height: 90px;  
+        max-height: 90px;
+        width: 100%;  
     }
 
 }

@@ -86,9 +86,14 @@ export default function NavBar() {
             }}
           >
             <ListGroup.Item
-              className="nav-item active"
+              className="nav-item"
               action
               onClick={() => navigate("/")}
+              style={{
+                fontColor: "black",
+                border: "none",
+                backgroundColor: "white"
+              }}
             >
               ABOUT
             </ListGroup.Item>
@@ -96,6 +101,11 @@ export default function NavBar() {
               className="nav-item"
               action
               onClick={() => navigate("/ourservices")}
+              style={{
+                fontColor: "black",
+                border: "none",
+                backgroundColor: "white"
+              }}
             >
               SERVICES
             </ListGroup.Item>
@@ -103,6 +113,11 @@ export default function NavBar() {
               className="nav-item"
               action
               onClick={() => navigate("/contactform")}
+              style={{
+                fontColor: "black",
+                border: "none",
+                backgroundColor: "white"
+              }}
             >
               CONTACT
             </ListGroup.Item>
@@ -111,6 +126,11 @@ export default function NavBar() {
                 className="nav-item active"
                 action
                 onClick={() => navigate(`/user/${userId}`)}
+              style={{
+                fontColor: "black",
+                border: "none",
+                backgroundColor: "white"
+              }}
               >
                 PROFILE
               </ListGroup.Item>
@@ -121,17 +141,22 @@ export default function NavBar() {
 
           <div className="mobileButtonWrapper">
             <ListGroup
-              className="nav looooook mobileButtonWrapper"
+              className="nav mobileButtonWrapper"
               style={{
                 display: "flex",
                 flexDirection: "row",
                 position: "anchor-right",
               }}
             >
-              <ListGroup.Item>
+              <ListGroup.Item
+              style={{
+                border: "solid var(--bs-body-bg)",
+              }}
+              >
                 <span
                   style={{
                     marginRight: "15px",
+                    border: "solid var(--bs-body-bg)",
                   }}
                 >
                   {token ? (
@@ -170,7 +195,11 @@ export default function NavBar() {
                   )}
                 </span>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item
+              style={{
+                border: "solid var(--bs-body-bg)",
+              }}
+              >
                 <span>
                   {token ? (
                     <button
@@ -180,6 +209,7 @@ export default function NavBar() {
                     ></button>
                   ) : (
                     <ReactiveButton
+                    className="btn"
                       rounded
                       idleText={"REGISTER"}
                       type="button"

@@ -160,6 +160,7 @@ const ourServices = () => {
           <h3
             className="text-center mb-4 mx-auto cardPara"
             style={{
+              paddingBottom: "5vw",
               fontWeight: "200",
               fontSize: "2vw",
               maxWidth: "60%",
