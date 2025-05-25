@@ -88,7 +88,13 @@ export default function ContactFormPage() {
             viewport={{ once: true }}
             custom={-1}
           >
-            <h2 style={{ textAlign: "center", paddingTop: "100px" }}>
+            <h2
+              style={{
+                textAlign: "center",
+                paddingTop: "150px",
+                fontWeight: "175",
+              }}
+            >
               We'd Love To Hear From You!
             </h2>
 
