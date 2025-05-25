@@ -22,22 +22,22 @@ function App() {
   return (
     <Routes>
       {/* Admin Routes (most specific first) */}
-      <Route path="/admin/user/user/:userId" element={<AdminUser />} />
-      <Route path="/admin/user" element={<AdminAllUsers />} />
-      <Route path="/admin/search" element={<AdminSearch />} />
-      <Route path="/admin/dashboard" element={<AdminPage />} />
+      <Route exact path="/admin/user/user/:userId" element={<AdminUser />} />
+      <Route exact path="/admin/user" element={<AdminAllUsers />} />
+      <Route exact path="/admin/search" element={<AdminSearch />} />
+      <Route exact path="/admin/dashboard" element={<AdminPage />} />
 
       {/* User Protected Routes */}
-      <Route path="/profile/invoices/:userId" element={<UserInvoice />} />
-      <Route path="/profile/:userId" element={<Profile />} />
-      <Route path="/user/:userId" element={<UserPage />} />
+      <Route exact path="/profile/invoices/:userId" element={<UserInvoice />} />
+      <Route exact path="/profile/:userId" element={<Profile />} />
+      <Route exact path="/user/:userId" element={<UserPage />} />
 
       {/* Visitor Routes */}
-      <Route path="/contactform" element={<ContactForm />} />
-      <Route path="/ourservices" element={<OurServices />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Registration />} />
-      <Route path="/" element={<Home />} />
+      <Route exact path="/contactform" element={<ContactForm />} />
+      <Route exact path="/ourservices" element={<OurServices />} />
+      <Route exact path="/login" element={<Login />} />
+      <Route exact path="/register" element={<Registration />} />
+      <Route exact path="/" element={<Home />} />
     </Routes>
   );
 }
