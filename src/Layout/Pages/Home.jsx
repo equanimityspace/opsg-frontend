@@ -6,7 +6,7 @@ import opsgLogo from "../../assets/img/opsg-logo.png";
 import nurseSmiling from "../../assets/img/nurseSmiling.jpg";
 import NavBar from "../Navbar";
 import AnimationCountUp from "../../utils/AnimationCountUp";
-import "../pages/home.css";
+import "../Pages/home.css";
 import "../../../src/app.css";
 import HomeInfoCards from "../../utils/HomeInfoCards";
 import usaMap from "../../assets/img/usaMap.png";
@@ -119,10 +119,8 @@ const Home = () => {
               />
             </div>
 
-
-          <div className="counterWrapperContainer">
-
-            <div
+            <div className="counterWrapperContainer">
+              <div
                 className="counterWrapper"
                 style={{
                   marginTop: "7vh",
@@ -131,7 +129,8 @@ const Home = () => {
                   justifyContent: "center",
                 }}
               >
-                <h3 className="centeredCounter"
+                <h3
+                  className="centeredCounter"
                   style={{
                     fontSize: "clamp(4.5vw, 6px, 2vw)",
                     display: "flex",
@@ -146,22 +145,21 @@ const Home = () => {
                     zIndex: "2",
                   }}
                 >
-                  Trusted by over <AnimationCountUp from={0} to={50} /> Hospitals,
-                  providers, and practicioners
+                  Trusted by over <AnimationCountUp from={0} to={50} />{" "}
+                  Hospitals, providers, and practicioners
                 </h3>
 
-                  <img
-                    className="usMap"
-                    src={usaMap}
-                    alt="United States Map"
-                    style={{
-                      opacity: "18%",
-                      width: "85%",
-                      transform: "translate(4%, 10%)",
-                    }}
-                  ></img>
-                </div>
-                  
+                <img
+                  className="usMap"
+                  src={usaMap}
+                  alt="United States Map"
+                  style={{
+                    opacity: "18%",
+                    width: "85%",
+                    transform: "translate(4%, 10%)",
+                  }}
+                ></img>
+              </div>
             </div>
             <div
               className="cardsContainer"
