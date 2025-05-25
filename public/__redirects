@@ -1,0 +1,2 @@
+# redirect to content instead of breaking on refresh
+/* /index.html 200
