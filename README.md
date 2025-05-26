@@ -1,12 +1,39 @@
-# React + Vite
+# QuickBooks Dashboard - Fullstack Academy Final Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Business Logo](https://i.postimg.cc/SNH5v8J8/opsg-logo.png)
 
-Currently, two official plugins are available:
+### Created By
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Heather DeLiso](https://github.com/HeatherD2025)
+- [Tor Skaarva](https://github.com/Tor-Skaarva)
+- [Ryan Cutrone](https://github.com/equanimityspace)
 
-## Expanding the ESLint configuration
+A web application used by a small company to attract potential clients. It also securely integrates with QuickBooks to provide users with at-a-glance financial insights and outstanding balance information. Built as a final project for Fullstack Academy.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Features
+
+- **Secure QuickBooks Integration**: Real-time access to financial data
+- **Role-Based Access Control**:
+  - Admin users can view all user information
+  - Standard users see only their own data
+- **Polished Dashboard**: Clean, intuitive interface to attract potential clients
+
+## Technologies Used
+
+### Frontend
+
+- React.js with Vite
+- React Bootstrap for responsive layout
+- Framer Motion for animations
+- React Router for navigation
+- Redux for state management
+
+### Key Dependencies
+
+- `react-bootstrap` - UI components
+- `motion` - Animations
+- `jquery` - DOM manipulation
+- `jwt-decode` - Authentication
+- `react-google-recaptcha` - Security
+- `react-redux` - State management
+- `react-router-dom` - Routing
