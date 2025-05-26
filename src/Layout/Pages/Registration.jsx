@@ -8,7 +8,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
-
 import InfoModal from "../../utils/Modal";
 import NavBar from "../Navbar";
 
@@ -19,6 +18,7 @@ export default function Registration() {
   // Modal logic
   const [response, setResponse] = useState();
   const [show, setShow] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
 
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
@@ -36,15 +36,45 @@ export default function Registration() {
 
   // store form data as it is typed
   const update = (e) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+
+    // Validate password in real-time
+    if (name === "password") {
+      validatePassword(value);
+    }
   };
 
-  // submit registartion request
+  // Password validation function
+  const validatePassword = (password) => {
+    const minLength = password.length >= 8;
+    const hasCapital = /[A-Z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+
+    let error = "";
+    if (!minLength) error = "Password must be at least 8 characters";
+    else if (!hasCapital)
+      error = "Password must contain at least one capital letter";
+    else if (!hasNumber) error = "Password must contain at least one number";
+
+    setPasswordError(error);
+    return !error;
+  };
+
+  // submit registration request
   const submit = async (e) => {
     e.preventDefault();
+
+    // Validate password before submission
+    if (!validatePassword(formData.password)) {
+      setResponse(passwordError);
+      openModal();
+      return;
+    }
+
     try {
       const payload = await register(formData).unwrap();
       // on successful registration, go to user dash
@@ -203,13 +233,17 @@ export default function Registration() {
                     <Form.Control
                       type="password"
                       name="password"
-                      placeholder="  Enter password"
+                      placeholder="  Enter password (min 8 chars, 1 capital, 1 number)"
                       onChange={update}
                       style={{
                         fontSize: "12px",
                         paddingLeft: "3px",
                       }}
+                      isInvalid={!!passwordError}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {passwordError}
+                    </Form.Control.Feedback>
                   </Form.Group>
 
                   <ReactiveButton
@@ -224,8 +258,8 @@ export default function Registration() {
                       width: "80px",
                       fontSize: "12px",
                       backgroundColor: "#558e89",
-                      // marginTop: "10px",
                     }}
+                    disabled={!!passwordError || !formData.password}
                   ></ReactiveButton>
                 </Form>
               </Card.Body>
