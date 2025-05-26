@@ -10,11 +10,11 @@ const Footer = () => {
         backgroundColor: "#558e89",
         padding: "10px 0 25px 0",
         width: "100%",
-        marginTop: "50px",
+        zIndex: 100, // just to make sure
       }}
     >
       <Container>
-        <Row className="mb-3 align-items-center">
+        <Row className="align-items-center">
           <Col
             xs={12}
             md={5}
@@ -70,20 +70,6 @@ const Footer = () => {
         </Row>
 
         <div className="btmFooterTextBox">
-          <Row className="justify-content-center mb-2">
-            <Col xs={12}>
-              <h4
-                style={{
-                  marginBottom: "10px",
-                  fontSize: "1.1rem",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                }}
-              >
-                General Inquiries
-              </h4>
-            </Col>
-          </Row>
           <Row className="justify-content-center">
             <Col xs={12} sm={6} className="text-center mb-2 mb-sm-0">
               <div className="d-flex justify-content-center align-items-center">
