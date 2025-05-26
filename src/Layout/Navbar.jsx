@@ -123,7 +123,7 @@ export default function NavBar() {
             </ListGroup.Item>
             {token ? (
               <ListGroup.Item
-                className="nav-item active"
+                className="nav-item"
                 action
                 onClick={() => navigate(`/user/${userId}`)}
               style={{
