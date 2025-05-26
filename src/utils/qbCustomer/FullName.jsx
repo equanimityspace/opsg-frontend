@@ -15,8 +15,8 @@ function BusinessName({ id, bg }) {
       ) : !isLoading ? (
         <InfoCard
           bg={bg}
-          // title={arrCustomer[0]?.FullyQualifiedName}
-          // subtitle={`Billed to ${arrCustomer[0]?.PrimaryEmailAddr.Address}`}
+          title={arrCustomer[0]?.FullyQualifiedName}
+          subtitle={`Billed to ${arrCustomer[0]?.PrimaryEmailAddr.Address}`}
         />
       ) : (
         <InfoCard bg={bg} title="Loading..." />
