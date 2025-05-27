@@ -85,7 +85,9 @@ export default function Registration() {
         typeof error.data === "string"
           ? error.data.trim()
           : error.data?.message || "Registration failed";
-      setResponse("Registration Failed");
+      setResponse(
+        "Registration Failed. Have you already registered with this email?"
+      );
       openModal();
       console.error(errorMsg);
     }
