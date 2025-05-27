@@ -85,7 +85,7 @@ export default function Login() {
                 <Nav variant="tabs" defaultActiveKey="/login">
                   <Nav.Item>
                     <Nav.Link
-                      href="/login"
+                      href="/#/login"
                       style={{
                         variant: "secondary",
                         fontSize: "12px",
@@ -98,7 +98,7 @@ export default function Login() {
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link
-                      href="/register"
+                      href="/#/register"
                       style={{
                         variant: "secondary",
                         fontSize: "12px",

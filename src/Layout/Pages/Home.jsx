@@ -30,11 +30,11 @@ const Home = () => {
   };
 
   return (
-    <div
-      className="background"
-      style={{ minHeight: "100vh"}}
-    >
-      <div className="backgroundAccent" style={{ height: "14%", width: "100%" }}>
+    <div className="background" style={{ minHeight: "100vh" }}>
+      <div
+        className="backgroundAccent"
+        style={{ height: "14%", width: "100%" }}
+      >
         {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
         <NavBar />
         <div className="nameLogo">

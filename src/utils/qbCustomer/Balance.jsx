@@ -12,6 +12,11 @@ function Balance({ id, bg }) {
     <>
       {arrCustomer === null && status === "fulfilled" ? (
         <InfoCard bg="success" title="No outstanding balance 🎉" />
+      ) : arrCustomer.error ? (
+        <InfoCard
+          bg="success"
+          title="failed to fetch your information from quickbooks"
+        />
       ) : !isLoading ? (
         arrCustomer[0]?.Balance === 0 ? (
           <InfoCard bg="success" title="No outstanding balance 🎉" />

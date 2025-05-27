@@ -11,7 +11,7 @@ function BusinessName({ id, bg }) {
   return (
     <>
       {arrCustomer === null && status === "fulfilled" ? (
-        <></>
+        <InfoCard bg={bg} title="Not yet billed in quickbooks" />
       ) : !isLoading ? (
         <InfoCard
           bg={bg}
