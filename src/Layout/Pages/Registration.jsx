@@ -117,7 +117,7 @@ export default function Registration() {
                 <Nav variant="tabs" defaultActiveKey="/register">
                   <Nav.Item>
                     <Nav.Link
-                      href="/login"
+                      href="/#/login"
                       style={{
                         fontSize: "12px",
                         paddingBottom: "10px",
@@ -129,7 +129,7 @@ export default function Registration() {
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link
-                      href="/register"
+                      href="/#/register"
                       style={{
                         fontSize: "12px",
                         paddingBottom: "10px",
