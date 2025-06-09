@@ -28,9 +28,6 @@ export const UserNav = (props) => {
   const handleInvoiceClick = () => {
     navigate(`/profile/invoices/${userId}`);
   };
-  //importing handle logout for logout button
-  //nvm its in another function copy and pasting it
-  //nvm using handleClick
   return (
     <div>
       <div
@@ -78,17 +75,6 @@ export const UserNav = (props) => {
               </h4>
             </div>
           </div>
-
-          {/* <div className="sidebar-header2">
-            <img
-              src={opsgLogo}
-              className="rounded-circle usr-image"
-              height={isNotActive ? "20" : "70"}
-              width={isNotActive ? "20" : "70"}
-            ></img>
-            <h3 className="onPointLogoText">OnPoint</h3>
-          </div> */}
-
           <ul className="list-unstyled components">
             <li className="list-item">
               <Button

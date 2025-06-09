@@ -10,7 +10,7 @@ const Footer = () => {
         backgroundColor: "#558e89",
         padding: "10px 0 25px 0",
         width: "100%",
-        zIndex: 100, // just to make sure
+        zIndex: 10, 
       }}
     >
       <Container>

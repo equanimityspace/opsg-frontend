@@ -4,15 +4,11 @@ import { useState } from "react";
 import NavBar from "../Navbar";
 import "../../app.css";
 import ReactiveButton from "reactive-button";
-
 import InfoModal from "../../utils/Modal";
 import Footer from "../../utils/footer";
-
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
-// import storeToken from "../../utils/tokenService";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -148,7 +144,6 @@ export default function Login() {
                     />
                   </Form.Group>
 
-                  {/* // TESTING */}
                   <ReactiveButton
                     rounded
                     buttonState={loading ? "loading" : "idle"}
@@ -161,7 +156,6 @@ export default function Login() {
                       width: "80px",
                       fontSize: "12px",
                       backgroundColor: "#558e89",
-                      // marginTop: "10px",
                     }}
                   />
                 </Form>

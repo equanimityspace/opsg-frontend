@@ -27,9 +27,6 @@
   /* CSS styles for mobile devices (screens 768px and smaller) */
   /* Example: Smaller font size, different layout, etc. */
 
-  /* .footerTextWrapper {
-  } */
-
   .footerTextBoxes {
     display: flex;
     justify-content: center;

@@ -51,10 +51,6 @@
       .mainImage {
         display: flex;
         height: 60vw;
-        /* width: auto;
-
-        border-color: solid black 10px;
-        display: contents; */
       }
     }
 

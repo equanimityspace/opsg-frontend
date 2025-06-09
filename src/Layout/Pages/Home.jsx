@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-// const { scrollYProgress } = useScroll();
 
 import { Row, Col, Image, Container, CardImg } from "react-bootstrap";
 import opsgLogo from "../../assets/img/opsg-logo.png";
@@ -35,7 +34,6 @@ const Home = () => {
         className="backgroundAccent"
         style={{ height: "14%", width: "100%" }}
       >
-        {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
         <NavBar />
         <div className="nameLogo">
           <div
@@ -67,7 +65,7 @@ const Home = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              custom={-1} // make y negative, so fade in from top moving down
+              custom={-1} 
             >
               <Row className="justify-content-md-center">
                 <Col className="display-1" md="auto" style={{ margin: "auto" }}>

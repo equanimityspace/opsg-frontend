@@ -14,9 +14,7 @@ import AdminPage from "./Layout/Pages/AdminDashboard/AdminDashboard";
 import AdminAllUsers from "./Layout/Pages/AdminDashboard/AdminAllUsers";
 import AdminUser from "./Layout/Pages/AdminDashboard/AdminUser";
 import AdminSearch from "./Layout/Pages/AdminDashboard/AdminSearch";
-// import { AuthProvider } from "./Features/Navigations/AuthContext";
 
-// const AuthContext = React.createContext({ role: 'visitor'});
 
 function App() {
   return (
