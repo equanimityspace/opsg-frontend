@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import InfoModal from "../../utils/Modal";
-import "./../../app.css";
+import "../../app.css";
 import ReactiveButton from "reactive-button";
 import UserHeader from "./UserDash/UserHeader";
 

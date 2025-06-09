@@ -5,7 +5,7 @@ import NavBar from "../Navbar";
 import CredentialsCards from "../../utils/ServicesCards/CredentialsCards";
 import EnrollmentCards from "../../utils/ServicesCards/EnrollmentCards";
 import ConsultingCards from "../../utils/ServicesCards/ConsultingCards";
-import "../../Layout/Pages/ourServices.css";
+import "./ourServices.css";
 import Footer from "../../utils/footer";
 import medicalDocument from "../../assets/img/medical-document.jpg";
 

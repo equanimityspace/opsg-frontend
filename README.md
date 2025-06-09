@@ -38,3 +38,4 @@ A web application used by a small company to attract potential clients. It also 
 - `react-google-recaptcha` - Security
 - `react-redux` - State management
 - `react-router-dom` - Routing
+# Capstone-OPSG-frontend

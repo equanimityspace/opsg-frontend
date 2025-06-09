@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
-import { getToken } from "../../utils/tokenService";
+import { getToken } from "../tokenService";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import ReactiveButton from "reactive-button";
