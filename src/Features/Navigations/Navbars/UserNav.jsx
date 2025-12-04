@@ -79,16 +79,6 @@ export const UserNav = (props) => {
             </div>
           </div>
 
-          {/* <div className="sidebar-header2">
-            <img
-              src={opsgLogo}
-              className="rounded-circle usr-image"
-              height={isNotActive ? "20" : "70"}
-              width={isNotActive ? "20" : "70"}
-            ></img>
-            <h3 className="onPointLogoText">OnPoint</h3>
-          </div> */}
-
           <ul className="list-unstyled components">
             <li className="list-item">
               <Button
